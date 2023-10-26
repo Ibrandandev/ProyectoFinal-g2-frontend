@@ -1,0 +1,64 @@
+[
+    {
+      "nombre": "Juan",
+      "apellido": "Gonzalez",
+      "email": "juan@gonzalez.com",
+      "password": "top1",
+      "plan": "power",
+      "estado": "activo",
+      "USER_ROLE": "usuario",
+      "id": 
+        "1"
+      
+      
+    },
+    {"nombre": "Ignacio",
+    "apellido": "Soria",
+    "email": "ignacio@hotmail.com",
+    "password": "top1",
+    "plan": "libre",
+    "estado": "inactivo",
+    "USER_ROLE": "usuario",
+    "id": 
+      "2"
+     },
+     
+     {
+       
+      "nombre": "Marta",
+      "apellido": "Menendez",
+      "email": "marta@hotmail.com",
+      "password": "top1",
+      "plan": "full",
+      "estado": "inactivo",
+      "USER_ROLE": "usuario",
+      "id": 
+        "3"
+        
+      },
+      
+      {
+        "nombre": "Maria",
+        "apellido": "cruz",
+        "email": "maria@hotmail.com",
+        "password": "top1",
+        "plan": "full",
+        "estado": "activo",
+        "USER_ROLE": "usuario",
+        "id": 
+          "4"
+      },
+      {
+        "nombre": "Lucia",
+      "apellido": "Carrasco",
+      "email": "lucia@hotmail.com",
+      "password": "top1",
+      "plan": "full",
+      "estado": "activo",
+      "USER_ROLE": "admin",
+      "id": 
+        "5"
+        
+      }
+  ]
+  
