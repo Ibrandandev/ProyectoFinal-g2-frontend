@@ -1,24 +1,20 @@
 import './App.css';
-import TableClases from './components/TableClases';
-import TableUsuarios from './components/TableUsuarios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminPage from './pages/AdminPage';
 
 
 function App() {
   
   return (
-    <>
-    <div>
-      <h1 className='d-flex text-center'> Admin </h1>
-    </div>
-    <div>
-      <TableClases/>
-    </div>
-
-    <div>
-    <TableUsuarios/>
-    </div>   
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route
+          path="/admin"
+          element={<AdminPage/>         }
+        />
+  
+      </Routes>
+    </BrowserRouter>
   )
 }
-
 export default App
