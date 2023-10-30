@@ -1,0 +1,32 @@
+/*  
+paleta de colores 
+negro : #222831
+azul : #2D4059
+naranja : #FF5722
+blanco : #EEEEEE
+*/
+
+*{
+    font-family: 'Russo One', sans-serif;
+}
+
+.navbar {
+    background-color: #2D4059;
+}
+
+.btn-style {
+    background-color: #FF5722;
+}
+
+.btn-login{
+    border-color: #FF5722;
+}
+.btn-login:hover{
+    outline: 2px solid FF5722;
+    background-color: #FF5722;
+}
+
+
+.nav-item{
+    color: #FF5722;
+}
