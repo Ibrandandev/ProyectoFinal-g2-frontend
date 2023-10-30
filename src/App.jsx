@@ -1,4 +1,5 @@
 import './App.css';
+import ContactoScreen from './pages/ContactoScreen';
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <>
-         
+      <ContactoScreen></ContactoScreen>
     </>
   )
 }

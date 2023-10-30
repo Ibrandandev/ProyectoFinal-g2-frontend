@@ -1,0 +1,12 @@
+*{
+    background-color: #222831;
+
+}
+
+.formulario {
+    outline: 2px solid #FF5722;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FF5722;
+}
+
