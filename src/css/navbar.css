@@ -16,14 +16,23 @@ blanco : #EEEEEE
 
 .btn-style {
     background-color: #FF5722 !important;
+    color: #EEEEEE !important;
 }
 
-/* .btn-login{
+.btn-style:hover{
+    outline: 2px solid #EEEEEE !important;
+    background-color: #EEEEEE !important;
+    color: #FF5722 !important;
+}
+
+.btn-login{
     border-color: #FF5722 !important;
-} */
+    color: #FF5722 !important;
+}
 .btn-login:hover{
-    outline: 2px solid FF5722;
-    background-color: #FF5722;
+    outline: 2px solid #FF5722 !important;
+    background-color: #FF5722 !important;
+    color: #EEEEEE !important;
 }
 
 .btn-outline-primary{
@@ -31,5 +40,12 @@ blanco : #EEEEEE
 }
 
 .nav-link{
-    color: #FF5722;
+    color: #FF5722 !important;
+    /* padding-bottom: 0px; */
+}
+
+.nav-link:hover{
+    color: #EEEEEE !important;
+    /* outline: 2px solid ; */
+    border-bottom: #EEEEEE 2px solid;
 }
