@@ -1,0 +1,24 @@
+[
+    {
+        "nombre": "spinning",
+        "categoria": "Aerobico",
+        "horario": "18.30",
+        "profesor": "Alejandro",
+        "id": 1     
+    },
+    {
+        "nombre": "Yoga",
+        "categoria": "Mental health",
+        "horario": "17.30",
+        "profesor": "Juan",
+        "id": 2     
+        
+    },
+    {
+        "nombre": "Zumba",
+        "categoria": "Aerobico",
+        "horario": "14.30",
+        "profesor": "Mariana",
+        "id": 3  
+    }
+]
