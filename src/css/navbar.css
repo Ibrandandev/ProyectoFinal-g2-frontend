@@ -15,18 +15,21 @@ blanco : #EEEEEE
 }
 
 .btn-style {
-    background-color: #FF5722;
+    background-color: #FF5722 !important;
 }
 
-.btn-login{
-    border-color: #FF5722;
-}
+/* .btn-login{
+    border-color: #FF5722 !important;
+} */
 .btn-login:hover{
     outline: 2px solid FF5722;
     background-color: #FF5722;
 }
 
+.btn-outline-primary{
+    border-color: #FF5722;
+}
 
-.nav-item{
+.nav-link{
     color: #FF5722;
 }
