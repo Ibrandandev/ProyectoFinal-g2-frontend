@@ -24,8 +24,8 @@ const ContactoScreen = () => {
                     <label for="exampleFormControlTextarea1" className="form-label">Dejanos tu duda!</label>
                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    <div class="d-flex col-12 justify-content-end">
+                        <button class="btn btn-primary " type="submit">Enviar</button>
                     </div>
                 </div>
             </div>
