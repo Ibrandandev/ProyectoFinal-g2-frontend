@@ -14,6 +14,11 @@ blanco : #EEEEEE
     background-color: #2D4059;
 }
 
+/* .logo{
+    border-bottom: #FF5722 2px solid; 
+    padding: 5px;
+} */
+
 .btn-style {
     background-color: #FF5722 !important;
     color: #EEEEEE !important;
@@ -41,7 +46,6 @@ blanco : #EEEEEE
 
 .nav-link{
     color: #FF5722 !important;
-    /* padding-bottom: 0px; */
 }
 
 .nav-link:hover{
