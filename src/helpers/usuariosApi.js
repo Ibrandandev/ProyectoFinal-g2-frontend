@@ -4,7 +4,9 @@ const url = "https://proyectofinal-g2-backend.onrender.com/api/users";
 
 export const getUsuarios = async (limite = 0, pagina = 0) => {
   try {
-    const resp = await fetch(url + "?limite=" + limite + "&desde=" + pagina);
+    const resp = await fetch(url + "?from=" + pagina + "&limit=" + limite, {
+      method: "GET",
+    });
     const data = await resp.json(); // ver porque el de categorias esta configurado diferente. No tiene esta linea, pero tiene el metodo GET
 
     return data;
@@ -15,7 +17,7 @@ export const getUsuarios = async (limite = 0, pagina = 0) => {
   }
 };
 
-export const getUsuariosById = async (id) => {
+export const getUsuarioById = async (id) => {
   try {
     const resp = await fetch(url + "/" + id, { //ver si es asi la URl que puso nacho a los usuarios de ID
       method: "GET",

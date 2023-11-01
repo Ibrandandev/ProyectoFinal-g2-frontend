@@ -1,11 +1,37 @@
-import React, { useEffect } from 'react';
-import clasesGym from "../data/clases.json";
+import React, { useEffect, useState } from 'react';
 
+import Swal from 'sweetalert2';
+import withReactContent from "sweetalert2-react-content";
+
+//import ModalEdit from './ModalEdit';
 
 
 const TableClases = () => {
-useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
-  return (
+
+
+//const MySwal = withReactContent(Swal);
+
+//Para mostrar el modal 
+const [show, setShow] = useState(false);
+
+//Por el ID del curso
+const [cid, setCid] = useState(null);
+
+//cerrar modal 
+const handleClose = ()=>{
+  setCid(null);
+  setShow(false);
+  traerUsuarios();
+};
+
+//abrir modal 
+const handleShow = (id)=>{
+  setCid(id);
+  setShow(true);
+};
+
+
+ return (
     <div>
         <table className='table'>
         <thead>
@@ -19,17 +45,17 @@ useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
         </thead>
 
         <tbody>
-          {clasesGym.map((clase) => (
-            <tr key={clase.id}>
-              <th>{clase.nombre}</th>
-              <td>{clase.categoria}</td>
-              <td>{clase.horario}</td>
-              <td>{clase.profesor}</td>
+          {/*usuarios.map((usuario)) => (
+            <tr key={usuario.id}>
+              <th>{usuario.nombre}</th>
+              <td>{usuario.categoria}</td>
+              <td>{usuario.horario}</td>
+              <td>{usuario.profesor}</td>
               <td>
                 <div className="d-flex gap-3">
                   <button
                     className="btn btn-warning btn-sm"
-                    onClick={() => alert("Quiere modificar este elemento?")}
+                    onClick={() => handleShow(clase.id)}
                   >
                     <i className="fa fa-pencil" aria-hidden="true"></i>
                   </button>
@@ -44,7 +70,7 @@ useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
               </td>
 
 
-              {/*
+              
               <td>
                 {clase.destacado ? (
                   <i className="fa fa-star" aria-hidden="true"></i>
@@ -52,12 +78,13 @@ useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
                   <i className="fa fa-star-o" aria-hidden="true"></i>
                 )}
               </td>
-              */}
-
+              
             </tr>
-          ))}
+          ))*/}
+
         </tbody>
       </table>
+
     </div>
   )
 }

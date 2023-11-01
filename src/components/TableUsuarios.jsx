@@ -1,10 +1,8 @@
 import React from 'react';
-import listaUsuarios from "../data/usuarios.json";
 
 
+const TableUsuarios = ({usuarios, traerUsuarios}) => {
 
-
-const TableUsuarios = () => {
   return (
     <div>
     <table className='table'>
@@ -19,19 +17,19 @@ const TableUsuarios = () => {
     </thead>
 
     <tbody>
-      {listaUsuarios.map((usuario) => (
-        <tr key={usuario.id}>
+      {usuarios.map((usuario) => (
+        <tr key={usuario._id}>
           <th>{usuario.nombre}</th>
           <td>{usuario.email}</td>
-          <td>{usuario.plan}</td>
-          <td>{usuario.estado}</td>
-          {/*<td>
-            {curso.destacado ? (
-              <i className="fa fa-star" aria-hidden="true"></i>
+          <td>{usuario.planContratado}</td>
+            <td>
+            {usuario.usuarioActivo ? (
+              
+              <i className="fa fa-check text-success" aria-hidden="true"></i>
             ) : (
-              <i className="fa fa-star-o" aria-hidden="true"></i>
+              <i className="fa fa-times text-danger" aria-hidden="true"></i>
             )}
-          </td>
+            </td>
           <td>
             <div className="d-flex gap-3">
               <button
@@ -40,15 +38,14 @@ const TableUsuarios = () => {
               >
                 <i className="fa fa-pencil" aria-hidden="true"></i>
               </button>
-              {/* boton eliminar curso }
-              <button
+               <button
                 className="btn btn-danger btn-sm"
                 onClick={() => inactivarCurso(curso.nombre, curso._id)}
               >
                 <i className="fa fa-trash" aria-hidden="true"></i>
               </button>
             </div>
-          </td>*/}
+            </td>
         </tr>
       ))}
     </tbody>
