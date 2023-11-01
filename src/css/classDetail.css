@@ -1,3 +1,25 @@
-/* *{
+*{
     background-color: #2D4059;
-} */
+}
+
+img{
+    width: 100%;
+    /* justify-content: center; */
+    border: #FF5722;
+    max-width: 600px;
+}
+
+.datos{
+    color: #FF5722;
+}
+
+.btn-cursos{
+    outline: 1px solid #FF5722;
+    background-color: #2D4059 !important;
+    color: #EEEEEE !important;
+}
+
+.btn-cursos:hover{
+    outline: 4px solid #FF5722;
+    background-color: #FF5722 !important;
+}

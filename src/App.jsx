@@ -1,5 +1,5 @@
 import './App.css';
-import ClassDetailpage from './pages/classDetailpage';
+import ClassDetailpage from './pages/ClassDetailPage';
 import {
   createBrowserRouter,
   RouterProvider,
