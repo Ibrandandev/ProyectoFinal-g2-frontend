@@ -6,9 +6,11 @@ naranja : #FF5722
 blanco : #EEEEEE
 */
 
-*{
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* *{
     font-family: 'Russo One', sans-serif;
-}
+} */
 
 .navbar {
     background-color: #2D4059;
@@ -46,10 +48,16 @@ blanco : #EEEEEE
 
 .nav-link{
     color: #FF5722 !important;
+    border-radius: 5px;
 }
 
 .nav-link:hover{
     color: #EEEEEE !important;
     /* outline: 2px solid ; */
-    border-bottom: #EEEEEE 2px solid;
+    /* border-bottom: #EEEEEE 2px solid; */
+    background-color: #FF5722;
+}
+
+.logo{
+    font-family: 'Russo One', sans-serif !important;
 }

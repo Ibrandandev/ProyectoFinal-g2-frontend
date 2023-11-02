@@ -9,9 +9,6 @@ return (
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 mb-2 border-bottom w-100">
                 <div className="col-lg-2 mb-2 mb-md-0">
                     <Link className="navbar-brand logo text-white" to="/"><i class="fa fa-ravelry" aria-hidden="true"></i> RollingGym</Link>
-                    {/* <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
-                    <span>RollingGym</span>
-                    </a> */}
                 </div>
 
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -30,6 +27,12 @@ return (
                     <li className="nav-item">
                         <NavLink className="nav-link px-3" to="/aboutUs">About</NavLink>
                     </li>
+                    {/* {user.rol === "ADMIN_ROLE" && ( aqui hay q poner la funcion q permite entrar a admin */}
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin">
+                        <i className="fa fa-cog" aria-hidden="true"></i> Admin</NavLink>
+                    </li>
+                    {/* )} */}
                 </ul>
 
                 <div className="col-lg-3 text-end">
