@@ -4,11 +4,10 @@ import { useState } from 'react'
 import { authLogin } from '../helpers/ApiLogin';
 import { useNavigate } from 'react-router-dom';
 
-const login = () => {
+const LoginScreen = () => {
   const navigate = useNavigate
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -25,16 +24,6 @@ const login = () => {
       Navigate("/")
     }
   }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   if (nombre === "" || password === "") {
-  //     setError(true)
-  //     return
-  //   }
-  //   setError(false)
-  // }
 
   return (
     <>
@@ -64,4 +53,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default LoginScreen;
