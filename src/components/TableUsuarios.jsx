@@ -1,7 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {borrarUsuario} from "../helpers/usuariosApi";
 
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content';
+
+import ModalEdit from './ModalEdit';
 
 const TableUsuarios = ({usuarios, traerUsuarios}) => {
+  const MySwal = withReactContent(Swal);
+
+  const[show, setShow] = useState(false);
+
+  const [cid, setCid] = useState(null);
+
+  const handleClose = () =>{ 
+    setCid(null);
+    setShow(false);
+    traerUsuarios();
+  };
+
+  const handleShow = (id) =>{
+    setCid(id);
+    setShow(true);
+  };
+
+  const inactivarUsuario = async (nombre, id) => {
+    MySwal.fire({
+      title: `Está seguro que quiere inactivar el usuario ${nombre}?`,
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Si",
+      denyButtonText: `No`,
+    }).then((result) => { 
+      if (result.isConfirmed) {
+        borrarUsuario(id).then((resultado) => {
+          console.log(resultado);
+          traerUsuarios();
+          MySwal.fire("", `${resultado.message}`, "success");
+        });
+      } else if (result.isDenied) {
+        MySwal.fire("El Usuario no se inactivó", "", "info");
+      }
+    }); 
+    };
 
   return (
     <div>
@@ -34,13 +75,14 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
             <div className="d-flex gap-3">
               <button
                 className="btn btn-warning btn-sm"
-                onClick={() => handleShow(curso._id)}
+                onClick={() => handleShow(usuario._id)}
               >
                 <i className="fa fa-pencil" aria-hidden="true"></i>
               </button>
                <button
                 className="btn btn-danger btn-sm"
-                onClick={() => inactivarCurso(curso.nombre, curso._id)}
+                disabled={!usuario.usuarioActivo}
+                onClick={() => inactivarUsuario(usuario.nombre, usuario._id)}
               >
                 <i className="fa fa-trash" aria-hidden="true"></i>
               </button>
@@ -50,8 +92,9 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
       ))}
     </tbody>
   </table>
+  {show && <ModalEdit show={show} handleClose={handleClose} cid={cid}/>}
 </div>
   )
 }
 
-export default TableUsuarios
+export default TableUsuarios;

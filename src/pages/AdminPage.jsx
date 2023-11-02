@@ -24,14 +24,21 @@ setTotalUsuarios(total)
 
   return (
 <>  
-  {/*<div>
-      <h1 className='d-flex text-center'> Admin </h1>
-      
-    </div>
-    {/*<div>
-      //<TableClases/>
-  </div>}*/}
-    <div>
+<div className="bg-dark">
+      <div className="container bg-light vh-100">
+        <div className="row  py-5">
+          <div className="col text-center ">
+            <h1>
+              <span>
+                <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
+              </span>
+              Panel administrador
+            </h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+          <div>
         {usuarios.length > 0 ? (
          <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
         ) : (
@@ -39,9 +46,12 @@ setTotalUsuarios(total)
                 <div className="spinner-border" role="status">
                   <span className="visually-hidden">Loading...</span>
                 </div>
-              </div>
-        )}
-    </div>  
+              </div>)}
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>    
     </>
   )
 }
