@@ -4,36 +4,39 @@ import "../css/classDetail.css"
 
 const ClassDetailpage = () => {
     return (
-    
     <div>
         {
             console.log(data)
         }
         <div className="container text-white">
-            <div className="row d-flex mt-5">
-                <div className="col-6">
-                    <img className='justify-content-end' src={data[0].img} alt="" />
-                </div>
-                <div className="col-6">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-cursos" type="button" >Registrarse</button>
-                    </div>
+            <div className="row mt-5 ">
+                <div className="">
+                    <img className='mx-auto d-block' src={data[0].img} alt="" />
                 </div>
             </div>
-            <div className="row mt-4">
-                <div className="col">
-                    <h1><strong>{data[0].nombre}</strong></h1>
-                    <hr/>
-                    <div className='datos my-3'>
-                        <h5><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> {data[0].categoria}</h5>
-                        <h5><i class="fa fa-clock-o" aria-hidden="true"></i> {data[0].horario}</h5>
-                        <h5><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profe: {data[0].profesor}</h5>
-                    </div>
-                    <hr />
-                    <p>{data[0].descripcion}</p>
+            <div className="mt-4 d-flex justify-content-between align-items-center">
+                <h1 className='fontTitulos display-3'><strong>{data[0].nombre}</strong></h1>
+                <button class="btn btn-cursos w-50 mx-2" type="button" >Registrarse</button>
+            </div>
+            <hr/>
+            <div className='row datos my-3'>
+                <div className='col-12 col-lg-3 col-md-6'>
+                    <h5><i class="fa fa-caret-square-o-right fs-3" aria-hidden="true"></i> {data[0].categoria}</h5>
+                </div>
+                <div className='col-12 col-lg-3 col-md-6'>
+                    <h5><i class="fa fa-user-circle-o fs-3" aria-hidden="true"></i> Profe: {data[0].profesor}</h5>
+                </div>
+                <div className='col-12 col-lg-3 col-md-6'>
+                    <h5><i class="fa fa-clock-o fs-3" aria-hidden="true"></i> {data[0].horario}</h5>
+                </div>
+                <div className='col-12 col-lg-3 col-md-6'>
+                    <h5><i class="fa fa-calendar fs-3" aria-hidden="true"></i> {data[0].fecha}</h5>
+                </div>
+            </div>
+            <hr />
+            <p className='fs-5'>{data[0].descripcion}</p>
 
-                </div>
-            </div>
+            
         </div>
     </div>
 

@@ -4,7 +4,8 @@
         "categoria": "Aerobico",
         "horario": "18.30",
         "profesor": "Alejandro",
-        "img":"https://www.ispo.com/sites/default/files/2021-09/Spinning%20Kurs.png",
+        "fecha":"20/01/2023",
+        "img":"https://images.ecestaticos.com/TYGdday_etN9dpP6gSrOhSFkBEY=/0x138:2715x1667/1338x751/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fa8a%2F29f%2F3de%2Fa8a29f3dee4966893281196b764014e5.jpg", 
         "descripcion": "El spinning consiste en la realización de ejercicios sobre la bicicleta, compaginándolos con la música y efectuando coreografías, fundamentalmente buscando la diversión del público asistente, al mismo tiempo que trabaja a nivel global la tonificación del tronco y las extremidades superiores junto con un importante trabajo cardiovascular.",
         "id": 1     
     },
@@ -13,6 +14,7 @@
         "categoria": "Mental health",
         "horario": "17.30",
         "profesor": "Juan",
+        "fecha":"20/01/2023",
         "img":"https://almayvida.uy/wp-content/uploads/2020/08/mornign-yoga-main.jpg",
         "descripcion":"El yoga es una práctica que conecta el cuerpo, la respiración y la mente. Esta práctica utiliza posturas físicas, ejercicios de respiración y meditación para mejorar la salud general.",
         "id": 2     
@@ -23,6 +25,7 @@
         "categoria": "Aerobico",
         "horario": "14.30",
         "profesor": "Mariana",
+        "fecha":"20/01/2023",
         "img":"https://media.ucpa.com/t_UCPA_Horizontal/UCPA-SPORT-ACCESS/00091573-adultes-fitness.jpg",
         "descripcion":"Zumba es una disciplina deportiva que se imparte en clases dirigidas en la que se realizan ejercicios aeróbicos al ritmo de música latina (merengue, samba, reggaeton, cumbia y salsa) con la finalidad de perder peso de forma divertida y mejorar el estado de ánimo de los deportistas.",
         "id": 3  
