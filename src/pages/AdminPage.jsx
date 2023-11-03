@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import TableClases from '../components/TableClases';
 import TableUsuarios from '../components/TableUsuarios';
 
+import "../css/admin.css";
+
 import { getUsuarios } from '../helpers/usuariosApi';
 
 const AdminPage = () => {
@@ -24,7 +26,7 @@ setTotalUsuarios(total)
 
   return (
 <>  
-<div className="bg-dark">
+<div className="fondo">
       <div className="container bg-light vh-100">
         <div className="row  py-5">
           <div className="col text-center ">
@@ -36,7 +38,7 @@ setTotalUsuarios(total)
             </h1>
           </div>
         </div>
-        <div className="row">
+        <div className=" table row">
           <div className="col-12 col-md-8 offset-md-2">
           <div>
         {usuarios.length > 0 ? (
