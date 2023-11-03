@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/contacto.css"
+import emailjs from '@emailjs/browser';
+
+
+
 
 const ContactoScreen = () => {
+    const [formValues, setFormValues] = useState({nombre:"", destinatario:"", plan:""});
+    const handleChange = (e) => {
+        setFormValues({...formValues, [e.target.id]:e.target.value})
+    }
+    const templateParams = {
+        nombre: "lucia",
+        destinatario: formValues.destinatario,
+        plan: formValues.plan,
+    };
+
+    const sendEmail = (e) =>{
+        e.preventDefault()
+        emailjs.send('service_s77z5hs','template_z6ovm7l', templateParams, 'kPRDVZfVG6hM9voQ-')
+        .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        }, (err) => {
+        console.log('FAILED...', err);
+        });
+        }
     return (
         <div className="container">
             <div className="row">
@@ -15,19 +38,19 @@ const ContactoScreen = () => {
                 </div>
             </div>
             <div className="row justify-content-center text-white ">
-                <div className="col-8">
+                <form className="col-8" onSubmit={sendEmail}>
                     <div className="my-3 ">
-                        <label for="exampleFormControlInput1" className="form-label">Correo</label>
-                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        <label htmlFor="destinatario" className="form-label">Correo</label>
+                        <input type="email" className="form-control" id="destinatario" placeholder="name@example.com" onChange={handleChange} value={formValues.destinatario}/>
                     </div>
                     <div className="mb-3">
-                    <label for="exampleFormControlTextarea1" className="form-label">Dejanos tu duda!</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label htmlFor="plan" className="form-label">Dejanos tu duda!</label>
+                    <textarea className="form-control" id="plan" rows="3" onChange={handleChange} value={formValues.plan}></textarea>
                     </div>
-                    <div class="d-flex col-12 justify-content-end">
-                        <button class="btn btn-primary " type="submit">Enviar</button>
+                    <div className="d-flex col-12 justify-content-end">
+                        <button className="btn btn-primary " type="submit">Enviar</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
