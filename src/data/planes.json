@@ -1,0 +1,38 @@
+[
+    {
+        "nombre": "Plan Tonificación",
+        "precio": "100",
+        "duracion": "mensual",
+        "beneficios": [
+        "Acceso a +500 sedes",
+        "Actividades Indoor/Outdoor",
+        "Clases en vivo y On Demand",
+        "Apoyo personalizado"
+        ],
+        "id": 1
+    },
+    {
+        "nombre": "Plan Fitness",
+        "precio": "95",
+        "duracion": "mensual",
+        "beneficios": [
+            "Acceso a +500 sedes",
+            "Actividades Indoor/Outdoor",
+            "Clases en vivo y On Demand",
+            "Apoyo personalizado"
+            ],
+        "id": 2
+    },
+    {
+        "nombre": "Plan Plus",
+        "precio": "200",
+        "duracion": "anual",
+        "beneficios": [
+            "Acceso a +500 sedes",
+            "Actividades Indoor/Outdoor",
+            "Clases en vivo y On Demand",
+            "Apoyo personalizado"
+            ],
+        "id": 3
+    }
+]
