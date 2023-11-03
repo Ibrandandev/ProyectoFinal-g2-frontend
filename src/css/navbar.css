@@ -6,11 +6,18 @@ naranja : #FF5722
 blanco : #EEEEEE
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-/* *{
+h1, h2, h3, h4, h5{
     font-family: 'Russo One', sans-serif;
-} */
+}
+
+p, .btn , ul{
+    font-family: 'Raleway', sans-serif !important;
+}
+
+ul{
+    font-weight: 400;
+}
 
 .navbar {
     background-color: #2D4059;
