@@ -5,13 +5,13 @@ import "../css/navbar.css"
 const NavBar = () => {
 return (
     <nav className="navbar navbar-expand-lg">
-        <div className="container">
-            <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-xl-between py-4 mb-2 border-bottom w-100">
+        <div className="container-fluid">
+            <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between py-4 mb-2 border-bottom w-100 mx-lg-2 mx-xl-5">
                 <div className=" col-auto mb-2 mb-md-0">
-                    <Link className="navbar-brand logo text-white fs-4" to="/"><i class="fa fa-ravelry" aria-hidden="true"></i> RollingGym</Link>
+                    <Link className="navbar-brand logo text-white fs-4" to="/"><i className="fa fa-ravelry" aria-hidden="true"></i> RollingGym</Link>
                 </div>
 
-                <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <ul className="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
                     <li className="nav-item">
                         <NavLink className="nav-link px-3" to="/"> Home</NavLink>
                     </li>
