@@ -6,6 +6,8 @@ import withReactContent from 'sweetalert2-react-content';
 
 import ModalEdit from './ModalEdit';
 
+import "../css/table.css"
+
 const TableUsuarios = ({usuarios, traerUsuarios}) => {
   const MySwal = withReactContent(Swal);
 
@@ -66,9 +68,9 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
             <td>
             {usuario.usuarioActivo ? (
               
-              <i className="fa fa-check text-success" aria-hidden="true"></i>
+              <i className="fa fa-check text-success d-flex justify-content-center" aria-hidden="true"></i>
             ) : (
-              <i className="fa fa-times text-danger" aria-hidden="true"></i>
+              <i className="fa fa-times text-danger d-flex justify-content-center " aria-hidden="true"></i>
             )}
             </td>
           <td>
@@ -77,7 +79,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
                 className="btn btn-warning btn-sm"
                 onClick={() => handleShow(usuario._id)}
               >
-                <i className="fa fa-pencil" aria-hidden="true"></i>
+                <i className="fa fa-pencil " aria-hidden="true"></i>
               </button>
                <button
                 className="btn btn-danger btn-sm"

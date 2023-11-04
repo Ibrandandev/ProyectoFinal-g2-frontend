@@ -38,6 +38,9 @@ setTotalUsuarios(total)
             </h1>
           </div>
         </div>
+        <div>
+          <button></button>
+        </div>
         <div className=" table row">
           <div className="col-12 col-md-8 offset-md-2">
           <div>
