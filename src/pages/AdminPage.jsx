@@ -5,11 +5,13 @@ import TableUsuarios from '../components/TableUsuarios';
 import "../css/admin.css";
 
 import { getUsuarios } from '../helpers/usuariosApi';
+import { Button } from 'react-bootstrap';
 
 const AdminPage = () => {
 
 const [usuarios, setUsuarios] = useState([]);
-const [totalUsuarios, setTotalUsuarios] = useState(0)
+const [totalUsuarios, setTotalUsuarios] = useState(0);
+const [pulsado, setPulsado]=useState(false);
 
 //useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
 
@@ -38,10 +40,37 @@ setTotalUsuarios(total)
             </h1>
           </div>
         </div>
-        <div>
-          <button></button>
+
+        <div className='container'>
+          <div className='row'>
+          <div className='col-6 d-flex justify-content-center align-items-center'>
+          <Button className='botonU'
+          onClick={()=>setPulsado(!pulsado)}
+          >
+            Usuarios
+          </Button>
+          {pulsado ? (
+            <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
+          ) : (<h1>Adios!</h1>) }
         </div>
-        <div className=" table row">
+
+        <div className='col-6 d-flex justify-content-center align-items-center'>
+        <Button className='botonC'
+          onClick={()=>setPulsado(!pulsado)}
+          > Clases 
+          </Button>
+          {pulsado ? (
+            <TableClases usuarios={usuarios} traerUsuarios={traerUsuarios}/>
+          ) : (<h1>Adios!</h1>) }
+
+        </div>
+        </div>
+        </div>
+
+
+        
+
+       {/* <div className=" table row">
           <div className="col-12 col-md-8 offset-md-2">
           <div>
         {usuarios.length > 0 ? (
@@ -54,7 +83,7 @@ setTotalUsuarios(total)
               </div>)}
             </div>  
           </div>
-        </div>
+        </div>*/}
       </div>
     </div>    
     </>
