@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Login from './pages/LoginScreen.jsx'
+import LoginScreen from './pages/LoginScreen.jsx'
 
 const router = createBrowserRouter([
   {
