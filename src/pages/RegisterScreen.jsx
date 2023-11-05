@@ -1,24 +1,31 @@
 import React from "react";
 import { useState } from "react";
+import { crearUsuario } from "../helpers/UsuariosApi";
 
 function RegisterScreen() {
     const [regData, setRegData] = useState({
-        name: '',
-        email: '',
-        password: '',
+        nombre: "",
+        apellido: "",
+        email: "",
+        telefono: "",
+        planContratado: "",
+        password: "",
+        rol: "USER_ROLE",
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { id, value } = e.target;
         setRegData({
             ...regData,
-            [name]: value,
+            [id]: value,
         });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Datos enviados:', regData);
+        const response = await crearUsuario(regData);
+        console.log(response);
     };
 
     return (
@@ -29,9 +36,18 @@ function RegisterScreen() {
                 <label htmlFor="name">Nombre:</label>
                 <input 
                 type="text"
-                id="name"
-                name="name"
-                value={regData.name}
+                id="nombre"
+                name="nombre"
+                value={regData.nombre}
+                onChange={handleChange}
+                required
+                />
+                <label htmlFor="name">Apellido:</label>
+                <input 
+                type="text"
+                id="apellido"
+                name="apellido"
+                value={regData.apellido}
                 onChange={handleChange}
                 required
                 />
@@ -44,6 +60,24 @@ function RegisterScreen() {
                 onChange={handleChange}
                 required
                 />
+                <label htmlFor="">Telefono:</label>
+                <input
+                type="text"
+                id="telefono"
+                value={regData.telefono}
+                onChange={handleChange}
+                required/>
+                <label htmlFor="">Planes:</label>
+                <select
+                className="form-select"
+                aria-label="Default select example"
+                id="planContratado"
+                value={regData.planContratado}
+                onChange={handleChange}>
+                <option value="FULL">Plan Full</option>
+                <option value="MUSCULACION">Plan Musculacion</option>
+                <option value="CLASES">Plan Solo clases</option>
+                </select>
                 <label htmlFor="password">Contraseña:</label>
                 <input 
                 type="password"

@@ -3,12 +3,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Login from './pages/LoginScreen.jsx'
+import LoginScreen from './pages/LoginScreen.jsx'
+import RegisterScreen from './pages/RegisterScreen.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginScreen />
+  },
+  {
+    path: "/register",
+    element: <RegisterScreen />
   },
 ]);
 
