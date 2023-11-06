@@ -1,15 +1,19 @@
-thead{
-   font-family: 'Russo One', sans-serif;
-   
+thead th{
+    font-family: 'Raleway', sans-serif;
 
-}
+};
+
+tbody th{
+    font-family: 'Raleway', sans-serif;
+};
 
 table{
-    font-family: 'Raleway', sans-serif;
-    
+
+    background-color: blue;
+    border: 3px solid purple;
+};
+
+h1{
+    color: blueviolet;
 }
 
-/*tbody{
-
-
-}

@@ -49,23 +49,28 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
   return (
     <div>
     <table className='table'>
-    <thead>
+    <thead className='text-center'>
       <tr>
         <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
         <th scope="col">Email</th>
+        <th scope="col">Telefono</th>
         <th scope="col">Plan</th>
         <th scope="col">Estado</th>
         <th></th>
       </tr>
     </thead>
 
+
     <tbody>
       {usuarios.map((usuario) => (
         <tr key={usuario._id}>
           <th>{usuario.nombre}</th>
+          <th>{usuario.apellido}</th>
           <td>{usuario.email}</td>
+          <td>{usuario.telefono}</td>
           <td>{usuario.planContratado}</td>
-            <td>
+          <td>
             {usuario.usuarioActivo ? (
               
               <i className="fa fa-check text-success d-flex justify-content-center" aria-hidden="true"></i>
@@ -93,6 +98,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
         </tr>
       ))}
     </tbody>
+
   </table>
   {show && <ModalEdit show={show} handleClose={handleClose} cid={cid}/>}
 </div>
