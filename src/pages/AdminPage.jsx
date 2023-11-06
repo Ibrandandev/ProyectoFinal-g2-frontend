@@ -46,8 +46,7 @@ setTotalUsuarios(total)
           <div className='col-6 d-flex justify-content-center align-items-center'>
           <Button className='botonU'
           onClick={()=>setPulsado(!pulsado)}
-          >
-            Usuarios
+          > Usuarios
           </Button>
           {pulsado ? (
             <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
@@ -59,6 +58,14 @@ setTotalUsuarios(total)
           onClick={()=>setPulsado(!pulsado)}
           > Clases 
           </Button>
+
+          <button type="button" className="btn"  onClick={()=>setPulsado(!pulsado)}>
+            Clases
+          </button>
+
+
+
+
           {pulsado ? (
             <TableClases usuarios={usuarios} traerUsuarios={traerUsuarios}/>
           ) : (<h1>Adios!</h1>) }
