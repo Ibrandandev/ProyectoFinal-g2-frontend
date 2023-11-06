@@ -26,11 +26,11 @@ setTotalUsuarios(total)
 
   return (
 <>  
-<div className="fondo">
-      <div className="container bg-light vh-100">
+<div className= 'fondo'>
+      <div className="container vh-100">
         <div className="row  py-5">
           <div className="col text-center ">
-            <h1>
+            <h1 id='h1'>
               <span>
                 <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
               </span>

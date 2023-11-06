@@ -8,13 +8,17 @@ h1{
  };
 
  .fondo{
-        background-color: rgb(34, 40, 49)
- };
+        background-color: rgb(34, 40, 49);
+         font-family: 'Russo One';
+         color: aliceblue;
+   };
 
-
-
+   #h1{
+      color: blue;
+   };
  /*
 
  rgb(45, 64, 89)
 
-rgb(238, 238, 238)
+rgb(238, 238, 238)*/
+
