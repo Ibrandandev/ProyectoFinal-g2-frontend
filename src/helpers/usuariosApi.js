@@ -19,8 +19,8 @@ export const getUsuarios = async (limite = 0, pagina = 0) => {
 
 export const getUsuarioById = async (id) => {
   try {
-    const resp = await fetch(url + "/" + id, { //ver si es asi la URl que puso nacho a los usuarios de ID
-      method: "GET",
+    const resp = await fetch(url + "/" + id, { 
+       method: "GET",
       /*headers: {
         "Content-type": "application/json; charset=UTF-8",
         "x-token": token,
