@@ -1,0 +1,33 @@
+*{
+    background-color: #2D4059;
+}
+
+/* .rowTitulo{
+    background-color: #FF5722 ;
+    border-radius: 10px;
+} */
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Russo One', sans-serif;
+}
+
+p, ul, form {
+    font-family: 'Raleway', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 13pt;
+}
+
+
+.btn-cursos{
+    background-color: #FF5722 !important;
+    color: #EEEEEE !important;
+}
+
+.btn-cursos:hover{
+    outline: 2px solid #EEEEEE !important;
+    background-color: #EEEEEE !important;
+    color: #FF5722 !important;
+}
