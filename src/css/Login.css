@@ -1,14 +1,6 @@
-.login {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.login2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+:root{
+    --color-1: #222831;
+    --color-2: #2D4059;
+    --color-3: #FF5722;
+    --color-4: #EEEEEE;
 }
