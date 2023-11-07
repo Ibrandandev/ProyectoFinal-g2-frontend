@@ -44,14 +44,13 @@ setTotalUsuarios(total)
         <div className='container'>
           <div className='row'>
           <div className='col-6 d-flex justify-content-center align-items-center'>
-          <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-          {/*<Button className='botonU'
+          <Button className='botonU'
           onClick={()=>setPulsado(!pulsado)}
           > Usuarios
           </Button>
           {pulsado ? (
             <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-          ) : (<h1>Adios!</h1>) }*/}
+          ) : (<h1>Adios!</h1>) }
         </div>
 
         {/*<div className='col-6 d-flex justify-content-center align-items-center'>
