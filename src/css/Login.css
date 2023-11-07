@@ -1,14 +1,29 @@
-.login {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+:root{
+    --color-1: #222831;
+    --color-2: #2D4059;
+    --color-3: #FF5722;
+    --color-4: #EEEEEE;
 }
 
-.login2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+* {
+    box-sizing: border-box;
+    background-color: var(--color-2);
+    font-family: 'Russo One', sans-serif;
+}
+
+.container{
+    color: var(--color-3);
+    background: var(--color-4);
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h2{
+    background: var(--color-4)
+}
+
+.form{
+    background: var(--color-4);
 }
