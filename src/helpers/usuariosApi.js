@@ -19,7 +19,7 @@ export const getUsuarios = async (limite = 0, pagina = 0) => {
 
 export const getUsuarioById = async (id) => {
   try {
-    const resp = await fetch(url + "/" + id, { //ver si es asi la URl que puso nacho a los usuarios de ID
+    const resp = await fetch(url + "/" + id, { 
       method: "GET",
       /*headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -61,10 +61,10 @@ export const actualizarUsuario = async (id, datos) => {
     const resp = await fetch(url + "/" + id, {
       method: "PUT",
       body: JSON.stringify(datos),
-      /*headers: {
+      headers: {
         "Content-type": "application/json; charset=UTF-8",
-        "x-token": token,
-      },*/
+       // "x-token": token,
+      },
     });
 
     const data = await resp.json();

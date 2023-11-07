@@ -19,14 +19,15 @@ const ModalEdit = ({show, handleClose, cid}) => {
  
     const traerDatosUsuario = async () => {
         const resp = await getUsuarioById(cid);
-        setUsuario(resp.usuario)
+        setUsuario(resp.user)
     };
 
     const handleChange = (e)=> 
     {
         let valueCheck = false;
 
-        if (e.target.name === "UsuarioActivo") {
+        if (e.target.name === "usuarioActivo") {
+          console.log(e.target);
             if(e.target.checked){
                 valueCheck = true;
             } else {
@@ -39,7 +40,7 @@ const ModalEdit = ({show, handleClose, cid}) => {
         } else{
             setUsuario({
                 ...usuario,
-                [e.target.name]:e.target.name,
+                [e.target.name]:e.target.value,
            })}
         };
     
@@ -74,7 +75,7 @@ const ModalEdit = ({show, handleClose, cid}) => {
                     className="form-control"
                     value={usuario.planContratado}
                     onChange={handleChange}
-                    name="PlanContratado"
+                    name="planContratado"
                   ></textarea>
              
                   <div className="form-check form-switch">
@@ -84,7 +85,7 @@ const ModalEdit = ({show, handleClose, cid}) => {
                       role="switch"
                       checked={usuario.usuarioActivo}
                       onChange={handleChange}
-                      name="estado"
+                      name="usuarioActivo"
                     />
                     <label className="form-check-label fw-bold">Activo</label>
                   </div>

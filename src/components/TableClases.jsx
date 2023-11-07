@@ -5,33 +5,45 @@ import withReactContent from "sweetalert2-react-content";
 
 import "../css/table.css"
 
-//import ModalEdit from './ModalEdit';
-
 
 const TableClases = () => {
 
-
-//const MySwal = withReactContent(Swal);
-
-//Para mostrar el modal 
+const MySwal = withReactContent(Swal); 
 const [show, setShow] = useState(false);
 
-//Por el ID del curso
 const [cid, setCid] = useState(null);
 
-//cerrar modal 
 const handleClose = ()=>{
   setCid(null);
   setShow(false);
-  traerUsuarios();
+  traerClases();
 };
 
-//abrir modal 
 const handleShow = (id)=>{
   setCid(id);
   setShow(true);
 };
 
+
+const inactivarClase = async (nombre, id) => {
+  MySwal.fire({
+    title: `Está seguro que quiere inactivar la clase ${nombre}?`,
+    showDenyButton: true,
+    showCancelButton: false,
+    confirmButtonText: "Si",
+    denyButtonText: `No`,
+  }).then((result) => { 
+    if (result.isConfirmed) {
+      borrarClase(id).then((resultado) => {
+        console.log(resultado);
+        traerClases();
+        MySwal.fire("", `${resultado.message}`, "success");
+      });
+    } else if (result.isDenied) {
+      MySwal.fire("La clase no se inactivó", "", "info");
+    }
+  }); 
+}
 
  return (
 
