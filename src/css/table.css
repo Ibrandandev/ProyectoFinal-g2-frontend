@@ -7,6 +7,7 @@ tbody th{
     font-family: 'Raleway', sans-serif;
 };
 
+<<<<<<< HEAD
 table{
 
     background-color: blue;
@@ -15,5 +16,10 @@ table{
 
 h1{
     color: blueviolet;
+=======
+.table-admin tbody{
+    font-family: 'Raleway', sans-serif;
+    
+>>>>>>> pruebaboton
 }
 

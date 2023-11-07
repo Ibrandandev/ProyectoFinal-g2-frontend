@@ -1,6 +1,6 @@
-h1{
-    font-family: 'Raleway', sans-serif;
-    color: rgb(255, 87, 34)
+.titulo-admin{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(255, 87, 34);
  };
 
  .table{
@@ -9,9 +9,22 @@ h1{
 
  .fondo{
         background-color: rgb(34, 40, 49);
-         font-family: 'Russo One';
-         color: aliceblue;
-   };
+ };
+
+ .botonU{
+   color: rgb(45, 64, 89) ;
+ };
+
+ .botonC{
+   color: rgb(255, 87, 34) ;
+ }
+
+ .btn{
+   background-color: rgb(255, 87, 34) ;
+
+ }
+
+
 
    #h1{
       color: blue;

@@ -20,7 +20,7 @@ export const getUsuarios = async (limite = 0, pagina = 0) => {
 export const getUsuarioById = async (id) => {
   try {
     const resp = await fetch(url + "/" + id, { 
-      method: "GET",
+       method: "GET",
       /*headers: {
         "Content-type": "application/json; charset=UTF-8",
         "x-token": token,
