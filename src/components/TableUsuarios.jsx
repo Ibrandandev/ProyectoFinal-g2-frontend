@@ -6,7 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 
 import ModalEdit from './ModalEdit';
 
-import "../css/table.css"
+import "../css/table.css";
 
 const TableUsuarios = ({usuarios, traerUsuarios}) => {
   const MySwal = withReactContent(Swal);
@@ -48,7 +48,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
 
   return (
     <div>
-    <table className='table'>
+    <table className='table table-admin'>
     <thead>
       <tr>
         <th scope="col">Nombre</th>

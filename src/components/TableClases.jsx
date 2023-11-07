@@ -35,7 +35,7 @@ const handleShow = (id)=>{
 
  return (
     <div>
-        <table className='table'>
+        <table className='table table-admin'>
         <thead>
           <tr>
             <th scope="col">Nombre</th>

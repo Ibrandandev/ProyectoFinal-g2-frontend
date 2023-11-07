@@ -11,7 +11,8 @@ const AdminPage = () => {
 
 const [usuarios, setUsuarios] = useState([]);
 const [totalUsuarios, setTotalUsuarios] = useState(0);
-const [pulsado, setPulsado]=useState(false);
+const [mostrarUsuarios, setMostrarUsuarios]=useState(false);
+const [mostrarClases, setMostrarClases]=useState(false);
 
 //useEffect(()=>{alert("Bienvenidos a la pagina de administrador 🛠️")}, [] )
 
@@ -29,10 +30,10 @@ setTotalUsuarios(total)
   return (
 <>  
 <div className="fondo">
-      <div className="container bg-light vh-100">
+      <div className="container bg-light vh-100 fondo">
         <div className="row  py-5">
           <div className="col text-center ">
-            <h1>
+            <h1 className='titulo-admin'>
               <span>
                 <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
               </span>
@@ -44,26 +45,35 @@ setTotalUsuarios(total)
         <div className='container'>
           <div className='row'>
           <div className='col-6 d-flex justify-content-center align-items-center'>
+          
           <Button className='botonU'
-          onClick={()=>setPulsado(!pulsado)}
+          onClick={()=>
+            {
+              setMostrarUsuarios(!mostrarUsuarios)
+              if (mostrarClases)setMostrarClases(false)   
+            }
+          }
           > Usuarios
           </Button>
-          {pulsado ? (
+
+          {mostrarUsuarios && (
             <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-          ) : (<h1>Adios!</h1>) }
+          ) }
         </div>
 
-        {/*<div className='col-6 d-flex justify-content-center align-items-center'>
+        <div className='col-6 d-flex justify-content-center align-items-center'>
         <Button className='botonC'
-          onClick={()=>setPulsado(!pulsado)}
-          > Clases 
+          onClick={()=> {
+            
+            setMostrarClases(!mostrarClases)
+            if (mostrarUsuarios)setMostrarUsuarios(false)         
+          }
+          } > Clases
           </Button>
-
-         {pulsado ? (
-            <TableClases usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-         ) : (<h1>Adios!</h1>) 
-
-        </div>}*/}
+          {mostrarClases && (
+            <TableClases/>
+          ) }
+        </div>
         </div>
         </div>
 
