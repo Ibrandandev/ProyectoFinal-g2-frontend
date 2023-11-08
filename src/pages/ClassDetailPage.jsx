@@ -8,15 +8,20 @@ const ClassDetailpage = () => {
         {
             console.log(data)
         }
+        
+        <img className=' d-block img-spinning' src={data[0].img} alt="" />
+
         <div className="container text-white">
-            <div className="row mt-5 ">
+
+            {/* <div className="row mt-5 ">
                 <div className="">
-                    <img className='mx-auto d-block' src={data[0].img} alt="" />
+                    <img className='mx-auto d-block h-75 ' src={data[0].img} alt="" />
                 </div>
-            </div>
+            </div> */}
+            
             <div className="mt-4 d-flex justify-content-between align-items-center">
                 <h1 className='fontTitulos display-3'><strong>{data[0].nombre}</strong></h1>
-                <button class="btn btn-cursos w-50 mx-2" type="button" >Registrarse</button>
+                <button className="btn btn-cursos w-50 mx-2" type="button" >Registrarse</button>
             </div>
             <hr/>
             <div className='row datos my-3'>
@@ -43,4 +48,4 @@ const ClassDetailpage = () => {
 )
 }
 
-export default ClassDetailpage
+export default ClassDetailpage;

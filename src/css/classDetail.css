@@ -31,3 +31,7 @@ img{
     outline: 4px solid #FF5722;
     background-color: #FF5722 !important;
 }
+
+.img-spinning{
+    max-height: 600px;
+}
