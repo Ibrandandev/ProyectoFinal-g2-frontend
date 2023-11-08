@@ -2,10 +2,10 @@
     background-color: #2D4059;
 }
 
-/* .rowTitulo{
+.rowTitulo{
     background-color: #FF5722 ;
     border-radius: 10px;
-} */
+}
 
 h1, h2, h3, h4, h5 {
     font-family: 'Russo One', sans-serif;
@@ -30,4 +30,8 @@ ul {
     outline: 2px solid #EEEEEE !important;
     background-color: #EEEEEE !important;
     color: #FF5722 !important;
+}
+
+.infoPer{
+    border-bottom: #FF5722 14px solid !important;
 }
