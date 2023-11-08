@@ -48,7 +48,7 @@ const inactivarClase = async (nombre, id) => {
  return (
 
     <div>
-        <table className='table table-admin'>
+        <table className='table'>
         <thead>
           <tr>
             <th scope="col">Nombre</th>

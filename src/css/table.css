@@ -1,25 +1,13 @@
 thead th{
     font-family: 'Raleway', sans-serif;
 
-};
+}
 
 tbody th{
     font-family: 'Raleway', sans-serif;
-};
-
-<<<<<<< HEAD
-table{
-
-    background-color: blue;
-    border: 3px solid purple;
-};
-
-h1{
-    color: blueviolet;
-=======
-.table-admin tbody{
-    font-family: 'Raleway', sans-serif;
-    
->>>>>>> pruebaboton
 }
 
+.table-admin tbody{
+    font-family: 'Raleway', sans-serif;
+
+}

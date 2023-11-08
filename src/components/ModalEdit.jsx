@@ -9,7 +9,7 @@ import withReactContent from 'sweetalert2-react-content';
 import Modal from 'react-bootstrap/Modal';
 
 
-const ModalEdit = ({show, handleClose, cid}) => {
+const ModalEdit = ({show, handleClose, uid}) => {
     const MySwal = withReactContent(Swal);
     const [usuario, setUsuario] =useState(null);
 
@@ -18,7 +18,7 @@ const ModalEdit = ({show, handleClose, cid}) => {
     }, []);
  
     const traerDatosUsuario = async () => {
-        const resp = await getUsuarioById(cid);
+        const resp = await getUsuarioById(uid);
         setUsuario(resp.user)
     };
 
@@ -70,6 +70,32 @@ const ModalEdit = ({show, handleClose, cid}) => {
                     name="nombre"
                     onChange={handleChange}
                   />
+
+                  <label className="fw-bold">Apellido</label>
+                  <textarea
+                    className="form-control"
+                    value={usuario.apellido}
+                    onChange={handleChange}
+                    name="apellido"
+                  ></textarea>
+
+                  <label className="fw-bold">Correo Electronico</label>
+                  <textarea
+                    className="form-control"
+                    value={usuario.email}
+                    onChange={handleChange}
+                    name="email"
+                  ></textarea>    
+
+                  <label className="fw-bold">Telefono</label>
+                  <textarea
+                    className="form-control"
+                    value={usuario.telefono}
+                    onChange={handleChange}
+                    name="telefono"
+                  ></textarea>        
+
+
                   <label className="fw-bold">PlanContratado</label>
                   <textarea
                     className="form-control"

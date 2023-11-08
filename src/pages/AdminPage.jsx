@@ -5,12 +5,17 @@ import TableUsuarios from '../components/TableUsuarios';
 import "../css/admin.css";
 
 import { getUsuarios } from '../helpers/usuariosApi';
+import { getClases } from '../helpers/clasesApi';
 import { Button } from 'react-bootstrap';
 
 const AdminPage = () => {
 
 const [usuarios, setUsuarios] = useState([]);
+const [clases, setClases] = useState([]);
+
 const [totalUsuarios, setTotalUsuarios] = useState(0);
+const [totalClases, setTotalClases] = useState(0);
+
 const [mostrarUsuarios, setMostrarUsuarios]=useState(false);
 const [mostrarClases, setMostrarClases]=useState(false);
 
@@ -18,6 +23,7 @@ const [mostrarClases, setMostrarClases]=useState(false);
 
 useEffect(() => {
     traerUsuarios();
+    traerClases();
 }, []); 
 
 const traerUsuarios = async () => {
@@ -27,11 +33,19 @@ setTotalUsuarios(total)
 
 };
 
+
+const traerClases = async () => {
+  const {services, total} = await getClases();
+  setClases(services);
+  setTotalClases(total)
+  
+  };
+
   return (
 <>  
 <div className="fondo">
       <div className="container bg-light vh-100 fondo">
-        <div className="row  py-5">
+        <div className="row  py-5 head">
           <div className="col text-center ">
             <h1 className='titulo-admin'>
               <span>

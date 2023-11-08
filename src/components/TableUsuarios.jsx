@@ -13,16 +13,16 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
 
   const[show, setShow] = useState(false);
 
-  const [cid, setCid] = useState(null);
+  const [uid, setUid] = useState(null);
 
   const handleClose = () =>{ 
-    setCid(null);
+    setUid(null);
     setShow(false);
     traerUsuarios();
   };
 
   const handleShow = (id) =>{
-    setCid(id);
+    setUid(id);
     setShow(true);
   };
 
@@ -81,13 +81,13 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
           <td>
             <div className="d-flex gap-3">
               <button
-                className="btn btn-warning btn-sm"
+                className="btn btn-warning btn-sm btn-table"
                 onClick={() => handleShow(usuario._id)}
               >
                 <i className="fa fa-pencil " aria-hidden="true"></i>
               </button>
                <button
-                className="btn btn-danger btn-sm"
+                className="btn btn-danger btn-sm btn-table"
                 disabled={!usuario.usuarioActivo}
                 onClick={() => inactivarUsuario(usuario.nombre, usuario._id)}
               >
@@ -100,7 +100,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
     </tbody>
 
   </table>
-  {show && <ModalEdit show={show} handleClose={handleClose} cid={cid}/>}
+  {show && <ModalEdit show={show} handleClose={handleClose} uid={uid}/>}
 </div>
   )
 }
