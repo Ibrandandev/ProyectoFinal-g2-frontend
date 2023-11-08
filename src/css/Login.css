@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Russo+One&display=swap');
 
 :root{
     --color-1: #222831;
@@ -7,23 +7,45 @@
     --color-4: #EEEEEE;
 }
 
-* {
-    box-sizing: border-box;
-    background-color: var(--color-2);
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-2);
+    /* font-family: 'Russo One', sans-serif; */
+    border-radius: 10px 10px 10px 10px;
+}
+
+.titulo {
     font-family: 'Russo One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container{
-    color: var(--color-3);
-    background: var(--color-4);
-    margin-top: 150px;
-    padding: 3px;
+.form {
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Russo One', sans-serif;
+    /* background-color: var(--color-4); */
 }
 
-h2{
-    background: var(--color-4)
+label {
+    font-size: 1.2em;
+    font-weight: 10px;
 }
 
-.form{
-    background: var(--color-4);
+input {
+    width: 100%;
+    padding: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--color-3);
+    color: var(--color-4);
+    border: none;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
 }

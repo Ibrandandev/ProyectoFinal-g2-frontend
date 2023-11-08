@@ -28,20 +28,22 @@ const LoginScreen = () => {
   return (
     <>
     <div className='container'>
-      <div>
+      <div className="container-all">
+      <div className='titulo'>
         <h2>Iniciar sesion</h2>
       </div>
       <div>
         <form className='form' onSubmit={handleLogin}>
-          <div>
+          <div className='row'>
             <label htmlFor="">Correo:</label>
             <input 
             type="text" 
+            placeholder='example@mail.com'
             value={email}
             onChange={e => setEmail(e.target.value)}
             />
           </div>
-          <div>
+          <div className='row'>
             <label htmlFor="">Contraseña:</label>
             <input 
             type="password"
@@ -49,10 +51,11 @@ const LoginScreen = () => {
             onChange={e => setPassword(e.target.value)}
             />
           </div>
-          <div>
+          <div className='row button'>
             <button>Log in</button>
           </div>
         </form>
+      </div>
       </div>
     </div>
     </>
