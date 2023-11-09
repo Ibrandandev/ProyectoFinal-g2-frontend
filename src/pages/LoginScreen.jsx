@@ -27,35 +27,35 @@ const LoginScreen = () => {
 
   return (
     <>
-    <div className='container'>
-      <div className="container-all">
-      <div className='titulo'>
+    <div className="login">
+      <div className="login-container">
         <h2>Iniciar sesion</h2>
-      </div>
-      <div>
-        <form className='form' onSubmit={handleLogin}>
-          <div className='row'>
+        <form onSubmit={handleLogin}>
+          <div className="input-container">
             <label htmlFor="">Correo:</label>
-            <input 
+            <input
             type="text" 
             placeholder='example@mail.com'
             value={email}
             onChange={e => setEmail(e.target.value)}
             />
           </div>
-          <div className='row'>
+          <div className="input-container">
             <label htmlFor="">Contraseña:</label>
             <input 
-            type="password"
+            type="password" 
+            placeholder='Min. 8 caracteres'
             value={password}
-            onChange={e => setPassword(e.target.value)}
-            />
+            onChange={e => setPassword(e.target.value)}/>
           </div>
-          <div className='row button'>
-            <button>Log in</button>
+          <div className="registro">
+            <p>No tenes cuenta?</p>
+            <a href="#">Registrate aqui!</a>
           </div>
         </form>
-      </div>
+        <div className="login-button">
+          <button>Log in</button>
+        </div>
       </div>
     </div>
     </>
