@@ -1,4 +1,4 @@
-*{
+.background {
     background-color: #2D4059;
 }
 
@@ -35,3 +35,11 @@ ul {
 .infoPer{
     border-bottom: #FF5722 14px solid !important;
 }
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }

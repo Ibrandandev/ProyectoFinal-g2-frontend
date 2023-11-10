@@ -11,7 +11,7 @@ const PlanDetailsPage = () => {
   const [formValues, setFormValues] = useState({
     nombre: "",
     destinatario: "",
-    plan: "",
+    consulta: "",
   });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const PlanDetailsPage = () => {
   const templateParams = {
     nombre: formValues.nombre,
     destinatario: formValues.destinatario,
-    plan: formValues.plan,
+    consulta: formValues.consulta,
   };
 
   const sendEmail = (e) => {
@@ -44,27 +44,30 @@ const PlanDetailsPage = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
+          Swal.fire({
+            title: "¡Listo!",
+            text: "Tu consulta ha sido enviada!",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+          });
         },
         (err) => {
           console.log("FAILED...", err);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salió mal!",
+            confirmButtonText: "Aceptar",
+          });
         }
       );
   };
 
-  const mostrarAlerta = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: "¡Listo!",
-      text: "Tu consulta ha sido enviada!",
-      icon: "success",
-      confirmButtonText: "Aceptar",
-    });
-  };
 
   return (
-    <div>
-      <div className="container text-white">
-        <div className="row mt-4 ">
+    <div className="background">
+      <div className="container text-white pt-4">
+        <div className="row">
           <div className="col-12 col-lg-5 justify-content-md-center">
             <img className="w-100" src={plan.img} alt="" />
           </div>
@@ -154,7 +157,7 @@ const PlanDetailsPage = () => {
                   className="form-label"
                 ></label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   id="validationDefault03"
                   placeholder="Numero de teléfono"
@@ -162,17 +165,20 @@ const PlanDetailsPage = () => {
                 />
               </div>
               <div className="col mb-3">
-                <label
+              <label
                   htmlFor="formGroupExampleInput"
                   className="form-label"
-                ></label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="formGroupExampleInput"
-                  placeholder="Motivo de consulta"
-                  required
-                />
+                >Motivo de consulta</label>
+                <select className="form-select" aria-label="Default select example"
+                onChange={handleChange}
+                value={formValues.consulta}
+                id="consulta">
+                  <option value="Precio">Precio</option>
+                  <option value="Horario">Horario</option>
+                  <option value="3">Three</option>
+                </select>
+                
+                
                 <label
                   htmlFor="exampleFormControlTextarea1"
                   className="form-label"
@@ -182,30 +188,13 @@ const PlanDetailsPage = () => {
                   id="plan"
                   rows="3"
                   placeholder="Ingrese aquí su consulta..."
-                  onChange={handleChange}
-                  value={formValues.plan}
                 ></textarea>
               </div>
 
-              <div className="col-12">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="invalidCheck2"
-                    required
-                  />
-                  <label className="form-check-label" htmlFor="invalidCheck2">
-                    Agree to terms and conditions
-                  </label>
-                  {/* lo dejo al terminos y condiciones? o pongo si acepta recibir notificaciones? */}
-                </div>
-              </div>
               <div className="col-12 mb-5 d-flex justify-content-end">
                 <button
                   className="btn btn-cursos"
                   type="submit"
-                  onSubmit={mostrarAlerta}
                 >
                   Enviar consulta
                 </button>
