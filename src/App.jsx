@@ -1,10 +1,10 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PlanDetailPage from "./pages/PlanDetailPage";
+import PlanDetailsPage from "./pages/PlanDetailsPage";
 const router = createBrowserRouter([
   {
-    path: "/plan-detail/:id",
-    element: <PlanDetailPage />,
+    path: "/plan-details/:id",
+    element: <PlanDetailsPage />,
   },
 ]);
 

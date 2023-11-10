@@ -1,10 +1,11 @@
+import "../css/plan-details.css";
 import { useState } from "react";
-import data from "../data/planes.json";
-import "../css/planDetail.css";
-import emailjs from "@emailjs/browser";
 import { useParams } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import data from "../data/plans.json";
 
-const PlanDetailPage = () => {
+const PlanDetailsPage = () => {
   const { id } = useParams();
 
   const [formValues, setFormValues] = useState({
@@ -42,7 +43,7 @@ const PlanDetailPage = () => {
 
   const mostrarAlerta = (e) => {
     e.preventDefault();
-    swal.fire({
+    Swal.fire({
       title: "¡Listo!",
       text: "Tu consulta ha sido enviada!",
       icon: "success",
@@ -208,4 +209,4 @@ const PlanDetailPage = () => {
   );
 };
 
-export default PlanDetailPage;
+export default PlanDetailsPage;
