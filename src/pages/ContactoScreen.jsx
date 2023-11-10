@@ -1,44 +1,69 @@
 import React, { useState } from "react";
 import "../css/contacto.css"
 import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
 
 
 
 const ContactoScreen = () => {
-    const [formValues, setFormValues] = useState({nombre:"", destinatario:"", plan:""});
+    const [formValues, setFormValues] = useState({nombre:"", destinatario:"", consulta:""});
     const handleChange = (e) => {
         setFormValues({...formValues, [e.target.id]:e.target.value})
     }
     const templateParams = {
-        nombre: "lucia",
+        nombre: formValues.nombre,
         destinatario: formValues.destinatario,
-        plan: formValues.plan,
+        consulta: formValues.consulta,
     };
 
     const sendEmail = (e) =>{
         e.preventDefault()
-        emailjs.send('service_s77z5hs','template_z6ovm7l', templateParams, 'kPRDVZfVG6hM9voQ-')
+        emailjs.send('service_s77z5hs','template_3cnfsca', templateParams, 'kPRDVZfVG6hM9voQ-')
         .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
+        Swal.fire({
+            title: "¡Listo!",
+            text: "Tu consulta ha sido enviada!",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+        });
         }, (err) => {
         console.log('FAILED...', err);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salió mal!",
+            confirmButtonText: "Aceptar",
+        });
         });
         }
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col text-white">
-                    {/* <h1>Contacto Screen</h1> */}
-                </div>
-            </div>
-            <div className="row mt-5 justify-content-center">
+        <div className="background min-vh-100">
+        
+        <div className="container pt-5">
+            <div className="row  justify-content-center">
                 <div className="col-8 text-white ">
-                    <h5 className="formulario">Tenes alguna duda? Contáctanos!</h5>
+                    <h1 className="formulario fs-2">Tenes alguna duda? Contáctanos!</h1>
                 </div>
             </div>
             <div className="row justify-content-center text-white ">
                 <form className="col-8" onSubmit={sendEmail}>
+                <div className="my-3">
+                <label
+                  htmlFor="validationDefault01"
+                  className="form-label"
+                >Nombre</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="nombre"
+                  placeholder="Nombre"
+                  onChange={handleChange}
+                  value={formValues.nombre}
+                  required
+                />
+              </div>
                     <div className="my-3 ">
                         <label htmlFor="destinatario" className="form-label">Correo</label>
                         <input type="email" className="form-control" id="destinatario" placeholder="name@example.com" onChange={handleChange} value={formValues.destinatario}/>
@@ -48,14 +73,15 @@ const ContactoScreen = () => {
                         <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input placeholder"/>
                     </div>
                     <div className="mb-3">
-                    <label htmlFor="plan" className="form-label">Dejanos tu duda!</label>
-                    <textarea className="form-control" id="plan" rows="3" onChange={handleChange} value={formValues.plan}></textarea>
+                    <label htmlFor="consulta" className="form-label">Dejanos tu duda!</label>
+                    <textarea className="form-control" id="consulta" rows="3" onChange={handleChange} value={formValues.consulta}></textarea>
                     </div>
                     <div className="d-flex col-12 justify-content-end">
                         <button className="btn btn-primary " type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
+        </div>
         </div>
     )
 }
