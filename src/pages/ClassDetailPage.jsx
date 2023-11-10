@@ -26,16 +26,16 @@ const ClassDetailpage = () => {
             <hr/>
             <div className='row datos my-3'>
                 <div className='col-12 col-lg-3 col-md-6'>
-                    <h5><i class="fa fa-caret-square-o-right fs-3" aria-hidden="true"></i> {data[0].categoria}</h5>
+                    <h5><i className="fa fa-caret-square-o-right fs-3" aria-hidden="true"></i> {data[0].categoria}</h5>
                 </div>
                 <div className='col-12 col-lg-3 col-md-6'>
-                    <h5><i class="fa fa-user-circle-o fs-3" aria-hidden="true"></i> Profe: {data[0].profesor}</h5>
+                    <h5><i className="fa fa-user-circle-o fs-3" aria-hidden="true"></i> Profe: {data[0].profesor}</h5>
                 </div>
                 <div className='col-12 col-lg-3 col-md-6'>
-                    <h5><i class="fa fa-clock-o fs-3" aria-hidden="true"></i> {data[0].horario}</h5>
+                    <h5><i className="fa fa-clock-o fs-3" aria-hidden="true"></i> {data[0].horario}</h5>
                 </div>
                 <div className='col-12 col-lg-3 col-md-6'>
-                    <h5><i class="fa fa-calendar fs-3" aria-hidden="true"></i> {data[0].fecha}</h5>
+                    <h5><i className="fa fa-calendar fs-3" aria-hidden="true"></i> {data[0].fecha}</h5>
                 </div>
             </div>
             <hr />
