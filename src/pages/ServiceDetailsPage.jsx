@@ -1,30 +1,33 @@
+import { useEffect, useState } from "react";
 import "../css/service-details.css";
-import data from "../data/services.json";
 import { useParams } from "react-router-dom";
+import { getServiceById } from "../helpers/servicesApi";
 
 const ServiceDetailsPage = () => {
   const { id } = useParams();
 
+  const [service, setService] = useState([]);
+  useEffect(() => {
+    traerServicios()
+  }, [])
+  
+  const traerServicios = async () => {
+    const {service} = await getServiceById(id);
+    setService(service)
+  }
+
   return (
     <div>
-      {console.log(data)}
-
       <img
         className=" d-block img-spinning"
-        src={data[id].img}
-        alt={data[id].nombre}
+        src={service.img}
+        alt={service.nombre}
       />
 
       <div className="container text-white">
-        {/* <div className="row mt-5 ">
-                <div className="">
-                    <img className='mx-auto d-block h-75 ' src={data[0].img} alt="" />
-                </div>
-            </div> */}
-
         <div className="mt-4 d-flex justify-content-between align-items-center">
           <h1 className="fontTitulos display-3">
-            <strong>{data[id].nombre}</strong>
+            <strong>{service.nombre}</strong>
           </h1>
           <button className="btn btn-cursos w-50 mx-2" type="button">
             Registrarse
@@ -35,33 +38,35 @@ const ServiceDetailsPage = () => {
           <div className="col-12 col-lg-3 col-md-6">
             <h5>
               <i
-                className="fa fa-caret-square-o-right fs-3"
+                className="fa fa-caret-square-o-right fs-3 me-2"
                 aria-hidden="true"
-              ></i>{" "}
-              {data[id].categoria}
+              ></i> 
+              {/* {service.categoria} */}
+              Cardio
             </h5>
           </div>
           <div className="col-12 col-lg-3 col-md-6">
             <h5>
-              <i className="fa fa-user-circle-o fs-3" aria-hidden="true"></i>{" "}
-              Profe: {data[id].profesor}
+              <i className="fa fa-user-circle-o fs-3 me-2" aria-hidden="true"></i>
+              {/* Profe: {service.profesor} */}
+              Profe: Alex
             </h5>
           </div>
           <div className="col-12 col-lg-3 col-md-6">
             <h5>
-              <i className="fa fa-clock-o fs-3" aria-hidden="true"></i>{" "}
-              {data[id].horario}
+              <i className="fa fa-clock-o fs-3 me-2" aria-hidden="true"></i>
+              {service.horario}
             </h5>
           </div>
           <div className="col-12 col-lg-3 col-md-6">
             <h5>
-              <i className="fa fa-calendar fs-3" aria-hidden="true"></i>{" "}
-              {data[id].fecha}
+              <i className="fa fa-calendar fs-3 me-2" aria-hidden="true"></i>
+              {service.fecha}
             </h5>
           </div>
         </div>
         <hr />
-        <p className="fs-5">{data[id].descripcion}</p>
+        <p className="fs-5">{service.descripcion}</p>
       </div>
     </div>
   );
