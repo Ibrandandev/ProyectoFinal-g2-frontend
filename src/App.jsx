@@ -1,24 +1,19 @@
-import './App.css';
-import ClassDetailpage from './pages/ClassDetailPage';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import "./App.css";
+import ServiceDetailsPage from "./pages/ServiceDetailsPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: "/classDetail",
-    element:<ClassDetailpage></ClassDetailpage>,
+    path: "/service-details/:id",
+    element: <ServiceDetailsPage />,
   },
 ]);
 
-
 function App() {
-  
   return (
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
