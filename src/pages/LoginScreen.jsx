@@ -34,8 +34,7 @@ const LoginScreen = () => {
           <div className="input-container">
             <label htmlFor="">Correo:</label>
             <input
-            type="text" 
-            placeholder='example@mail.com'
+            type="text"
             value={email}
             onChange={e => setEmail(e.target.value)}
             />
@@ -43,14 +42,13 @@ const LoginScreen = () => {
           <div className="input-container">
             <label htmlFor="">Contraseña:</label>
             <input 
-            type="password" 
-            placeholder='Min. 8 caracteres'
+            type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}/>
           </div>
           <div className="registro">
             <p>No tenes cuenta?</p>
-            <a href="#">Registrate aqui!</a>
+            <a href="">Registrate aqui!</a>
           </div>
         </form>
         <div className="login-button">

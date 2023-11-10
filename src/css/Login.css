@@ -13,6 +13,7 @@
     justify-content: center;
     min-width: 100vw;
     min-height: 100vh;
+    max-width: 100%;
     background: var(--color-1);
 }
 
@@ -91,4 +92,14 @@ input:focus {
 
 .login-button button:hover {
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .login {
+        max-width: 100%;
+    }
+
+    .login-container {
+        height: 52vh;
+    }
 }
