@@ -1,24 +1,19 @@
-import './App.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import PlanDetailPage from './pages/PlanDetailPage';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import PlanDetailPage from "./pages/PlanDetailPage";
 const router = createBrowserRouter([
   {
-    path: "/planDetail",
-    element:<PlanDetailPage></PlanDetailPage>,
+    path: "/plan-detail/:id",
+    element: <PlanDetailPage />,
   },
 ]);
 
 function App() {
-  
-
   return (
     <>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
