@@ -1,17 +1,16 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PlanDetailsPage from "./pages/PlanDetailsPage";
-const router = createBrowserRouter([
-  {
-    path: "/plan-details/:id",
-    element: <PlanDetailsPage />,
-  },
-]);
 
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<h1>Hola</h1>} />
+          <Route path="/plan-details/:id" element={<PlanDetailsPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

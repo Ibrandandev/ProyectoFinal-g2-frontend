@@ -1,18 +1,28 @@
 import "../css/plan-details.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import data from "../data/plans.json";
+import { getPlanById } from "../helpers/plansApi";
 
 const PlanDetailsPage = () => {
   const { id } = useParams();
-
+  const [plan, setPlan] = useState([]);
   const [formValues, setFormValues] = useState({
     nombre: "",
     destinatario: "",
     plan: "",
   });
+
+  useEffect(() => {
+    traerPlanes();
+  }, []);
+
+  const traerPlanes = async () => {
+    const { plan } = await getPlanById(id);
+    setPlan(plan);
+  };
+
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.id]: e.target.value });
   };
@@ -53,33 +63,32 @@ const PlanDetailsPage = () => {
 
   return (
     <div>
-      {console.log(data)}
-
       <div className="container text-white">
         <div className="row mt-4 ">
           <div className="col-12 col-lg-5 justify-content-md-center">
-            <img className="w-100" src={data[id].img} alt="" />
+            <img className="w-100" src={plan.img} alt="" />
           </div>
           <div className="col-12 col-lg-7 mt-3">
             <div className="d-flex justify-content-between rowTitulo">
-              <h1 className="rowTitulo mx-4 m-2">{data[id].nombre}</h1>
+              <h1 className="rowTitulo mx-4 m-2">{plan.nombre}</h1>
               <h2 className="rowTitulo align-self-center mx-5 m-2">
-                ${data[id].precio}
+                ${plan.precio}
               </h2>
             </div>
             <div>
-              <h5 className="mt-3 mx-3">{data[id].duracion}</h5>
+              <h5 className="mt-3 mx-3">{plan.duracion}</h5>
             </div>
             <div>
               <ul className="mt-4 mx-2">
-                {data[id].beneficios.map((beneficio) => {
+                {/* {plan.beneficios.map((beneficio) => {
                   return (
-                    <li key={crypto.randomUUID()}>
-                      <i className="fa fa-check" aria-hidden="true"></i>{" "}
+                    <li key={plan._id}>
+                      <i className="fa fa-check" aria-hidden="true"></i>
                       {beneficio}
                     </li>
-                  );
+                  ); 
                 })}
+                */}
               </ul>
             </div>
           </div>
