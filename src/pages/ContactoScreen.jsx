@@ -29,7 +29,7 @@ const ContactoScreen = () => {
         <div className="container">
             <div className="row">
                 <div className="col text-white">
-                    <h1>Contacto Screen</h1>
+                    {/* <h1>Contacto Screen</h1> */}
                 </div>
             </div>
             <div className="row mt-5 justify-content-center">
@@ -42,6 +42,10 @@ const ContactoScreen = () => {
                     <div className="my-3 ">
                         <label htmlFor="destinatario" className="form-label">Correo</label>
                         <input type="email" className="form-control" id="destinatario" placeholder="name@example.com" onChange={handleChange} value={formValues.destinatario}/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput" className="form-label">Motivo de consulta</label>
+                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input placeholder"/>
                     </div>
                     <div className="mb-3">
                     <label htmlFor="plan" className="form-label">Dejanos tu duda!</label>
