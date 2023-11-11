@@ -26,10 +26,18 @@
    border: 4px solid rgb(255, 87, 34) !important; 
    font-family: 'Raleway', sans-serif !important;
    font-weight: bold !important; 
-   height: auto;
-   width: auto;
-  
+   height: 10vh;
+   width: 30vw;
    
+}
+
+.botonU:hover{
+   background-color: rgb(255, 87, 34) !important;
+}
+
+
+.botonC:hover{
+   background-color: rgb(255, 87, 34) !important;
 }
 
 .botonC{
@@ -37,8 +45,8 @@
    border: 4px solid rgb(255, 87, 34) !important; 
    font-family: 'Raleway', sans-serif !important;
    font-weight: bold !important; 
-   height: auto;
-   width: auto;
+   height: 10vh;
+   width: 30vw;
    
 }
 

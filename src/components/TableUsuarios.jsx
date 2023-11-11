@@ -28,7 +28,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
 
   const inactivarUsuario = async (nombre, id) => {
     MySwal.fire({
-      title: `Está seguro que quiere inactivar el usuario ${nombre}?`,
+      title: `Está seguro que quiere deshabilitar el usuario ${nombre}?`,
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: "Si",
@@ -41,18 +41,17 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
           MySwal.fire("", `${resultado.message}`, "success");
         });
       } else if (result.isDenied) {
-        MySwal.fire("El Usuario no se inactivó", "", "info");
+        MySwal.fire("El Usuario no se deshabilito", "", "info");
       }
     }); 
     };
 
   return (
-    <div>
+    <div className='table-responsive'>
     <table className='table table-admin'>
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
+        <th scope="col">Usuario</th>
         <th scope="col">Email</th>
         <th scope="col">Telefono</th>
         <th scope="col">Plan Contratado</th>
@@ -65,9 +64,8 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
     <tbody>
       {usuarios.map((usuario) => (
         <tr key={usuario._id}>
-          <th>{usuario.nombre}</th>
-          <th>{usuario.apellido}</th>
-          <td>{usuario.email}</td>
+          <th>{usuario.nombre} {usuario.apellido}</th>
+           <td>{usuario.email}</td>
           <td>{usuario.telefono}</td>
           <td>{usuario.planContratado}</td>
           <td>

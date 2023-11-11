@@ -44,7 +44,7 @@ const traerClases = async () => {
   return (
 <>  
 <div className="fondo">
-      <div className="container bg-light vh-100 fondo">
+      <div className="container min-vh-100 bg-light fondo">
         <div className="row  py-5 head">
           <div className="col text-center ">
             <h1 className='titulo-admin'>
@@ -56,8 +56,8 @@ const traerClases = async () => {
           </div>
         </div>
 
-        <div className='container'>
-          <div className='row'>
+        <div className='container d-flex align-items-center justify-content-center flex-column'>
+        <div className='row m-5'>
           <div className='col-6 d-flex justify-content-center align-items-center'>
           
           <Button className='botonU'
@@ -69,10 +69,6 @@ const traerClases = async () => {
           }
           > Usuarios
           </Button>
-
-          {mostrarUsuarios && (
-            <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-          ) }
         </div>
 
         <div className='col-6 d-flex justify-content-center align-items-center'>
@@ -84,30 +80,23 @@ const traerClases = async () => {
           }
           } > Clases
           </Button>
+         
+        </div>
+        </div>
+
+        <div>
+          {mostrarUsuarios && (
+            <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
+          ) }
+  
           {mostrarClases && (
             <TableClases/>
           ) }
-        </div>
-        </div>
-        </div>
-
-
+         </div>
         
 
-       {/* <div className=" table row">
-          <div className="col-12 col-md-8 offset-md-2">
-          <div>
-        {usuarios.length > 0 ? (
-         <TableUsuarios usuarios={usuarios} traerUsuarios={traerUsuarios}/>
-        ) : (
-            <div className="d-flex justify-content-center">
-                <div className="spinner-border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </div>
-              </div>)}
-            </div>  
-          </div>
-        </div>*/}
+
+        </div>
       </div>
     </div>    
     </>
