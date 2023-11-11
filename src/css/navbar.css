@@ -1,0 +1,71 @@
+/*  
+paleta de colores 
+negro : #222831
+azul : #2D4059
+naranja : #FF5722
+blanco : #EEEEEE
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif;
+}
+
+p,
+.btn,
+ul {
+  font-family: "Raleway", sans-serif !important;
+}
+
+ul {
+  font-weight: 400;
+}
+
+/* .logo{
+    border-bottom: #FF5722 2px solid; 
+    padding: 5px;
+} */
+
+.btn-style {
+  background-color: #ff5722 !important;
+  color: #eeeeee !important;
+}
+
+.btn-style:hover {
+  outline: 2px solid #eeeeee !important;
+  background-color: #eeeeee !important;
+  color: #ff5722 !important;
+}
+
+.btn-login {
+  border-color: #ff5722 !important;
+  color: #ff5722 !important;
+}
+.btn-login:hover {
+  outline: 2px solid #ff5722 !important;
+  background-color: #ff5722 !important;
+  color: #eeeeee !important;
+}
+
+.btn-outline-primary {
+  border-color: #ff5722;
+}
+
+.nav-link {
+  color: #ff5722 !important;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  color: #eeeeee !important;
+  /* outline: 2px solid ; */
+  /* border-bottom: #EEEEEE 2px solid; */
+  background-color: #ff5722;
+}
+
+.logo {
+  font-family: "Russo One", sans-serif !important;
+}

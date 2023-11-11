@@ -1,13 +1,45 @@
-
 /*
+
+font-family: 'Russo One', sans-serif;
+font-family: 'Raleway', sans-serif;
 
 Color Palette: #222831 #2D4059 #FF5722 #EEEEEE - Color Hunt
 Color Palette: #FF7517 #3E3939 #2C2727 #F6F4F4 - Color Hunt
 Color Palette: #F4F4F4 #FF7315 #3A3535 #232020 - Color Hunt
 
-
-font-family: 'Russo One', sans-serif;
-font-family: 'Raleway', sans-serif;
-
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
+
+.bg-blue {
+  background-color: #2d4059;
+}
+
+.bg-orange {
+  background-color: #ff5722;
+}
+
+.bg-black {
+  background-color: #222831;
+}
+
+.bg-white {
+  background-color: #eeeeee;
+}
+
+.text-blue {
+  color: #2d4059;
+}
+
+.text-orange {
+  color: #ff5722;
+}
+
+.text-black {
+  color: #222831;
+}
+
+.text-white {
+  color: #eeeeee;
+}
