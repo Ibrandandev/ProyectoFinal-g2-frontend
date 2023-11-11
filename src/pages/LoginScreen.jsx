@@ -46,14 +46,11 @@ const LoginScreen = () => {
             value={password}
             onChange={e => setPassword(e.target.value)}/>
           </div>
-          <div className="registro">
-            <p>No tenes cuenta?</p>
-            <a href="">Registrate aqui!</a>
+          <div className="container-loginbutton">
+            <button className="login-button">Log in</button>
+            <p className="registrarse">No tenes cuenta?<a href="">Registrate aqui!</a></p>
           </div>
         </form>
-        <div className="login-button">
-          <button>Log in</button>
-        </div>
       </div>
     </div>
     </>
