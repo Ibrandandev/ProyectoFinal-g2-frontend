@@ -4,9 +4,8 @@ import {borrarUsuario} from "../helpers/usuariosApi";
 import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
 
-import ModalEdit from './ModalEdit';
-
 import "../css/table.css";
+import EditUsuarios from "./EditUsuarios";
 
 const TableUsuarios = ({usuarios, traerUsuarios}) => {
   const MySwal = withReactContent(Swal);
@@ -98,7 +97,7 @@ const TableUsuarios = ({usuarios, traerUsuarios}) => {
     </tbody>
 
   </table>
-  {show && <ModalEdit show={show} handleClose={handleClose} uid={uid}/>}
+  {show && <EditUsuarios show={show} handleClose={handleClose} uid={uid}/>}
 </div>
   )
 }

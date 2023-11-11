@@ -14,7 +14,6 @@ const [usuarios, setUsuarios] = useState([]);
 const [clases, setClases] = useState([]);
 
 const [totalUsuarios, setTotalUsuarios] = useState(0);
-const [totalClases, setTotalClases] = useState(0);
 
 const [mostrarUsuarios, setMostrarUsuarios]=useState(false);
 const [mostrarClases, setMostrarClases]=useState(false);
@@ -35,10 +34,8 @@ setTotalUsuarios(total)
 
 
 const traerClases = async () => {
-  const {services, total} = await getClases();
+  const {services} = await getClases();
   setClases(services);
-  setTotalClases(total)
-  
   };
 
   return (
@@ -90,7 +87,7 @@ const traerClases = async () => {
           ) }
   
           {mostrarClases && (
-            <TableClases/>
+            <TableClases clases={clases} traerClases={traerClases}/>
           ) }
          </div>
         

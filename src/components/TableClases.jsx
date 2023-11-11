@@ -5,8 +5,12 @@ import withReactContent from "sweetalert2-react-content";
 
 import "../css/table.css"
 
+import EditClases from "../components/EditClases";
 
-const TableClases = () => {
+import { borrarClase } from '../helpers/clasesApi';
+
+
+const TableClases  = ({clases, traerClases}) => {
 
 const MySwal = withReactContent(Swal); 
 const [show, setShow] = useState(false);
@@ -53,53 +57,53 @@ const inactivarClase = async (nombre, id) => {
           <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Categoría</th>
-            <th scope="col">Horario</th>
             <th scope="col">Profesor</th>
-            <th></th>
+            <th scope="col">Dias</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Estado </th>
           </tr>
         </thead>
 
         <tbody>
-          {/*usuarios.map((usuario)) => (
-            <tr key={usuario.id}>
-              <th>{usuario.nombre}</th>
-              <td>{usuario.categoria}</td>
-              <td>{usuario.horario}</td>
-              <td>{usuario.profesor}</td>
+          {clases.map((clase) => (
+            <tr key={clase._id}>
+              <th>{clase.nombre}</th>
+              <td>{clase.categoria}</td>
+              <td>{clase.profesor}</td>
+              <td>{clase.dias}</td>
+              <td>{clase.horario}</td>
               <td>
+            {clase.estado ? (
+              
+              <i className="fa fa-check text-success d-flex justify-content-center" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-times text-danger d-flex 
+              justify-content-center " aria-hidden="true"></i>
+            )}
+            </td>
+            <td>
                 <div className="d-flex gap-3">
                   <button
                     className="btn btn-warning btn-sm"
-                    onClick={() => handleShow(clase.id)}
+                    onClick={() => handleShow(clase._id)}
                   >
                     <i className="fa fa-pencil" aria-hidden="true"></i>
                   </button>
                   
                   <button
                     className="btn btn-danger btn-sm"
-                    onClick={() => inactivarClase(clase.nombre, clase.id)}
+                    onClick={() => inactivarClase(clase.nombre, clase._id)}
+                    disabled={!clase.estado}
                   >
                     <i className="fa fa-trash" aria-hidden="true"></i>
                      </button>
                 </div>
-              </td>
-
-
-              
-              <td>
-                {clase.destacado ? (
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                ) : (
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                )}
-              </td>
-              
+              </td>          
             </tr>
-          ))*/}
-
-        </tbody>
+          ))}
+        </tbody> 
       </table>
-
+      {show && <EditClases show={show} handleClose={handleClose} cid={cid}/>}
     </div>
   )
 }

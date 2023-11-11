@@ -1,14 +1,14 @@
-const url = "https://proyectofinal-g2-backend.onrender.com/api/classes";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/services";
 
 
-export const getClases = async (desde=0) => {
+export const getClases = async (desde=0, limite = 0) => {
     try{ 
-        const resp = await fetch (url + "?limite" + limite + "&desde" + desde, {
+        const resp = await fetch (url + "?from" + desde + "&limit" + limite, {
             method: "GET",
-            /*headers: {
+            headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "x-token": token,
-              },*/
+                //"x-token": token,
+              },
         });
 
     const data = await resp.json();
@@ -26,10 +26,10 @@ export const getClaseById = async (id) => {
     try{ 
         const resp = await fetch (url + "/" + id, {
             method: "GET",
-            /*headers: {
+            headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "x-token": token,
-              },*/
+                //"x-token": token,
+              },
         });
 
     const data = await resp.json();
@@ -45,11 +45,11 @@ export const getClaseById = async (id) => {
 export const crearClase = async (datos) => {
     try{ 
         const resp = await fetch (url, {
-            method: "PUSH",
-            /*headers: {
+            method: "POST",
+            headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "x-token": token,
-              },*/
+                //"x-token": token,
+              },
         });
 
     const data = await resp.json();
@@ -65,10 +65,10 @@ export const actualizarClase = async (id, datos) => {
     try{ 
         const resp = await fetch (url + "/" + id, {
             method: "PUT",
-            /*headers: {
+            headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "x-token": token,
-              },*/
+                //"x-token": token,
+              },
         });
 
     const data = await resp.json();
@@ -84,10 +84,10 @@ export const borrarClase = async (id) => {
     try{ 
         const resp = await fetch (url + "/" + id, {
             method: "DELETE",
-            /*headers: {
+            headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "x-token": token,
-              },*/
+                //"x-token": token,
+              },
         });
 
     const data = await resp.json();

@@ -9,7 +9,7 @@ import withReactContent from 'sweetalert2-react-content';
 import Modal from 'react-bootstrap/Modal';
 
 
-const ModalEdit = ({show, handleClose, uid}) => {
+const EditUsuarios = ({show, handleClose, uid}) => {
     const MySwal = withReactContent(Swal);
     const [usuario, setUsuario] =useState(null);
 
@@ -113,7 +113,7 @@ const ModalEdit = ({show, handleClose, uid}) => {
                       onChange={handleChange}
                       name="usuarioActivo"
                     />
-                    <label className="form-check-label fw-bold">Activo</label>
+                    <label className="form-check-label fw-bold">Estado</label>
                   </div>
                   <div className="d-grid mt-2">
                     <button className="btn btn-warning">Actualizar</button>
@@ -128,4 +128,4 @@ const ModalEdit = ({show, handleClose, uid}) => {
       );    
 };
  
-export default ModalEdit;
+export default EditUsuarios;

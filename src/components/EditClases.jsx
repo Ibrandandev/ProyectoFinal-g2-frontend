@@ -9,8 +9,7 @@ import withReactContent from 'sweetalert2-react-content';
 import Modal from 'react-bootstrap/Modal';
 
 
-const EditClases = () => {
-
+const EditClases = ({show, handleClose, cid}) => {
     const MySwal = withReactContent(Swal);
     const [clase, setClase] =useState(null);
 
@@ -20,20 +19,21 @@ const EditClases = () => {
  
     const traerDatosClases = async () => {
         const resp = await getClaseById(cid);
-        setClase(resp.clase) //VER!!!!!!!! NOMBRE QUE LE PUSO NACHO.  
+        setClase(resp.service) 
     };
 
     const handleChange = (e)=> 
     {
         let valueCheck = false;
 
-        if (e.target.name === "claseActiva") {
+        if (e.target.name === "estado") {
           console.log(e.target);
             if(e.target.checked){
                 valueCheck = true;
             } else {
                 valueCheck = false
             }
+            
             setClase({
                 ...clase,
                 [e.target.name]: valueCheck,
@@ -45,12 +45,11 @@ const EditClases = () => {
            })}
         };
     
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
     
         await actualizarClase(clase._id, clase);
-        MySwal.fire("clase Actualizado", "", "success");
+        MySwal.fire("clase Actualizada", "", "success");
         handleClose();
     };
 
@@ -73,23 +72,21 @@ const EditClases = () => {
                     onChange={handleChange}
                   />
 
-                 
-                
-                  <label className="fw-bold">Telefono</label>
+                  <label className="fw-bold">Categoria</label>
                   <textarea
                     className="form-control"
-                    value={clase.telefono}
+                    value={clase.categoria}
                     onChange={handleChange}
-                    name="telefono"
+                    name="categoria"
                   ></textarea>        
 
 
-                  <label className="fw-bold">PlanContratado</label>
+                  <label className="fw-bold">Fechas </label>
                   <textarea
                     className="form-control"
-                    value={clase.planContratado}
+                    value={clase.fecha}
                     onChange={handleChange}
-                    name="planContratado"
+                    name="fecha"
                   ></textarea>
              
                   <div className="form-check form-switch">
@@ -97,11 +94,11 @@ const EditClases = () => {
                       className="form-check-input"
                       type="checkbox"
                       role="switch"
-                      checked={clase.claseActiva}
+                      checked={clase.estado}
                       onChange={handleChange}
-                      name="claseActivo"
+                      name="estado"
                     />
-                    <label className="form-check-label fw-bold">Activo</label>
+                    <label className="form-check-label fw-bold">Estado</label>
                   </div>
                   <div className="d-grid mt-2">
                     <button className="btn btn-warning">Actualizar</button>
