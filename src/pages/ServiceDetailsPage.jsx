@@ -8,13 +8,13 @@ const ServiceDetailsPage = () => {
 
   const [service, setService] = useState([]);
   useEffect(() => {
-    traerServicios()
-  }, [])
-  
+    traerServicios();
+  }, []);
+
   const traerServicios = async () => {
-    const {service} = await getServiceById(id);
-    setService(service)
-  }
+    const { service } = await getServiceById(id);
+    setService(service);
+  };
 
   return (
     <div>
@@ -30,7 +30,7 @@ const ServiceDetailsPage = () => {
             <strong>{service.nombre}</strong>
           </h1>
           <button className="btn btn-cursos w-50 mx-2" type="button">
-            Registrarse
+            Reservar
           </button>
         </div>
         <hr />
@@ -40,14 +40,17 @@ const ServiceDetailsPage = () => {
               <i
                 className="fa fa-caret-square-o-right fs-3 me-2"
                 aria-hidden="true"
-              ></i> 
+              ></i>
               {/* {service.categoria} */}
               Cardio
             </h5>
           </div>
           <div className="col-12 col-lg-3 col-md-6">
             <h5>
-              <i className="fa fa-user-circle-o fs-3 me-2" aria-hidden="true"></i>
+              <i
+                className="fa fa-user-circle-o fs-3 me-2"
+                aria-hidden="true"
+              ></i>
               {/* Profe: {service.profesor} */}
               Profe: Alex
             </h5>
