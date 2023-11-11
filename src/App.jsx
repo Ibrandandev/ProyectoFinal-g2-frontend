@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import NavbarApp from "./components/NavbarApp";
+import FooterApp from "./components/FooterApp";
 import HomeScreen from "./pages/HomeScreen";
 import LoginScreen from "./pages/LoginScreen";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar auth={auth} logIn={logIn} logOut={logOut} />
+      <NavbarApp auth={auth} logIn={logIn} logOut={logOut} />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
@@ -44,7 +44,7 @@ function App() {
         />
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
-      <Footer />
+      <FooterApp />
     </BrowserRouter>
   );
 }

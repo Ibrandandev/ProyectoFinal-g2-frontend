@@ -1,6 +1,6 @@
 import GoogleMap from "./GoogleMap";
 
-const Footer = () => {
+const FooterApp = () => {
   return (
     <div className="bg-blue container-fluid pt-3">
       <GoogleMap />
@@ -33,4 +33,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterApp;

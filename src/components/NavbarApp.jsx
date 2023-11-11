@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
 
-const Navbar = ({ auth, logIn, logOut }) => {
+const NavbarApp = ({ auth, logIn, logOut }) => {
   const activeLink = {
     textDecoration: "underline",
   };
@@ -108,4 +108,4 @@ const Navbar = ({ auth, logIn, logOut }) => {
   );
 };
 
-export default Navbar;
+export default NavbarApp;
