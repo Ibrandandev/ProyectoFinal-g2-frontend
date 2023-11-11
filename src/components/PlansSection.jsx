@@ -36,9 +36,11 @@ const PlansSection = () => {
             </p>
           </div>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
+            {plan.beneficios.map((beneficio) => (
+              <li className="list-group-item">{beneficio}</li>
+            ))
+            }
+            
           </ul>
           <div className="card-body">
             <a href="#" className="btn d-flex justify-content-center">
