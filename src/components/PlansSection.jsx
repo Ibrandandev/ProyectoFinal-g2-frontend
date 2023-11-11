@@ -1,14 +1,38 @@
+import React from 'react'
+import { useState, useEffect } from "react";
+import { getPlans } from "../helpers/plans";
+
+import "../css/plans.css";
+
+
 const PlansSection = () => {
+
+  const [planes, setPlanes] = useState([]);
+
+  useEffect(() => {
+    traerPlanes();
+  }, []);
+
+  const traerPlanes = async () => {
+    const { plans } = await getPlans();
+    setPlanes(plans);
+  };
+
+
   return (
-    <section className="container">
-      <h2 className="text-center">Plans</h2>
+    <section className="container mt-5">
+      <h2 className="text-center">Nuestros Planes</h2>
       <div className="row justify-content-center gap-2">
+      
+       
+        {planes.map((plan) => (   
+              
         <div className="card col-3">
           <div className="card-body">
-            <h5 className="card-title fs-3">Plan Total</h5>
+            <h5 className="card-title d-flex justify-content-center w-75">{plan.nombre}</h5>
             <hr />
             <p className="card-text fs-5 text-center py-2">
-              $<span> 10.000</span>/mes
+              $<span>{plan.precio}</span>/mes
             </p>
           </div>
           <ul className="list-group list-group-flush">
@@ -17,49 +41,15 @@ const PlansSection = () => {
             <li className="list-group-item">A third item</li>
           </ul>
           <div className="card-body">
-            <a href="#" className="btn btn-primary w-75 mx-auto d-block">
+            <a href="#" className="btn d-flex justify-content-center">
               Asociate
             </a>
           </div>
         </div>
-        <div className="card col-3">
-          <div className="card-body">
-            <h5 className="card-title fs-3">Plan Total</h5>
-            <hr />
-            <p className="card-text fs-5 text-center py-2">
-              $<span> 10.000</span>/mes
-            </p>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="btn btn-primary w-75 mx-auto d-block">
-              Asociate
-            </a>
-          </div>
-        </div>
-        <div className="card col-3">
-          <div className="card-body">
-            <h5 className="card-title fs-3">Plan Total</h5>
-            <hr />
-            <p className="card-text fs-5 text-center py-2">
-              $<span> 10.000</span>/mes
-            </p>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="btn btn-primary w-75 mx-auto d-block">
-              Asociate
-            </a>
-          </div>
-        </div>
+
+        )
+        )}
+      
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ const CategoriesSection = () => {
   };
 
   return (
-    <section className="container">
+    <section className="container mt-5">
       <h2 className="text-center">Categorias</h2>
       <div className="row justify-content-center gap-3">
         {categorias.map((c) => (

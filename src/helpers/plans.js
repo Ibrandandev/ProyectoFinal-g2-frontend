@@ -1,6 +1,6 @@
-const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/plans/";
  
-export const getCategories = async (from = 0, limit = 0) => {
+export const getPlans = async (from = 0, limit = 0) => {
   try {
     const resp = await fetch(`${url}?from=${from}&limit=${limit}`, {
       method: "GET",
@@ -11,13 +11,14 @@ export const getCategories = async (from = 0, limit = 0) => {
     const data = await resp.json();
 
     return data;
+    
   } catch (error) {
     console.log(error);
     throw new Error("Error al obtener la informacion!");
   }
 };
 
-export const getCategory = async (id) => {
+export const getPlan = async (id) => {
   try {
     const resp = await fetch(`${url}/${id}`, {
       method: "GET",
@@ -34,7 +35,7 @@ export const getCategory = async (id) => {
   }
 };
 
-export const postCategory = async (datos) => {
+export const postPlan = async (datos) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -51,3 +52,22 @@ export const postCategory = async (datos) => {
     return { msg: "No se conecto al backend!" };
   }
 };
+
+
+export const deletePlan = async (id) => {
+    try {
+      const resp = await fetch(`${url}/${id}`, {
+        method: "DELETE",
+        body: JSON.stringify(datos),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await resp.json();
+  
+      return data;
+    } catch (error) {
+      console.log(error);
+      return { msg: "No se conecto al backend!" };
+    }
+  };
