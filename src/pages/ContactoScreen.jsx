@@ -52,12 +52,12 @@ const ContactoScreen = () => {
     <div className="background min-vh-100">
       <div className="container pt-5">
         <div className="row  justify-content-center">
-          <div className="col-8 text-white ">
+          <div className="col-10 text-white ">
             <h1 className="formulario fs-2">Tenes alguna duda? Contáctanos!</h1>
           </div>
         </div>
         <div className="row justify-content-center text-white ">
-          <form className="col-8" onSubmit={sendEmail}>
+          <form className="col-10" onSubmit={sendEmail}>
             <div className="my-3">
               <label htmlFor="validationDefault01" className="form-label">
                 Nombre
@@ -122,8 +122,8 @@ const ContactoScreen = () => {
                 maxLength="250"
               ></textarea>
             </div>
-            <div className="d-flex col-12 justify-content-end">
-              <button className="btn btn-primary " type="submit">
+            <div className="d-flex justify-content-end mt-4">
+              <button className="btn btn-style btn-lg" type="submit">
                 Enviar
               </button>
             </div>
