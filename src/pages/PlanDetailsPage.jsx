@@ -65,7 +65,7 @@ const PlanDetailsPage = () => {
 
 
   return (
-    <div className="background">
+    <div className="background min-vh-100">
       <div className="container text-white pt-4">
         <div className="row">
           <div className="col-12 col-lg-5 justify-content-md-center">
@@ -100,14 +100,6 @@ const PlanDetailsPage = () => {
           <h2 className="infoPer">Información Personal</h2>
           <form className="row g-3 justify-content-center" onSubmit={sendEmail}>
             <div className="row">
-              {/* <div className="form-floating mb-3">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-                <label htmlFor="floatingInput">Email address</label>
-              </div>
-              <div className="form-floating">
-                <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
-                <label htmlFor="floatingPassword">Password</label>
-              </div> */}
               <div className="col-12 col-md-6">
                 <label
                   htmlFor="validationDefault01"
@@ -121,6 +113,8 @@ const PlanDetailsPage = () => {
                   onChange={handleChange}
                   value={formValues.nombre}
                   required
+                  minLength="3"
+                  maxLength="10"
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -141,6 +135,8 @@ const PlanDetailsPage = () => {
                     onChange={handleChange}
                     value={formValues.destinatario}
                     required
+                    minLength="12"
+                    maxLength="35"
                   />
                 </div>
               </div>
@@ -179,6 +175,9 @@ const PlanDetailsPage = () => {
                   id="plan"
                   rows="3"
                   placeholder="Ingrese aquí su consulta..."
+                  required
+                  minLength="10"
+                  maxLength="200"
                 ></textarea>
               </div>
 
