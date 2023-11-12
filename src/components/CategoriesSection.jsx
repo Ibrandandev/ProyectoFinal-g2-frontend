@@ -20,7 +20,10 @@ const CategoriesSection = () => {
         {categorias.map((c) => (
           <div className=" col-3 card text-bg-dark px-0 rounded-0 " key={c._id}>
             <img
-              src={c.img}
+              src={
+                c.img ??
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX9TjNUBXez72OB1MUkeAlbEBTRybtYpxJhyAt-j5FaSpLSo4CSw75EKARpwp3roPsrzc&usqp=CAU"
+              }
               className="card-img opacity-75"
               alt={`Imagen de entrenamiento ${c.nombre}`}
             />
