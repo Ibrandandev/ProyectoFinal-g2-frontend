@@ -1,6 +1,7 @@
 import "../css/comments-section.css";
 import { useState, useEffect } from "react";
 import { getComments, postComment } from "../helpers/commentsApi";
+import Swal from "sweetalert2";
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);
@@ -19,7 +20,12 @@ const CommentsSection = () => {
     e.preventDefault();
     const data = { comentario: review };
     const resp = await postComment(data);
-    console.log(resp);
+    if (resp.message === "Exitoso") {
+      Swal.fire(resp.message, "", "success");
+    } else {
+      Swal.fire(resp.message, "", "warning");
+    }
+
     setReview("");
   };
 
