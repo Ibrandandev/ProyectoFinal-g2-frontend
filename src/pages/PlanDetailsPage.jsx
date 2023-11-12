@@ -157,11 +157,13 @@ const PlanDetailsPage = () => {
                         <div className="row"> */}
               
               <div className="col mb-3">
-                <label htmlFor="formGroupExampleInput" className="form-label">Motivo de consulta</label>
+                <label htmlFor="formGroupExampleInput" className="form-label"></label>
                 <select className="form-select" aria-label="Default select example"
                   onChange={handleChange}
                   value={formValues.consulta}
-                  id="consulta">
+                  id="consulta"
+                  required>
+                    <option value="">Motivo de consulta</option>
                     <option value="Precio">Precio</option>
                     <option value="Horario">Horario</option>
                     <option value="Otro">Otro</option>
