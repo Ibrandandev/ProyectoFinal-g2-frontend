@@ -5,7 +5,8 @@ import NavbarApp from "./components/NavbarApp";
 import FooterApp from "./components/FooterApp";
 import HomeScreen from "./pages/HomeScreen";
 import LoginScreen from "./pages/LoginScreen";
-import ProtectedRoutes from "./routes/ProtectedRoutes";
+// import ProtectedRoutes from "./routes/ProtectedRoutes";
+import ProtectedRoutesAdmin from "./routes/ProtectedRoutesAdmin";
 import AdminScreen from "./pages/AdminScreen";
 import ErrorScreen from "./pages/ErrorScreen";
 import RegisterScreen from "./pages/RegisterScreen";
@@ -14,32 +15,45 @@ import PlanDetailsScreen from "./pages/PlanDetailsScreen";
 import ServiceDetailsScreen from "./pages/ServiceDetailsScreen";
 
 function App() {
-  const [auth, setAuth] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [user, setUser] = useState(false);
 
-  const logIn = () => {
-    setAuth(true);
+  const guardarUsuario = (datos) => {
+    setUser(datos);
   };
 
-  const logOut = () => {
-    setAuth(false);
+  const iniciarSesion = () => {
+    setLogin(true);
+  };
+
+  const cerrarSesion = () => {
+    setLogin(false);
   };
 
   return (
     <BrowserRouter>
-      <NavbarApp auth={auth} logIn={logIn} logOut={logOut} />
+      <NavbarApp user={user} login={login} cerrarSesion={cerrarSesion} />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route
+          path="/login"
+          element={
+            <LoginScreen
+              iniciarSesion={iniciarSesion}
+              guardarUsuario={guardarUsuario}
+            />
+          }
+        />
         <Route path="/register" element={<RegisterScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
         <Route path="/service-details" element={<ServiceDetailsScreen />} />
         <Route path="/plan-details" element={<PlanDetailsScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
         <Route
           path="/admin"
           element={
-            <ProtectedRoutes auth={auth}>
+            <ProtectedRoutesAdmin user={user}>
               <AdminScreen />
-            </ProtectedRoutes>
+            </ProtectedRoutesAdmin>
           }
         />
         <Route path="*" element={<ErrorScreen />} />
