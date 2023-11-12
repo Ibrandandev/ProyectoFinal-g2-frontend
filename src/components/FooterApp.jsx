@@ -2,7 +2,7 @@ import GoogleMap from "./GoogleMap";
 
 const FooterApp = () => {
   return (
-    <div className="bg-blue container-fluid pt-3">
+    <div className="bg-blue container-fluid pt-3 mt-3">
       <GoogleMap />
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-4 border-top mx-xl-5">
         <div className="col-md-4 d-flex align-items-center">
