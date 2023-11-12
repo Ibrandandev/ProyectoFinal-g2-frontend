@@ -1,0 +1,41 @@
+[
+    {
+      "nombre": "spinning",
+      "categoria": "Aerobico",
+      "horario": "18.30",
+      "profesor": "Alejandro",
+      "id": 1     
+    },
+    {
+      "nombre": "Yoga",
+      "categoria": "Mental health",
+      "horario": "17.30",
+      "profesor": "Juan",
+      "id": 2     
+        
+      },
+      {
+        "nombre": "Zumba",
+      "categoria": "Aerobico",
+      "horario": "14.30",
+      "profesor": "Mariana",
+      "id": 3  
+        
+      },
+    
+      {
+        "nombre": "Abs",
+      "categoria": "Musculacion",
+      "horario": "18.30",
+      "profesor": "Sandra",
+      "id": 4    
+      },
+      {
+        "nombre": "Functional",
+        "categoria": "Musculacion",
+        "horario": "18.30",
+        "profesor": "Pedro",
+        "id": 5       
+      }
+  ]
+  

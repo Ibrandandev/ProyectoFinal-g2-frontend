@@ -3,10 +3,11 @@ import CategoriesSection from "../components/CategoriesSection";
 import PlansSection from "../components/PlansSection";
 import TrainersSection from "../components/TrainersSection";
 import CommentsSection from "../components/CommentsSection";
+import "../css/home-section.css";
 
 const HomeScreen = () => {
   return (
-    <main className="bg-white min-vh-100">
+    <main className="min-vh-100">
       <HeroSection />
       <CategoriesSection />
       <PlansSection />

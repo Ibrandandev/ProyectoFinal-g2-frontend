@@ -30,7 +30,7 @@ const CommentsSection = () => {
   };
 
   return (
-    <section className="container">
+    <section className="container mt-5">
       <h2 className="text-center">Comentarios</h2>
       <div>
         {comments.map((comment) => (
