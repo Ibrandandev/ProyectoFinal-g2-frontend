@@ -29,6 +29,10 @@ ul {
     padding: 5px;
 } */
 
+.icon {
+  width: 2rem;
+}
+
 .btn-style {
   background-color: #ff5722 !important;
   color: #eeeeee !important;

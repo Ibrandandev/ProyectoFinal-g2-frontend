@@ -12,7 +12,9 @@ const NavbarApp = ({ auth, logIn, logOut }) => {
         <header className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between py-4 border-bottom w-100 mx-lg-1">
           <div className=" col-auto mb-2 mb-md-0">
             <NavLink className="navbar-brand logo text-white fs-4" to="/">
-              <i className="fa fa-ravelry" aria-hidden="true"></i> RollingGym
+              {/* <i className="fa fa-ravelry" aria-hidden="true"></i>  */}
+              <img src="/icon.png" className="icon me-2" alt="" />
+              RollingGym
             </NavLink>
           </div>
 
