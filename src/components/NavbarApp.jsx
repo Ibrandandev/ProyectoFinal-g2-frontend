@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
 
-const NavbarApp = ({ auth, logIn, logOut }) => {
+const NavbarApp = ({ user = "", login, cerrarSesion }) => {
   const activeLink = {
     textDecoration: "underline",
   };
@@ -64,7 +64,7 @@ const NavbarApp = ({ auth, logIn, logOut }) => {
                 Contacto
               </NavLink>
             </li>
-            {auth && (
+            {user.rol === "ADMIN_ROLE" && (
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
@@ -79,27 +79,26 @@ const NavbarApp = ({ auth, logIn, logOut }) => {
 
           <div className="col-auto text-end">
             <div>
-              {!auth && (
+              {!login ? (
                 <>
-                  <button
-                    type="button"
-                    className="btn me-2 btn-login"
-                    onClick={logIn}
-                  >
-                    Login
-                  </button>
-                  <button type="button" className="btn me-2 btn-style">
-                    SignIn
-                  </button>
+                  <NavLink to="/login">
+                    <button type="button" className="btn me-2 btn-login">
+                      Iniciar Sesion
+                    </button>
+                  </NavLink>
+                  <NavLink to="/register">
+                    <button type="button" className="btn me-2 btn-style">
+                      Registrarse
+                    </button>
+                  </NavLink>
                 </>
-              )}
-              {auth && (
+              ) : (
                 <button
                   type="button"
                   className="btn  btn-style"
-                  onClick={logOut}
+                  onClick={cerrarSesion}
                 >
-                  LogOut
+                  Cerrar Sesion
                 </button>
               )}
             </div>
