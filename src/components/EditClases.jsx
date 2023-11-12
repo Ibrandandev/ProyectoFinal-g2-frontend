@@ -12,14 +12,29 @@ import Modal from 'react-bootstrap/Modal';
 const EditClases = ({show, handleClose, cid}) => {
     const MySwal = withReactContent(Swal);
     const [clase, setClase] =useState(null);
+    const [categorias, setCategorias] = useState({});
+    const [trainers, setTrainers] = useState({});
+
 
     useEffect(()=> {
-        traerDatosClases();      
+        traerDatosClases();
+        traerCategorias()    
+        traerProfesores()   
     }, []);
  
     const traerDatosClases = async () => {
         const resp = await getClaseById(cid);
         setClase(resp.service) 
+    };
+
+    const traerCategorias = async () => {
+      const resp = await getCategorias();
+      setCategorias(resp.categorias);
+    };
+
+    const traerProfesores = async () => {
+      const resp = await getTrainers();
+      setTrainers(resp.trainers);
     };
 
     const handleChange = (e)=> 
@@ -72,14 +87,52 @@ const EditClases = ({show, handleClose, cid}) => {
                     onChange={handleChange}
                   />
 
-                  <label className="fw-bold">Categoria</label>
-                  <textarea
-                    className="form-control"
-                    value={clase.categoria}
-                    onChange={handleChange}
-                    name="categoria"
-                  ></textarea>        
+                 
+               <div className="my-2">
+                <p>
+                  <span className="fw-bold">Categoría actual:</span>{" "}
+                  {categoria.nombre}
+                </p>
+                <label className="fw-bold">Cambiar categoría</label>
+                <select
+                  className="form-select"
+                  name="categoria"
+                  onChange={handleChange}
+                >
+                  <option value={categoria.nombre}>
+                    Elije una categoría
+                  </option>
+                  {categorias &&
+                    categorias.map((categoria) => (
+                      <option key={categoria._id} value={categoria._id}>
+                        {categoria.nombre}
+                      </option>
+                    ))}
+                </select>
+              </div>
 
+              <div className="my-2">
+                <p>
+                  <span className="fw-bold">Profesor:</span>{" "}
+                  {trainers.nombre}
+                </p>
+                <label className="fw-bold">Cambiar Profesor</label>
+                <select
+                  className="form-select"
+                  name="profesor"
+                  onChange={handleChange}
+                >
+                  <option value={profesor.nombre}>
+                    Elije un profesor
+                  </option>
+                  {trainers &&
+                    trainers.map((trainer) => (
+                      <option key={trainer._id} value={trainer._id}>
+                        {trainer.nombre}
+                      </option>
+                    ))}
+                </select>
+              </div>
 
                   <label className="fw-bold">Fechas </label>
                   <textarea

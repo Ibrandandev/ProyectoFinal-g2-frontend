@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Swal from 'sweetalert2';
 import withReactContent from "sweetalert2-react-content";
@@ -8,6 +8,7 @@ import "../css/table.css"
 import EditClases from "../components/EditClases";
 
 import { borrarClase } from '../helpers/clasesApi';
+import CrearClase from './CrearClase';
 
 
 const TableClases  = ({clases, traerClases}) => {
@@ -17,7 +18,9 @@ const [show, setShow] = useState(false);
 
 const [cid, setCid] = useState(null);
 
-const handleClose = ()=>{
+
+
+const handleClose = ()=>{ 
   setCid(null);
   setShow(false);
   traerClases();
@@ -48,6 +51,7 @@ const inactivarClase = async (nombre, id) => {
     }
   }); 
 }
+
 
  return (
 
@@ -104,7 +108,16 @@ const inactivarClase = async (nombre, id) => {
         </tbody> 
       </table>
       {show && <EditClases show={show} handleClose={handleClose} cid={cid}/>}
-    </div>
+      
+      <div>
+        <CrearClase/>
+
+      </div>
+      
+      
+
+</div>
+
   )
 }
 
