@@ -100,6 +100,14 @@ const PlanDetailsPage = () => {
           <h2 className="infoPer">Información Personal</h2>
           <form className="row g-3 justify-content-center" onSubmit={sendEmail}>
             <div className="row">
+              {/* <div className="form-floating mb-3">
+                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+                <label htmlFor="floatingInput">Email address</label>
+              </div>
+              <div className="form-floating">
+                <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
+                <label htmlFor="floatingPassword">Password</label>
+              </div> */}
               <div className="col-12 col-md-6">
                 <label
                   htmlFor="validationDefault01"
@@ -115,21 +123,6 @@ const PlanDetailsPage = () => {
                   required
                 />
               </div>
-              <div className="col-12 col-md-6">
-                <label
-                  htmlFor="validationDefault02"
-                  className="form-label"
-                ></label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationDefault02"
-                  placeholder="Apellido"
-                  required
-                />
-              </div>
-              {/* </div>
-                        <div className="row"> */}
               <div className="col-12 col-md-6">
                 <label
                   htmlFor="validationDefaultUsername"
@@ -151,34 +144,32 @@ const PlanDetailsPage = () => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-6">
+              {/* <div className="col-12 col-md-6">
                 <label
-                  htmlFor="validationDefault03"
+                  htmlFor="validationDefault02"
                   className="form-label"
                 ></label>
                 <input
-                  type="number"
+                  type="text"
                   className="form-control"
-                  id="validationDefault03"
-                  placeholder="Numero de teléfono"
+                  id="validationDefault02"
+                  placeholder="Apellido"
                   required
                 />
-              </div>
+              </div> */}
+              {/* </div>
+                        <div className="row"> */}
+              
               <div className="col mb-3">
-              <label
-                  htmlFor="formGroupExampleInput"
-                  className="form-label"
-                >Motivo de consulta</label>
+                <label htmlFor="formGroupExampleInput" className="form-label">Motivo de consulta</label>
                 <select className="form-select" aria-label="Default select example"
-                onChange={handleChange}
-                value={formValues.consulta}
-                id="consulta">
-                  <option value="Precio">Precio</option>
-                  <option value="Horario">Horario</option>
-                  <option value="3">Three</option>
+                  onChange={handleChange}
+                  value={formValues.consulta}
+                  id="consulta">
+                    <option value="Precio">Precio</option>
+                    <option value="Horario">Horario</option>
+                    <option value="Otro">Otro</option>
                 </select>
-                
-                
                 <label
                   htmlFor="exampleFormControlTextarea1"
                   className="form-label"
