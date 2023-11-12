@@ -1,7 +1,8 @@
-// const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
-const url = "http://localhost:8080/api/categories/";
+// const url = "http://localhost:8080/api/categories/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
+const token = JSON.parse(localStorage.getItem("token"));
 
-export const getCategories = async (from = 0, limit = 0) => {
+export const getCategories = async (from = 0, limit = 9) => {
   try {
     const resp = await fetch(`${url}?from=${from}&limit=${limit}`, {
       method: "GET",
@@ -42,6 +43,7 @@ export const postCategory = async (datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
+        token,
       },
     });
     const data = await resp.json();

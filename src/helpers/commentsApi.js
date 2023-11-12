@@ -1,9 +1,10 @@
-// const url = "https://proyectofinal-g2-backend.onrender.com/api/comments/";
-const url = "http://localhost:8080/api/comments/";
+// const url = "http://localhost:8080/api/comments/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/comments/";
+const token = JSON.parse(localStorage.getItem("token"));
 
-export const getComments = async (from = 0, limit = 5) => {
+export const getComments = async (limit = 5) => {
   try {
-    const resp = await fetch(`${url}?from=${from}&limit=${limit}`, {
+    const resp = await fetch(`${url}?limit=${limit}`, {
       method: "GET",
       headers: { "Content-Type": "application/json; charset=UTF-8" },
     });
@@ -20,9 +21,11 @@ export const postComment = async (datos) => {
     const resp = await fetch(url, {
       method: "POST",
       body: JSON.stringify(datos),
-      headers: { "content-type": "application/json; charset=utf-8" },
+      headers: {
+        "content-type": "application/json; charset=utf-8",
+        token,
+      },
     });
-
     const data = await resp.json();
     return data;
   } catch (error) {
