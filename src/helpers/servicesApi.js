@@ -33,6 +33,11 @@ export const getServiceById = async (id) => {
     return data;
   } catch (error) {
     console.log(error);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+    });
     throw new Error("Lo sentimos, no se pudo conectar al backend");
   }
 };

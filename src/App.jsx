@@ -1,4 +1,3 @@
-
 import "./App.css";import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavbarApp from "./components/NavbarApp";
@@ -52,8 +51,8 @@ function App() {
         <Route path="/services" element={<ServicesScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
         <Route path="/categories/:id" element={<CategoryScreen />} />
-        <Route path="/service-details" element={<ServiceDetailsScreen />} />
-        <Route path="/plan-details" element={<PlanDetailsScreen />} />
+        <Route path="/service-details/:id" element={<ServiceDetailsScreen />} />
+        <Route path="/plan-details/:id" element={<PlanDetailsScreen />} />
         <Route
           path="/admin"
           element={
@@ -74,6 +73,7 @@ function App() {
       </Routes>
       <FooterApp />
     </BrowserRouter>
+
   );
 }
 
