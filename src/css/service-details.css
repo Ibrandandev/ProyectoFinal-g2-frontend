@@ -1,37 +1,36 @@
-*{
-    background-color: #2D4059;
-}
-p , .btn{
-    font-family: 'Raleway', sans-serif !important;
-
+p,
+.btn {
+  font-family: "Raleway", sans-serif !important;
 }
 
-h1, h2, h3, h4, h5{
-    font-family: 'Russo One', sans-serif !important;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif !important;
 }
 
-
-img{
-    width: 100%;
-    border: #FF5722;
-    
+img {
+  width: 100%;
+  border: #ff5722;
 }
 
-.datos{
-    color: #FF5722;
+.datos {
+  color: #ff5722;
 }
 
-.btn-cursos{
-    outline: 1px solid #FF5722;
-    background-color: #2D4059 !important;
-    color: #EEEEEE !important;
+.btn-cursos {
+  outline: 1px solid #ff5722;
+  background-color: #2d4059 !important;
+  color: #eeeeee !important;
 }
 
-.btn-cursos:hover{
-    outline: 4px solid #FF5722;
-    background-color: #FF5722 !important;
+.btn-cursos:hover {
+  outline: 4px solid #ff5722;
+  background-color: #ff5722 !important;
 }
 
-.img-spinning{
-    max-height: 600px;
+.img-spinning {
+  max-height: 600px;
 }

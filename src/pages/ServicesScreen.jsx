@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getServices } from "../helpers/servicesApi";
+import { Link } from "react-router-dom";
 
 const ServicesScreen = () => {
   const [services, setServices] = useState([]);
@@ -36,6 +37,9 @@ const ServicesScreen = () => {
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </p>
+                    <Link to={`/service-details/${service._id}`}>
+                      <button className="btn btn-primary">Ver Más</button>
+                    </Link>
                   </div>
                 </div>
               </div>
