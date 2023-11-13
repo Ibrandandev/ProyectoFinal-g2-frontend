@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap";
 const AdminScreen = () => {
   const [usuarios, setUsuarios] = useState([]);
   // const [totalUsuarios, setTotalUsuarios] = useState(0);
-  const [services, setServices] = useState([]);
+  const [servicios, setServicios] = useState([]);
   const [mostrarUsuarios, setMostrarUsuarios] = useState(false);
   const [mostrarServicios, setMostrarServicios] = useState(false);
 
@@ -26,7 +26,7 @@ const AdminScreen = () => {
 
   const traerServicios = async () => {
     const { services } = await getServices();
-    setServices(services);
+    setServicios(services);
   };
 
   return (
@@ -78,7 +78,7 @@ const AdminScreen = () => {
 
               {mostrarServicios && (
                 <ServiceTable
-                  services={services}
+                  servicios={servicios}
                   traerServicios={traerServicios}
                 />
               )}
