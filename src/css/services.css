@@ -11,6 +11,7 @@ tbody th{
 
 
 
+
 .table-admin tbody{
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
@@ -19,4 +20,12 @@ tbody th{
 
 .table-admin{
     border:10px double;
+}
+
+.tituloForm{
+    color: rgb(255, 87, 34) !important;
+}
+
+.form-days{
+    color: black;
 }

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../helpers/categoriesApi";
 import { getTrainers } from "../../helpers/trainers";
+
+import "../../css/services.css";
+
 // import { createService } from "../../helpers/servicesApi";
 
 const CrearServicio = () => {
@@ -42,10 +45,10 @@ const CrearServicio = () => {
 
   return (
     <div className="container w-75">
-      <h2 className="text-blue"> Agregar nueva clase </h2>
+      <h2 className="text-blue tituloForm mt-5"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="nombre">
+        <label className="form-label fw-bold mt-2" htmlFor="nombre">
           Nombre de la Clase
         </label>
         <input
@@ -58,7 +61,7 @@ const CrearServicio = () => {
           required
         />
 
-        <label className="form-label" htmlFor="categoria">
+        <label className="form-label fw-bold mt-2" htmlFor="categoria">
           Categoria
         </label>
         <select
@@ -77,7 +80,7 @@ const CrearServicio = () => {
             ))}
         </select>
 
-        <label className="form-label" htmlFor="profesor">
+        <label className="form-label fw-bold mt-2" htmlFor="profesor">
           Profesor
         </label>
         <select
@@ -96,14 +99,16 @@ const CrearServicio = () => {
         </select>
 
         <div>
+        <label className="fw-bold mt-2">Dias</label>
           <div className="d-flex align-items-center">
+           
             <input
               type="checkbox"
               id="lunes"
               value="lunes"
               className="form-check-input m-0"
             />
-            <label htmlFor="lunes" className="form-label ms-2 m-0">
+            <label htmlFor="lunes" className="form-days ms-2 m-0">
               Lunes
             </label>
           </div>
@@ -115,7 +120,7 @@ const CrearServicio = () => {
               value="martes"
               className="form-check-input m-0"
             />
-            <label htmlFor="martes" className="form-label ms-2 m-0">
+            <label htmlFor="martes" className="form-days ms-2 m-0">
               Martes
             </label>
           </div>
@@ -126,7 +131,7 @@ const CrearServicio = () => {
               value="miercoles"
               className="form-check-input m-0"
             />
-            <label htmlFor="miercoles" className="form-label ms-2 m-0">
+            <label htmlFor="miercoles" className="form-days ms-2 m-0">
               Miercoles
             </label>
           </div>
@@ -137,7 +142,7 @@ const CrearServicio = () => {
               value="jueves"
               className="form-check-input m-0"
             />
-            <label htmlFor="jueves" className="form-label ms-2 m-0">
+            <label htmlFor="jueves" className="form-days ms-2 m-0">
               Jueves
             </label>
           </div>
@@ -148,13 +153,13 @@ const CrearServicio = () => {
               value="viernes"
               className="form-check-input m-0"
             />
-            <label htmlFor="viernes" className="form-label ms-2 m-0">
+            <label htmlFor="viernes" className="form-days ms-2 m-0">
               Viernes
             </label>
           </div>
         </div>
 
-        <label className="fw-bold" htmlFor="horario">
+        <label className="fw-bold mt-2" htmlFor="horario">
           Horario
         </label>
         <input
@@ -165,7 +170,7 @@ const CrearServicio = () => {
           onChange={handleChange}
         />
 
-        <label className="fw-bold" htmlFor="descripcion">
+        <label className="fw-bold mt-2" htmlFor="descripcion">
           Descripcion
         </label>
         <textarea
@@ -176,7 +181,7 @@ const CrearServicio = () => {
         ></textarea>
 
         <div className="d-grid mt-2">
-          <button className="btn btn-warning">Crear</button>
+          <button className="btn btn-warning w-25 d-flex justify-content-center mb-4">Crear</button>
         </div>
       </form>
     </div>
