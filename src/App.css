@@ -1,4 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
 
+:root {
+  --black: #222831;
+  --blue: #2d4059;
+  --orange: #ff5722;
+  --white: #eeeeee;
+}
 
 .text-title {
   font-family: "Russo One", sans-serif !important;
