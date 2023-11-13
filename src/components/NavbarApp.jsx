@@ -53,7 +53,7 @@ const NavbarApp = ({ user = "", login, cerrarSesion }) => {
                   to="/admin"
                   style={({ isActive }) => (isActive ? activeLink : undefined)}
                 >
-                  <i className="fa fa-cog" aria-hidden="true"></i> Admin
+                  Admin
                 </NavLink>
               </li>
             )}
