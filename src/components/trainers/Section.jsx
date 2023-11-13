@@ -16,7 +16,7 @@ const TrainersSection = () => {
 
   return (
     <section className="container mt-5">
-      <h2 className="text-center">Trainers</h2>
+      <h2 className="text-center text-orange">Profesores</h2>
       <div className="row justify-content-center">
         {trainers.map((trainer) => (
           <Card trainer={trainer} key={trainer._id} />
