@@ -1,5 +1,5 @@
-const url = "http://localhost:8080/api/users/";
-// const url = "https://proyectofinal-g2-backend.onrender.com/api/users";
+// const url = "http://localhost:8080/api/users/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/users";
 const token = JSON.parse(localStorage.getItem("token"));
 
 export const getUsers = async (limite = 0, pagina = 0) => {

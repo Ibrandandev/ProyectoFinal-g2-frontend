@@ -43,7 +43,7 @@ export const createPlan = async (datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        // token
+        token,
       },
     });
     const data = await resp.json();
@@ -61,7 +61,7 @@ export const deletePlan = async (id) => {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        // token
+        token,
       },
     });
     const data = await resp.json();

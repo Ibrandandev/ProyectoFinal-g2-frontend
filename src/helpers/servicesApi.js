@@ -1,5 +1,5 @@
-// const url = "http://localhost:8080/api/services";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/services";
+// const url = "http://localhost:8080/api/services/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/services/";
 const token = JSON.parse(localStorage.getItem("token"));
 
 export const getServices = async (desde = 0, limite = 0) => {
@@ -8,7 +8,7 @@ export const getServices = async (desde = 0, limite = 0) => {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        //"x-token": token,
+        token,
       },
     });
 
@@ -44,7 +44,7 @@ export const createService = async (datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        //token,
+        token,
       },
     });
 
@@ -63,7 +63,7 @@ export const updateService = async (id, datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        //token,
+        token,
       },
     });
 
@@ -81,7 +81,7 @@ export const deleteService = async (id) => {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        //token,
+        token,
       },
     });
 
