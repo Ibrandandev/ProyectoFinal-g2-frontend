@@ -57,6 +57,7 @@ const Table = ({ servicios, traerServicios }) => {
             <th scope="col">Profesor</th>
             <th scope="col">Dias</th>
             <th scope="col">Horario</th>
+            <th scope="col">Cupo</th>
             <th scope="col">Estado </th>
             <th></th>
           </tr>
@@ -68,8 +69,14 @@ const Table = ({ servicios, traerServicios }) => {
               <th>{servicio.nombre}</th>
               <td>{servicio.categoria}</td>
               <td>{servicio.profesor}</td>
-              <td>{servicio.dias}</td>
+              <td className="d-flex flex-column h-100">
+                {servicio &&
+                  servicio.dias.map((dia) => (
+                    <p key={crypto.randomUUID()}>{dia}</p>
+                  ))}
+              </td>
               <td>{servicio.horario}</td>
+              <td>{servicio.cupo}</td>
               <td>
                 {servicio.estado ? (
                   <i
