@@ -1,0 +1,44 @@
+[
+  {
+    "nombre": "Plan Tonificación",
+    "precio": "100",
+    "duracion": "Mensual",
+    "beneficios": [
+      "Acceso a +500 sedes",
+      "Actividades Indoor/Outdoor",
+      "Terapia de Movilidad",
+      "Fitness con Profesionales Certificados",
+      "Clases en vivo y On Demand"
+    ],
+    "img": "https://img.freepik.com/foto-gratis/gimnasio-pesas-suelo_1340-37013.jpg",
+    "id": 1
+  },
+  {
+    "nombre": "Plan Fitness",
+    "precio": "95",
+    "duracion": "Mensual",
+    "beneficios": [
+      "Acceso a +500 sedes",
+      "Actividades Indoor/Outdoor",
+      "Terapia de Movilidad",
+      "Fitness con Profesionales Certificados",
+      "Clases en vivo y On Demand"
+    ],
+    "img": "https://img.freepik.com/foto-gratis/gimnasio-pesas-suelo_1340-37013.jpg",
+    "id": 2
+  },
+  {
+    "nombre": "Plan Plus",
+    "precio": "200",
+    "duracion": "Anual",
+    "beneficios": [
+      "Acceso a +500 sedes",
+      "Actividades Indoor/Outdoor",
+      "Terapia de Movilidad",
+      "Fitness con Profesionales Certificados",
+      "Clases en vivo y On Demand"
+    ],
+    "img": "https://img.freepik.com/foto-gratis/gimnasio-pesas-suelo_1340-37013.jpg",
+    "id": 3
+  }
+]
