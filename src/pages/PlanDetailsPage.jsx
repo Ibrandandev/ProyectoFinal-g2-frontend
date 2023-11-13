@@ -98,18 +98,18 @@ const PlanDetailsPage = () => {
         </div>
         <div className="mt-4 ">
           <h2 className="infoPer">Información Personal</h2>
-          <form className="row g-3 justify-content-center" onSubmit={sendEmail}>
+          <form className="row g-3 justify-content-center pt-4" onSubmit={sendEmail}>
             <div className="row">
               <div className="col-12 col-md-6">
                 <label
                   htmlFor="validationDefault01"
                   className="form-label"
-                ></label>
+                >Nombre</label>
                 <input
                   type="text"
                   className="form-control"
                   id="nombre"
-                  placeholder="Nombre"
+                  placeholder="Ingrese su nombre"
                   onChange={handleChange}
                   value={formValues.nombre}
                   required
@@ -121,7 +121,7 @@ const PlanDetailsPage = () => {
                 <label
                   htmlFor="validationDefaultUsername"
                   className="form-label"
-                ></label>
+                >Correo</label>
                 <div className="input-group">
                   <span className="input-group-text" id="inputGroupPrepend2">
                     @
@@ -131,7 +131,7 @@ const PlanDetailsPage = () => {
                     className="form-control"
                     id="destinatario"
                     aria-describedby="inputGroupPrepend2"
-                    placeholder="Correo"
+                    placeholder="email@email.com"
                     onChange={handleChange}
                     value={formValues.destinatario}
                     required
@@ -156,14 +156,14 @@ const PlanDetailsPage = () => {
               {/* </div>
                         <div className="row"> */}
               
-              <div className="col mb-3">
-                <label htmlFor="formGroupExampleInput" className="form-label"></label>
+              <div className="col mb-3 pt-3">
+                <label htmlFor="formGroupExampleInput" className="form-label">Motivo de consulta</label>
                 <select className="form-select" aria-label="Default select example"
                   onChange={handleChange}
                   value={formValues.consulta}
                   id="consulta"
                   required>
-                    <option value="">Motivo de consulta</option>
+                    <option value="">Elija el motivo de su consulta</option>
                     <option value="Precio">Precio</option>
                     <option value="Horario">Horario</option>
                     <option value="Otro">Otro</option>
