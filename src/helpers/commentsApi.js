@@ -16,7 +16,7 @@ export const getComments = async (limit = 5) => {
   }
 };
 
-export const postComment = async (datos) => {
+export const createComment = async (datos) => {
   try {
     const resp = await fetch(url, {
       method: "POST",

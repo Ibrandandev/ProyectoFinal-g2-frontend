@@ -19,7 +19,7 @@ export const getCategories = async (from = 0, limit = 9) => {
   }
 };
 
-export const getCategory = async (id) => {
+export const getCategoryById = async (id) => {
   try {
     const resp = await fetch(`${url}/${id}`, {
       method: "GET",
@@ -36,7 +36,7 @@ export const getCategory = async (id) => {
   }
 };
 
-export const postCategory = async (datos) => {
+export const createCategory = async (datos) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
