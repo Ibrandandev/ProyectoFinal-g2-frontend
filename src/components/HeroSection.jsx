@@ -33,8 +33,12 @@ const HeroSection = () => {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Conoce nuestros planes</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>Cambia tu vida de la mano de RollingGym</h5>
+            <p className="w-50 mx-auto">
+              Comprometidos en desarrollar el bienestar de nuestra comunidad a
+              traves del equipamiento mas moderno y la mas variada oferta de
+              clases, para que nadie se quede afuera!
+            </p>
           </div>
         </div>
         <div className="carousel-item">
@@ -45,7 +49,7 @@ const HeroSection = () => {
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>Conoce nuestros servicios</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <p>Zumba, Spinning, Treking entre los más populares</p>
           </div>
         </div>
         <div className="carousel-item">
