@@ -1,48 +1,43 @@
-// const url = "http://localhost:8080/api/services/";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/services/";
+// const url = "http://localhost:8080/api/users/";
+const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
 const token = JSON.parse(localStorage.getItem("token"));
 
-export const getServices = async (desde = 0, limite = 0) => {
+export const getUsers = async (limite = 0, pagina = 0) => {
   try {
-    const resp = await fetch(url + "?from" + desde + "&limit" + limite, {
+    const resp = await fetch(url + "?from=" + pagina + "&limit=" + limite, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
         token,
       },
     });
-
     const data = await resp.json();
+
     return data;
   } catch (error) {
     console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    throw new Error("Lo sentimos, No se pudo obtener la informacion");
   }
 };
 
-export const getServiceById = async (id) => {
+export const getUserById = async (id) => {
   try {
     const resp = await fetch(url + "/" + id, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
+        token,
       },
     });
-
     const data = await resp.json();
     return data;
   } catch (error) {
     console.log(error);
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-    });
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    throw new Error("Lo sentimos, No se pudo obtener la informacion");
   }
 };
 
-export const createService = async (datos) => {
+export const createUser = async (datos) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -57,11 +52,11 @@ export const createService = async (datos) => {
     return data;
   } catch (error) {
     console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    return { msg: "No se conectó con backend" };
   }
 };
 
-export const updateService = async (id, datos) => {
+export const updateUser = async (id, datos) => {
   try {
     const resp = await fetch(url + "/" + id, {
       method: "PUT",
@@ -73,14 +68,15 @@ export const updateService = async (id, datos) => {
     });
 
     const data = await resp.json();
+
     return data;
   } catch (error) {
     console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    return { msg: "No se conectó con backend" };
   }
 };
 
-export const deleteService = async (id) => {
+export const deleteUser = async (id) => {
   try {
     const resp = await fetch(url + "/" + id, {
       method: "DELETE",
@@ -91,9 +87,10 @@ export const deleteService = async (id) => {
     });
 
     const data = await resp.json();
+
     return data;
   } catch (error) {
     console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    return { msg: "No se conectó con backend" };
   }
 };
