@@ -1,46 +1,53 @@
-
-/*
-
-font-family: 'Russo One', sans-serif;
-font-family: 'Raleway', sans-serif;
-
-Color Palette: #222831 #2D4059 #FF5722 #EEEEEE - Color Hunt
-Color Palette: #FF7517 #3E3939 #2C2727 #F6F4F4 - Color Hunt
-Color Palette: #F4F4F4 #FF7315 #3A3535 #232020 - Color Hunt
-
-*/
-
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
 
+:root {
+  --black: #222831;
+  --blue: #2d4059;
+  --orange: #ff5722;
+  --white: #eeeeee;
+}
+
+.text-title {
+  font-family: "Russo One", sans-serif !important;
+}
+
+.text-body {
+  font-family: "Raleway", sans-serif;
+}
+
 .bg-blue {
-  background-color: #2d4059;
+  background-color: var(--blue) !important;
 }
 
 .bg-orange {
-  background-color: #ff5722;
+  background-color: var(--orange);
 }
 
-.bg-black {
-  background-color: #222831;
+.bg-our-black {
+  background-color: var(--black);
 }
 
-.bg-white {
-  background-color: #eeeeee;
+.bg-our-white {
+  background-color: var(--white);
 }
 
 .text-blue {
-  color: #2d4059;
+  color: var(--blue);
 }
 
 .text-orange {
-  color: #ff5722;
+  color: var(--orange);
 }
 
-.text-black {
-  color: #222831;
+.text-our-black {
+  color: var(--black);
 }
 
-.text-white {
-  color: #eeeeee;
+.text-our-white {
+  color: var(--white) !important;
+}
+
+.border-orange {
+  border: 5px solid var(--orange);
 }

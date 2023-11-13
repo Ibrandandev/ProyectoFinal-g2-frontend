@@ -1,6 +1,6 @@
-import "../css/Login.css";
+import "../css/login.css";
 import { useState } from "react";
-import { authLogin } from "../helpers/ApiLogin";
+import { login } from "../helpers/loginApi";
 import MessageApp from "../components/MessageApp";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
       password,
     };
 
-    const response = await authLogin(data);
+    const response = await login(data);
 
     if (response?.token) {
       localStorage.setItem("token", JSON.stringify(response.token));
