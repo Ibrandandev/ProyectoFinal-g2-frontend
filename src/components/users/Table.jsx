@@ -46,61 +46,64 @@ const TableUsuarios = ({ usuarios, traerUsuarios }) => {
   return (
     <div className="table-responsive">
       <table className="table table-admin text-center">
-        <thead>
-          <tr>
-            <th scope="col">Usuario</th>
-            <th scope="col">Email</th>
-            <th scope="col">Plan Contratado</th>
-            <th scope="col">Rol</th>
-            <th scope="col">Estado</th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {usuarios.map((usuario) => (
-            <tr key={usuario._id}>
-              <th>
-                {usuario.nombre} {usuario.apellido}
-              </th>
-              <td>{usuario.email}</td>
-              <td>{usuario.planContratado}</td>
-              <td>{usuario.rol}</td>
-              <td>
-                {usuario.usuarioActivo ? (
-                  <i
-                    className="fa fa-check text-success d-flex justify-content-center"
-                    aria-hidden="true"
-                  ></i>
-                ) : (
-                  <i
-                    className="fa fa-times text-danger d-flex justify-content-center "
-                    aria-hidden="true"
-                  ></i>
-                )}
-              </td>
-              <td>
-                <div className="d-flex gap-3">
-                  <button
-                    className="btn btn-warning btn-sm btn-table"
-                    onClick={() => handleShow(usuario._id)}
-                  >
-                    <i className="fa fa-pencil " aria-hidden="true"></i>
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm btn-table"
-                    disabled={!usuario.usuarioActivo}
-                    onClick={() =>
-                      deshabilitarUsuario(usuario.nombre, usuario._id)
-                    }
-                  >
-                    <i className="fa fa-trash" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </td>
+        {usuarios && (
+          <thead>
+            <tr>
+              <th scope="col">Usuario</th>
+              <th scope="col">Email</th>
+              <th scope="col">Plan Contratado</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
+          </thead>
+        )}
+        {usuarios && (
+          <tbody>
+            {usuarios.map((usuario) => (
+              <tr key={usuario._id}>
+                <th>
+                  {usuario.nombre} {usuario.apellido}
+                </th>
+                <td>{usuario.email}</td>
+                <td>{usuario.planContratado}</td>
+                <td>{usuario.rol}</td>
+                <td>
+                  {usuario.usuarioActivo ? (
+                    <i
+                      className="fa fa-check text-success d-flex justify-content-center"
+                      aria-hidden="true"
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa fa-times text-danger d-flex justify-content-center "
+                      aria-hidden="true"
+                    ></i>
+                  )}
+                </td>
+                <td>
+                  <div className="d-flex gap-3">
+                    <button
+                      className="btn btn-warning btn-sm btn-table"
+                      onClick={() => handleShow(usuario._id)}
+                    >
+                      <i className="fa fa-pencil " aria-hidden="true"></i>
+                    </button>
+                    <button
+                      className="btn btn-danger btn-sm btn-table"
+                      disabled={!usuario.usuarioActivo}
+                      onClick={() =>
+                        deshabilitarUsuario(usuario.nombre, usuario._id)
+                      }
+                    >
+                      <i className="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        )}
       </table>
       {show && <ModalEdit show={show} handleClose={handleClose} uid={uid} />}
     </div>

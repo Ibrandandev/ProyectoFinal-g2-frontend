@@ -14,9 +14,16 @@ const AdminScreen = () => {
   const [mostrarServicios, setMostrarServicios] = useState(false);
 
   useEffect(() => {
-    traerUsuarios();
-    traerServicios();
-  }, []);
+    if (mostrarUsuarios) {
+      traerUsuarios();
+    }
+  }, [mostrarUsuarios]);
+
+  useEffect(() => {
+    if (mostrarServicios) {
+      traerServicios();
+    }
+  }, [mostrarServicios]);
 
   const traerUsuarios = async () => {
     const { users } = await getUsers();
