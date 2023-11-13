@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../helpers/categoriesApi";
 import { getTrainers } from "../../helpers/trainers";
-// import { createService } from "../../helpers/servicesApi";
+import { createService } from "../../helpers/servicesApi";
+import Swal from "sweetalert2";
 
-const CrearServicio = () => {
+const FormCreate = () => {
   const [categorias, setCategorias] = useState(null);
   const [profesores, setProfesores] = useState(null);
   const [service, setService] = useState({
@@ -12,11 +13,17 @@ const CrearServicio = () => {
     profesor: "",
     dias: [],
     horario: "",
+    cupo: 0,
+    img: "",
     descripcion: "",
   });
+  const [dias, setDias] = useState([]);
 
   useEffect(() => {
     traerCategorias();
+  }, []);
+
+  useEffect(() => {
     traerProfesores();
   }, []);
 
@@ -34,10 +41,33 @@ const CrearServicio = () => {
     setService({ ...service, [e.target.id]: e.target.value });
   };
 
+  const handleChangeCheck = (e) => {
+    const { checked, value } = e.target;
+    if (checked && !dias.includes(value)) {
+      setDias([...dias, value]);
+    } else {
+      setDias(dias.filter((dia) => dia !== value));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(service);
-    //const resp = await createService(service)
+    if (!service.categoria) {
+      return Swal.fire("Debe Seleccionar Categoria", "", "info");
+    }
+    if (!service.profesor) {
+      return Swal.fire("Debe Seleccionar Profesor", "", "info");
+    }
+    if (dias.length === 0) {
+      return Swal.fire("Debe Seleccionar al menos un Dia", "", "info");
+    }
+    if (!service.horario) {
+      return Swal.fire("Debe Seleccionar el Horario", "", "info");
+    }
+    service.dias = [...dias];
+    service.cupo = Number(service.cupo);
+    const resp = await createService(service);
+    console.log(resp);
   };
 
   return (
@@ -45,7 +75,7 @@ const CrearServicio = () => {
       <h2 className="text-blue"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="nombre">
+        <label className="form-label fw-bold" htmlFor="nombre">
           Nombre de la Clase
         </label>
         <input
@@ -58,50 +88,59 @@ const CrearServicio = () => {
           required
         />
 
-        <label className="form-label" htmlFor="categoria">
-          Categoria
-        </label>
-        <select
-          className="form-select"
-          aria-label="Default select example"
-          value={service.categoria}
-          id="categoria"
-          onChange={handleChange}
-          required
-        >
-          {categorias &&
-            categorias.map((categoria) => (
-              <option value={categoria._id} key={categoria._id}>
-                {categoria.nombre}
-              </option>
-            ))}
-        </select>
-
-        <label className="form-label" htmlFor="profesor">
-          Profesor
-        </label>
-        <select
-          className="form-select"
-          aria-label="Default select example"
-          value={service.profesor}
-          id="profesor"
-          onChange={handleChange}
-        >
-          {profesores &&
-            profesores.map((profesor) => (
-              <option value={profesor._id} key={profesor._id}>
-                {profesor.nombre} {profesor.apellido}
-              </option>
-            ))}
-        </select>
+        {categorias && (
+          <>
+            <label className="form-label fw-bold" htmlFor="categoria">
+              Categoria
+            </label>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              value={service.categoria}
+              id="categoria"
+              onChange={handleChange}
+            >
+              <option value="NONE">Selecciona una categoria</option>
+              {categorias.map((categoria) => (
+                <option value={categoria._id} key={categoria._id}>
+                  {categoria.nombre}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+        {profesores && (
+          <>
+            <label className="form-label fw-bold" htmlFor="profesor">
+              Profesor
+            </label>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              value={service.profesor}
+              id="profesor"
+              onChange={handleChange}
+            >
+              <option value="NONE">Selecciona un Profesor</option>
+              {profesores.map((profesor) => (
+                <option value={profesor._id} key={profesor._id}>
+                  {profesor.nombre} {profesor.apellido}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
 
         <div>
+          <p className="my-1 fw-bold">Dias</p>
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
               id="lunes"
+              name="dias"
               value="lunes"
               className="form-check-input m-0"
+              onChange={handleChangeCheck}
             />
             <label htmlFor="lunes" className="form-label ms-2 m-0">
               Lunes
@@ -111,9 +150,11 @@ const CrearServicio = () => {
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
+              name="dias"
               id="martes"
               value="martes"
               className="form-check-input m-0"
+              onChange={handleChangeCheck}
             />
             <label htmlFor="martes" className="form-label ms-2 m-0">
               Martes
@@ -122,8 +163,10 @@ const CrearServicio = () => {
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
+              name="dias"
               id="miercoles"
               value="miercoles"
+              onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
             <label htmlFor="miercoles" className="form-label ms-2 m-0">
@@ -133,8 +176,10 @@ const CrearServicio = () => {
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
+              name="dias"
               id="jueves"
               value="jueves"
+              onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
             <label htmlFor="jueves" className="form-label ms-2 m-0">
@@ -144,8 +189,10 @@ const CrearServicio = () => {
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
+              name="dias"
               id="viernes"
               value="viernes"
+              onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
             <label htmlFor="viernes" className="form-label ms-2 m-0">
@@ -165,6 +212,30 @@ const CrearServicio = () => {
           onChange={handleChange}
         />
 
+        <label className="fw-bold" htmlFor="cupo">
+          Cupo de Participantes
+        </label>
+        <input
+          type="number"
+          className="form-control"
+          min={5}
+          id="cupo"
+          value={service.cupo}
+          required
+          onChange={handleChange}
+        />
+        <label className="form-label fw-bold" htmlFor="img">
+          Imagen
+        </label>
+        <input
+          type="url"
+          className="form-control"
+          value={service.img}
+          id="img"
+          onChange={handleChange}
+          required
+        />
+
         <label className="fw-bold" htmlFor="descripcion">
           Descripcion
         </label>
@@ -173,6 +244,7 @@ const CrearServicio = () => {
           value={service.descripcion}
           onChange={handleChange}
           id="descripcion"
+          required
         ></textarea>
 
         <div className="d-grid mt-2">
@@ -183,4 +255,4 @@ const CrearServicio = () => {
   );
 };
 
-export default CrearServicio;
+export default FormCreate;
