@@ -7,7 +7,7 @@ import withReactContent from "sweetalert2-react-content";
 
 import Modal from "react-bootstrap/Modal";
 
-const EditUsuarios = ({ show, handleClose, uid }) => {
+const ModalEdit = ({ show, handleClose, uid }) => {
   const MySwal = withReactContent(Swal);
   const [usuario, setUsuario] = useState(null);
 
@@ -129,4 +129,4 @@ const EditUsuarios = ({ show, handleClose, uid }) => {
   );
 };
 
-export default EditUsuarios;
+export default ModalEdit;
