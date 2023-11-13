@@ -1,4 +1,4 @@
-import "../css/hero-section.css";
+import "../css/hero.css";
 
 const HeroSection = () => {
   return (
@@ -33,7 +33,7 @@ const HeroSection = () => {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
+            <h5>Conoce nuestros planes</h5>
             <p>Some representative placeholder content for the first slide.</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ const HeroSection = () => {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
+            <h5>Conoce nuestros servicios</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ const HeroSection = () => {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
+            <h5>Reserva ahora tu proxima clase</h5>
             <p>Some representative placeholder content for the third slide.</p>
           </div>
         </div>
@@ -67,7 +67,7 @@ const HeroSection = () => {
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
+        <span className="visually-hidden">Anterior</span>
       </button>
       <button
         className="carousel-control-next"
@@ -76,7 +76,7 @@ const HeroSection = () => {
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
+        <span className="visually-hidden">Siguiente</span>
       </button>
     </div>
   );
