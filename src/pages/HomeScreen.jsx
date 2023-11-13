@@ -1,13 +1,13 @@
 import HeroSection from "../components/HeroSection";
-import CategoriesSection from "../components/CategoriesSection";
-import PlansSection from "../components/PlansSection";
-import TrainersSection from "../components/TrainersSection";
-import CommentsSection from "../components/CommentsSection";
-import "../css/home-section.css";
+import CategoriesSection from "../components/categories/Section";
+import PlansSection from "../components/plans/Section";
+import TrainersSection from "../components/trainers/Section";
+import CommentsSection from "../components/comments/Section";
+import "../css/home.css";
 
 const HomeScreen = () => {
   return (
-    <main className="min-vh-100">
+    <main className="min-vh-100 bg-our-black">
       <HeroSection />
       <CategoriesSection />
       <PlansSection />
