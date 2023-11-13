@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getCategories } from "../../helpers/categoriesApi";
+import { getTrainers } from "../../helpers/trainers";
 // import { createService } from "../../helpers/servicesApi";
 
 const CrearServicio = () => {
+  const [categorias, setCategorias] = useState(null);
+  const [profesores, setProfesores] = useState(null);
   const [service, setService] = useState({
     nombre: "",
     categoria: "",
@@ -10,6 +14,21 @@ const CrearServicio = () => {
     horario: "",
     descripcion: "",
   });
+
+  useEffect(() => {
+    traerCategorias();
+    traerProfesores();
+  }, []);
+
+  const traerCategorias = async () => {
+    const { categories } = await getCategories();
+    setCategorias(categories);
+  };
+
+  const traerProfesores = async () => {
+    const { trainers } = await getTrainers();
+    setProfesores(trainers);
+  };
 
   const handleChange = (e) => {
     setService({ ...service, [e.target.id]: e.target.value });
@@ -23,60 +42,116 @@ const CrearServicio = () => {
 
   return (
     <div className="container w-75">
-      <h2> Agregar nueva clase </h2>
+      <h2 className="text-blue"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
-        <label className="fw-bold">Nombre de la Clase</label>
+        <label className="form-label" htmlFor="nombre">
+          Nombre de la Clase
+        </label>
         <input
           type="text"
           className="form-control"
           value={service.nombre}
           id="nombre"
           onChange={handleChange}
+          minLength={4}
+          required
         />
 
-        <label className="fw-bold">Categoria</label>
+        <label className="form-label" htmlFor="categoria">
+          Categoria
+        </label>
         <select
           className="form-select"
           aria-label="Default select example"
           value={service.categoria}
           id="categoria"
           onChange={handleChange}
+          required
         >
-          <option value="1">Aerobico y Cardio</option>
-          <option value="2">Fuerza</option>
-          <option value="3">Mind & Body</option>
+          {categorias &&
+            categorias.map((categoria) => (
+              <option value={categoria._id} key={categoria._id}>
+                {categoria.nombre}
+              </option>
+            ))}
         </select>
 
-        <label className="fw-bold">Profesor</label>
+        <label className="form-label" htmlFor="profesor">
+          Profesor
+        </label>
         <select
           className="form-select"
           aria-label="Default select example"
           value={service.profesor}
-          id="profeso"
+          id="profesor"
           onChange={handleChange}
         >
-          <option value="1">Lucia Borghi</option>
-          <option value="2">Lucia Paterlini </option>
-          <option value="3">Ignacio Brandan</option>
-          <option value="3">Gonzalo Garcia </option>
+          {profesores &&
+            profesores.map((profesor) => (
+              <option value={profesor._id} key={profesor._id}>
+                {profesor.nombre} {profesor.apellido}
+              </option>
+            ))}
         </select>
 
         <div>
-          <input type="checkbox" id="cbox1" value="first" />
-          <label htmlFor="cbox1">Lunes</label>
-          <br />
-          <input type="checkbox" id="cbox2" value="second" />
-          <label htmlFor="cbox2">Martes </label>
-          <br />
-          <input type="checkbox" id="cbox3" value="third" />
-          <label htmlFor="cbox3"> Miercoles </label>
-          <br />
-          <input type="checkbox" id="cbox4" value="fourth" />
-          <label htmlFor="cbox4"> Jueves </label>
-          <br />
-          <input type="checkbox" id="cbox5" value="fifth" />
-          <label htmlFor="cbox5"> Viernes </label>
+          <div className="d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="lunes"
+              value="lunes"
+              className="form-check-input m-0"
+            />
+            <label htmlFor="lunes" className="form-label ms-2 m-0">
+              Lunes
+            </label>
+          </div>
+
+          <div className="d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="martes"
+              value="martes"
+              className="form-check-input m-0"
+            />
+            <label htmlFor="martes" className="form-label ms-2 m-0">
+              Martes
+            </label>
+          </div>
+          <div className="d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="miercoles"
+              value="miercoles"
+              className="form-check-input m-0"
+            />
+            <label htmlFor="miercoles" className="form-label ms-2 m-0">
+              Miercoles
+            </label>
+          </div>
+          <div className="d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="jueves"
+              value="jueves"
+              className="form-check-input m-0"
+            />
+            <label htmlFor="jueves" className="form-label ms-2 m-0">
+              Jueves
+            </label>
+          </div>
+          <div className="d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="viernes"
+              value="viernes"
+              className="form-check-input m-0"
+            />
+            <label htmlFor="viernes" className="form-label ms-2 m-0">
+              Viernes
+            </label>
+          </div>
         </div>
 
         <label className="fw-bold" htmlFor="horario">
