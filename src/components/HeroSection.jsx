@@ -60,7 +60,7 @@ const HeroSection = () => {
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>Reserva ahora tu proxima clase</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <p>Hazlo las 24hs, estaremos atentos a tus consultas</p>
           </div>
         </div>
       </div>
