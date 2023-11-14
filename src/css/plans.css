@@ -13,3 +13,7 @@
 .btn-outline-primary {
   border-color: #ff5722 !important;
 }
+
+.plan-card {
+  height: 500px !important;
+}

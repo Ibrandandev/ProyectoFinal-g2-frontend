@@ -1,47 +1,54 @@
-.background{
-    background-color: #222831;
-
+.background {
+  background-color: #222831;
 }
 
-h1, h2, h3, h4, h5{
-    font-family: 'Russo One', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif;
 }
 
-p, .btn , ul, form{
-    font-family: 'Raleway', sans-serif !important;
+p,
+.btn,
+ul,
+form {
+  font-family: "Raleway", sans-serif !important;
 }
 
 .btn-style {
-    background-color: #FF5722 !important;
-    color: #EEEEEE !important;
+  background-color: #ff5722 !important;
+  color: #eeeeee !important;
 }
 
-.btn-style:hover{
-    outline: 2px solid #EEEEEE !important;
-    background-color: #EEEEEE !important;
-    color: #FF5722 !important;
+.btn-style:hover {
+  outline: 2px solid #eeeeee !important;
+  background-color: #eeeeee !important;
+  color: #ff5722 !important;
 }
-
 
 .formulario {
-    outline: 2px solid #FF5722;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #FF5722;
+  outline: 2px solid #ff5722;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ff5722;
 }
 
 @media (min-width: 1250px) {
-    .background{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://png.pngtree.com/background/20230528/original/pngtree-gym-filled-with-machines-and-equipment-picture-image_2774012.jpg") ;
-        background-size: cover;
-        color: #222831;
-    }
+  .background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://png.pngtree.com/background/20230528/original/pngtree-gym-filled-with-machines-and-equipment-picture-image_2774012.jpg");
+    background-size: cover;
+    color: #222831;
+  }
 }
 
 @media (min-width: 768px) {
-    .background{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://png.pngtree.com/background/20230528/original/pngtree-gym-filled-with-machines-and-equipment-picture-image_2774012.jpg") ;
-        background-size: cover;
-        color: #222831;
-    }
+  .background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://png.pngtree.com/background/20230528/original/pngtree-gym-filled-with-machines-and-equipment-picture-image_2774012.jpg");
+    background-size: cover;
+    color: #222831;
+  }
 }
