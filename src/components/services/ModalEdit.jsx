@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getServiceById } from "../../helpers/servicesApi";
 import { updateService } from "../../helpers/servicesApi";
-import { getTrainers } from "../../helpers/trainers";
+import { getTrainers } from "../../helpers/trainersApi";
 import { getCategories } from "../../helpers/categoriesApi";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";

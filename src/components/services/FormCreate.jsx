@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../helpers/categoriesApi";
-import { getTrainers } from "../../helpers/trainers";
+import { getTrainers } from "../../helpers/trainersApi";
 import { createService } from "../../helpers/servicesApi";
 import Swal from "sweetalert2";
 
