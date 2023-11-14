@@ -1,5 +1,6 @@
 import "../../css/footer.css";
 import Mapa from "./Mapa";
+import { Link } from "react-router-dom";
 
 const FooterApp = () => {
   return (
@@ -20,25 +21,25 @@ const FooterApp = () => {
 
           <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li className="ms-3">
-              <a className="" href="#">
+              <Link className="" to="*">
                 <i
                   className="fa fa-instagram text-orange"
                   aria-hidden="true"
                 ></i>
-              </a>
+              </Link>
             </li>
             <li className="ms-3">
-              <a className="" href="#">
+              <Link className="" to="*">
                 <i
                   className="fa fa-facebook text-orange"
                   aria-hidden="true"
                 ></i>
-              </a>
+              </Link>
             </li>
             <li className="ms-3">
-              <a className="" href="#">
+              <Link className="" to="*">
                 <i className="fa fa-twitter text-orange" aria-hidden="true"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </footer>
