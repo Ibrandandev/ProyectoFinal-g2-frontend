@@ -1,6 +1,7 @@
+// const url = "http://localhost:8080/api/auth/login/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/auth/login";
 
-export const authLogin = async (datos) => {
+export const login = async (datos) => {
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -10,7 +11,6 @@ export const authLogin = async (datos) => {
       },
     });
 
-    //recibimos del backend
     const data = await resp.json();
 
     return data;

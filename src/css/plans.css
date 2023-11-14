@@ -1,0 +1,15 @@
+.btn {
+  font-family: "Raleway", sans-serif !important;
+  background-color: #ff5722 !important;
+  color: #eeeeee !important;
+}
+
+.btn:hover {
+  outline: 2px solid #eeeeee !important;
+  background-color: #eeeeee !important;
+  color: #ff5722 !important;
+}
+
+.btn-outline-primary {
+  border-color: #ff5722 !important;
+}
