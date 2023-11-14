@@ -48,8 +48,11 @@ const Table = ({ servicios, traerServicios }) => {
   };
 
   return (
-    <div>
-      <table className="table">
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div className="table-responsive">
+          <table className="table media">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -63,12 +66,14 @@ const Table = ({ servicios, traerServicios }) => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="col-4">
           {servicios.map((servicio) => (
             <tr key={servicio._id}>
               <th>{servicio.nombre}</th>
-              <td>{servicio.categoria}</td>
-              <td>{servicio.profesor}</td>
+              {/* <td>{servicio.categoria}</td> */}
+              <td>cardio</td>
+              {/* <td>{servicio.profesor}</td> */}
+              <td>gonzalo garcia</td>
               <td className="d-flex flex-column h-100">
                 {servicio &&
                   servicio.dias.map((dia) => (
@@ -115,6 +120,10 @@ const Table = ({ servicios, traerServicios }) => {
           ))}
         </tbody>
       </table>
+          </div>
+        
+
+      <div className="col">
       {show && (
         <ModalEdit
           show={show}
@@ -122,9 +131,12 @@ const Table = ({ servicios, traerServicios }) => {
           serviceId={serviceId}
         />
       )}
-
+      </div>
+      
       <div>
         <FormCreate />
+      </div>
+        </div>
       </div>
     </div>
   );
