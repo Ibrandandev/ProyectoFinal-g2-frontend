@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
 
-const NavbarApp = ({ user = "", login, cerrarSesion }) => {
+const NavbarApp = ({ user, login, cerrarSesion }) => {
   const activeLink = {
     textDecoration: "underline",
   };
@@ -10,15 +10,14 @@ const NavbarApp = ({ user = "", login, cerrarSesion }) => {
     <nav className="bg-blue navbar-expand-lg">
       <div className="container pb-3">
         <header className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between py-4 border-bottom w-100 mx-lg-1">
-          <div className=" col-auto mb-2 mb-md-0">
-            <NavLink className="navbar-brand logo text-white fs-4" to="/">
-              {/* <i className="fa fa-ravelry" aria-hidden="true"></i>  */}
+          <div className=" col-auto mb-2 mb-lg-0">
+            <NavLink className="navbar-brand logo text-white fs-4 " to="/">
               <img src="/icon.png" className="icon me-2" alt="" />
               RollingGym
             </NavLink>
           </div>
 
-          <ul className="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
+          <ul className="nav col-12 col-lg-auto mb-2 justify-content-center mb-lg-0">
             <li className="nav-item">
               <NavLink
                 className="nav-link px-3"
@@ -37,6 +36,17 @@ const NavbarApp = ({ user = "", login, cerrarSesion }) => {
                 Servicios
               </NavLink>
             </li>
+            {login && (
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link px-3"
+                  to="/bookings"
+                  style={({ isActive }) => (isActive ? activeLink : undefined)}
+                >
+                  Mis Reservas
+                </NavLink>
+              </li>
+            )}
             <li className="nav-item">
               <NavLink
                 className="nav-link px-3"
@@ -59,7 +69,7 @@ const NavbarApp = ({ user = "", login, cerrarSesion }) => {
             )}
           </ul>
 
-          <div className="col-auto text-end">
+          <div className="col-auto text-end ">
             <div>
               {!login ? (
                 <>
