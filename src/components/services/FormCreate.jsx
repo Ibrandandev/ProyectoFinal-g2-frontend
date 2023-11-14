@@ -218,8 +218,11 @@ const FormCreate = () => {
             type="time"
             className="form-control"
             id="horario"
+            min="08:00"
+            max="22:30"
             value={service.horario}
             onChange={handleChange}
+            required
           />
         </div>
 

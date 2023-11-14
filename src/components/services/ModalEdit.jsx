@@ -91,6 +91,7 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                 className="form-control"
                 value={servicio.nombre}
                 name="nombre"
+                required
                 onChange={handleChange}
               />
 
@@ -138,6 +139,9 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                 className="form-control"
                 value={servicio.horario}
                 name="horario"
+                min="08:00"
+                max="22:30"
+                required
                 onChange={handleChange}
               />
               <label className="fw-bold">Cupo</label>
@@ -146,6 +150,7 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                 className="form-control"
                 value={servicio.cupo}
                 name="cupo"
+                required
                 onChange={handleChange}
               />
               <label className="fw-bold">Imagen</label>
@@ -154,6 +159,7 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                 className="form-control"
                 value={servicio.img}
                 name="img"
+                required
                 onChange={handleChange}
               />
               <div className="form-check form-switch">
