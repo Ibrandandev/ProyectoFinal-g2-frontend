@@ -39,23 +39,18 @@ const AdminScreen = () => {
   return (
     <>
       <div className="fondo">
-        <div className="container min-vh-100 bg-light fondo">
-          <div className="row  py-5 head">
+        <div className="container bg-light fondo">
+          <div className="row py-5 bg-our-black">
             <div className="col text-center ">
-              <h1 className="titulo-admin">
-                <span>
-                  <i className="fa fa-cogs" aria-hidden="true"></i>
-                </span>
-                Panel administrador
-              </h1>
+              <h1 className="titulo-admin">Panel administrador</h1>
             </div>
           </div>
 
           <div className="container d-flex align-items-center justify-content-center flex-column">
-            <div className="row m-5">
-              <div className="col-6 d-flex justify-content-center align-items-center">
+            <div className="row m-5 gap-2">
+              <div className="col-12">
                 <Button
-                  className="botonU"
+                  className="botonU bg-our-black w-100"
                   onClick={() => {
                     setMostrarUsuarios(!mostrarUsuarios);
                     if (mostrarServicios) setMostrarServicios(false);
@@ -65,9 +60,9 @@ const AdminScreen = () => {
                 </Button>
               </div>
 
-              <div className="col-6 d-flex justify-content-center align-items-center">
+              <div className="col-12">
                 <Button
-                  className="botonC"
+                  className="botonC  w-100"
                   onClick={() => {
                     setMostrarServicios(!mostrarServicios);
                     if (mostrarUsuarios) setMostrarUsuarios(false);
