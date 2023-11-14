@@ -31,6 +31,7 @@ function App() {
   };
 
   const cerrarSesion = () => {
+    localStorage.removeItem("token");
     setLogin(false);
   };
 
@@ -66,7 +67,7 @@ function App() {
           path="/bookings"
           element={
             <ProtectedRoutes login={login}>
-              <BookingsScreen />
+              <BookingsScreen user={user} />
             </ProtectedRoutes>
           }
         />
