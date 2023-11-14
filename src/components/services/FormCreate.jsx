@@ -71,87 +71,87 @@ const FormCreate = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mb-5">
       <h2 className="text-blue"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-        <label className="form-label fw-bold" htmlFor="nombre">
-          Nombre de la Clase
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          value={service.nombre}
-          id="nombre"
-          onChange={handleChange}
-          minLength={4}
-          required
-        />
+        <div className="mb-5">
+          <label className="form-label fw-bold" htmlFor="nombre">
+            Nombre de la Clase
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            value={service.nombre}
+            id="nombre"
+            onChange={handleChange}
+            minLength={4}
+            required
+          />
         </div>
-        
+
         {categorias && (
           <>
-          <div className="mb-3">
-          <label className="form-label fw-bold" htmlFor="categoria">
-              Categoria
-            </label>
-            <select
-              className="form-select"
-              aria-label="Default select example"
-              value={service.categoria}
-              id="categoria"
-              onChange={handleChange}
-            >
-              <option value="NONE">Selecciona una categoria</option>
-              {categorias.map((categoria) => (
-                <option value={categoria._id} key={categoria._id}>
-                  {categoria.nombre}
-                </option>
-              ))}
-            </select>
-          </div>
+            <div className="mb-3">
+              <label className="form-label fw-bold" htmlFor="categoria">
+                Categoria
+              </label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                value={service.categoria}
+                id="categoria"
+                onChange={handleChange}
+              >
+                <option value="NONE">Selecciona una categoria</option>
+                {categorias.map((categoria) => (
+                  <option value={categoria._id} key={categoria._id}>
+                    {categoria.nombre}
+                  </option>
+                ))}
+              </select>
+            </div>
           </>
         )}
 
         {profesores && (
           <>
-          <div className="mb-3">
-          <label className="form-label fw-bold" htmlFor="profesor">
-              Profesor
-            </label>
-            <select
-              className="form-select"
-              aria-label="Default select example"
-              value={service.profesor}
-              id="profesor"
-              onChange={handleChange}
-            >
-              <option value="NONE">Selecciona un Profesor</option>
-              {profesores.map((profesor) => (
-                <option value={profesor._id} key={profesor._id}>
-                  {profesor.nombre} {profesor.apellido}
-                </option>
-              ))}
-            </select>
-          </div>
+            <div className="mb-3">
+              <label className="form-label fw-bold" htmlFor="profesor">
+                Profesor
+              </label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                value={service.profesor}
+                id="profesor"
+                onChange={handleChange}
+              >
+                <option value="NONE">Selecciona un Profesor</option>
+                {profesores.map((profesor) => (
+                  <option value={profesor._id} key={profesor._id}>
+                    {profesor.nombre} {profesor.apellido}
+                  </option>
+                ))}
+              </select>
+            </div>
           </>
         )}
 
         <div className="col">
           <div className="mb-3">
-          <p className="my-1 fw-bold">Dias</p>
+            <p className="my-1 fw-bold">Dias</p>
           </div>
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
-              id="lunes"
+              id="Lunes"
               name="dias"
-              value="lunes"
+              value="Lunes"
               className="form-check-input m-0"
               onChange={handleChangeCheck}
             />
-            <label htmlFor="lunes" className="form-label ms-2 m-0">
+            <label htmlFor="Lunes" className="form-label ms-2 m-0">
               Lunes
             </label>
           </div>
@@ -160,12 +160,12 @@ const FormCreate = () => {
             <input
               type="checkbox"
               name="dias"
-              id="martes"
-              value="martes"
+              id="Martes"
+              value="Martes"
               className="form-check-input m-0"
               onChange={handleChangeCheck}
             />
-            <label htmlFor="martes" className="form-label ms-2 m-0">
+            <label htmlFor="Martes" className="form-label ms-2 m-0">
               Martes
             </label>
           </div>
@@ -173,12 +173,12 @@ const FormCreate = () => {
             <input
               type="checkbox"
               name="dias"
-              id="miercoles"
-              value="miercoles"
+              id="Miercoles"
+              value="Miercoles"
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="miercoles" className="form-label ms-2 m-0">
+            <label htmlFor="Miercoles" className="form-label ms-2 m-0">
               Miercoles
             </label>
           </div>
@@ -186,12 +186,12 @@ const FormCreate = () => {
             <input
               type="checkbox"
               name="dias"
-              id="jueves"
-              value="jueves"
+              id="Jueves"
+              value="Jueves"
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="jueves" className="form-label ms-2 m-0">
+            <label htmlFor="Jueves" className="form-label ms-2 m-0">
               Jueves
             </label>
           </div>
@@ -199,69 +199,69 @@ const FormCreate = () => {
             <input
               type="checkbox"
               name="dias"
-              id="viernes"
-              value="viernes"
+              id="Viernes"
+              value="Viernes"
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="viernes" className="form-label ms-2 m-0">
+            <label htmlFor="Viernes" className="form-label ms-2 m-0">
               Viernes
             </label>
           </div>
         </div>
 
         <div className="mb-3">
-        <label className="fw-bold" htmlFor="horario">
-          Horario
-        </label>
-        <input
-          type="time"
-          className="form-control"
-          id="horario"
-          value={service.horario}
-          onChange={handleChange}
-        />
+          <label className="fw-bold" htmlFor="horario">
+            Horario
+          </label>
+          <input
+            type="time"
+            className="form-control"
+            id="horario"
+            value={service.horario}
+            onChange={handleChange}
+          />
         </div>
 
         <div className="mb-3">
-        <label className="fw-bold" htmlFor="cupo">
-          Cupo de Participantes
-        </label>
-        <input
-          type="number"
-          className="form-control"
-          min={5}
-          id="cupo"
-          value={service.cupo}
-          required
-          onChange={handleChange}
-        />
+          <label className="fw-bold" htmlFor="cupo">
+            Cupo de Participantes
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            min={5}
+            id="cupo"
+            value={service.cupo}
+            required
+            onChange={handleChange}
+          />
         </div>
-        
+
         <div className="mb-3">
-        <label className="form-label fw-bold" htmlFor="img">
-          Imagen
-        </label>
-        <input
-          type="url"
-          className="form-control"
-          value={service.img}
-          id="img"
-          onChange={handleChange}
-          required
-        />
+          <label className="form-label fw-bold" htmlFor="img">
+            Imagen
+          </label>
+          <input
+            type="url"
+            className="form-control"
+            value={service.img}
+            id="img"
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="mb-3">
-        <label className="fw-bold" htmlFor="descripcion">
-          Descripcion
-        </label>
-        <textarea
-          className="form-control"
-          value={service.descripcion}
-          onChange={handleChange}
-          id="descripcion"
-          required
-        ></textarea>
+          <label className="fw-bold" htmlFor="descripcion">
+            Descripcion
+          </label>
+          <textarea
+            className="form-control"
+            value={service.descripcion}
+            onChange={handleChange}
+            id="descripcion"
+            required
+          ></textarea>
         </div>
 
         <div className="d-grid mt-2">
