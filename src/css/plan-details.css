@@ -1,0 +1,44 @@
+.rowTitulo {
+  background-color: #ff5722;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif;
+}
+
+p,
+ul,
+form {
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 13pt;
+}
+
+.btn-cursos {
+  background-color: #ff5722 !important;
+  color: #eeeeee !important;
+}
+
+.btn-cursos:hover {
+  outline: 2px solid #eeeeee !important;
+  background-color: #eeeeee !important;
+  color: #eee !important;
+}
+
+.infoPer {
+  border-bottom: #ff5722 14px solid !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

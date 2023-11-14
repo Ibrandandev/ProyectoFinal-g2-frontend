@@ -1,0 +1,36 @@
+p,
+.btn {
+  font-family: "Raleway", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif !important;
+}
+
+img {
+  width: 100%;
+  border: #ff5722;
+}
+
+.datos {
+  color: #ff5722;
+}
+
+.btn-cursos {
+  outline: 1px solid #ff5722;
+  background-color: #2d4059 !important;
+  color: #eeeeee !important;
+}
+
+.btn-cursos:hover {
+  outline: 4px solid #ff5722;
+  background-color: #ff5722 !important;
+}
+
+.img-spinning {
+  max-height: 600px;
+}
