@@ -6,11 +6,28 @@ const token = JSON.parse(localStorage.getItem("token"));
 
 export const getServices = async (desde = 0, limite = 0) => {
   try {
-    const resp = await fetch(url + "?from" + desde + "&limit" + limite, {
+    const resp = await fetch(url + "?from=" + desde + "&limit=" + limite, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
         token,
+      },
+    });
+
+    const data = await resp.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Lo sentimos, no se pudo conectar al backend");
+  }
+};
+
+export const getServicesByCategory = async (category = null) => {
+  try {
+    const resp = await fetch(`${url}?category=${category}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
       },
     });
 
