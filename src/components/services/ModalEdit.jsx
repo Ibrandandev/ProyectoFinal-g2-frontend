@@ -68,7 +68,11 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
     e.preventDefault();
 
     const resp = await updateService(servicio._id, servicio);
-    MySwal.fire(resp, "", "success");
+    if (resp?.errors) {
+      MySwal.fire(resp.errors[0], "", "error");
+    } else {
+      MySwal.fire(resp.message, "", "success");
+    }
     handleClose();
   };
 
@@ -93,7 +97,7 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
               <div className="my-2">
                 <p>
                   <span className="fw-bold">Categoría actual:</span>
-                  {servicio.categoria}
+                  {servicio.categoria.nombre}
                 </p>
                 <label className="fw-bold">Cambiar categoría</label>
                 <select
@@ -109,18 +113,16 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                     ))}
                 </select>
               </div>
-              {console.log(categorias)}
               <div className="my-2">
                 <p>
                   <span className="fw-bold">Profesor:</span>{" "}
-                  {servicio.categoria}
+                  {servicio.profesor.nombre} {servicio.profesor.apellido}
                 </p>
                 <label className="fw-bold">Cambiar Profesor</label>
                 <select
                   className="form-select"
                   name="profesor"
                   onChange={handleChange}
-                  value={servicio.profesor}
                 >
                   {profesores &&
                     profesores.map((profesor) => (
@@ -130,15 +132,30 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
                     ))}
                 </select>
               </div>
-              {console.log(profesores)}
-              <label className="fw-bold">Fechas </label>
-              <textarea
+              <label className="fw-bold">Horario</label>
+              <input
+                type="time"
                 className="form-control"
-                value={servicio.fecha}
+                value={servicio.horario}
+                name="horario"
                 onChange={handleChange}
-                name="fecha"
-              ></textarea>
-
+              />
+              <label className="fw-bold">Cupo</label>
+              <input
+                type="number"
+                className="form-control"
+                value={servicio.cupo}
+                name="cupo"
+                onChange={handleChange}
+              />
+              <label className="fw-bold">Imagen</label>
+              <input
+                type="url"
+                className="form-control"
+                value={servicio.img}
+                name="img"
+                onChange={handleChange}
+              />
               <div className="form-check form-switch">
                 <input
                   className="form-check-input"
