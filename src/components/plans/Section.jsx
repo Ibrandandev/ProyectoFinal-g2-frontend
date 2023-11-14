@@ -1,6 +1,6 @@
 import "../../css/home.css";
 import { useState, useEffect } from "react";
-import { getPlans } from "../../helpers/plans";
+import { getPlans } from "../../helpers/plansApi";
 import Card from "./Card";
 
 import "../../css/plans.css";
