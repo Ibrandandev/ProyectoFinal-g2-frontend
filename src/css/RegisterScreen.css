@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Russo+One&display=swap');
+
+:root{
+    --color-1: #222831;
+    --color-2: #2D4059;
+    --color-3: #FF5722;
+    --color-4: #EEEEEE;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--color-1);
+}
+
+.register-container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: var(--color-2);
+    border-radius: 25px;
+}
+
+.register-container h2 {
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    color: var(--color-3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+    color: var(--color-3);
+}
+
+.input-container-uno, .input-container-dos, .input-container-tres {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.input-container-cuatro {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.register-button {
+    background-color: var(--color-1);
+    color: var(--color-3);
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+}
+
+.register-button:hover {
+    transform: scale(1.1);
+}
+
+.iniciar-sesion {
+    text-align: center;
+    color: var(--color-3);
+}
+
+@media only screen and (min-width: 600px) {
+    .register-container {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .register-container {
+        width: 50%;
+    }
+}
