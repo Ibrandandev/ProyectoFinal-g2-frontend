@@ -12,7 +12,7 @@ Gimnasio, servicios y productos que ofrece
   - cd ProyectoFinal-g2-frontend
   - Levantar la web en un servidor y disfrutar
 
-## 👨‍💻 Tecnologías Usadas 👨‍💻
+## 👨‍💻 Tecnologías Usadas 👩‍💻
 
 <table>
   <thead>
@@ -48,3 +48,10 @@ Gimnasio, servicios y productos que ofrece
     </tr>
   </tbody>
 </table>
+
+## 👨‍💻 Integrantes 👩‍💻
+
+- Lucia Paterlini
+- Ignacio Brandan
+- Luci Borghi
+- Gonzalo Garcia
