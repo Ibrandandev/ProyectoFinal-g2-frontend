@@ -38,7 +38,9 @@ const CommentsSection = () => {
             key={comment._id}
             className="bg-white border border-danger rounded px-3 py-2 mb-2 "
           >
-            <p className="m-0 text-orange fw-bold">{comment.usuario}</p>
+            <p className="m-0 text-orange fw-bold">
+              {comment.usuario.nombre} {comment.usuario.apellido}
+            </p>
             <p className="m-0 text-black">{comment.comentario}</p>
           </div>
         ))}
