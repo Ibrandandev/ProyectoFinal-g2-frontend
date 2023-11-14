@@ -71,10 +71,11 @@ const FormCreate = () => {
   };
 
   return (
-    <div className="container w-75">
+    <div className="container">
       <h2 className="text-blue"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
+        <div className="mb-3">
         <label className="form-label fw-bold" htmlFor="nombre">
           Nombre de la Clase
         </label>
@@ -87,10 +88,12 @@ const FormCreate = () => {
           minLength={4}
           required
         />
-
+        </div>
+        
         {categorias && (
           <>
-            <label className="form-label fw-bold" htmlFor="categoria">
+          <div className="mb-3">
+          <label className="form-label fw-bold" htmlFor="categoria">
               Categoria
             </label>
             <select
@@ -107,11 +110,14 @@ const FormCreate = () => {
                 </option>
               ))}
             </select>
+          </div>
           </>
         )}
+
         {profesores && (
           <>
-            <label className="form-label fw-bold" htmlFor="profesor">
+          <div className="mb-3">
+          <label className="form-label fw-bold" htmlFor="profesor">
               Profesor
             </label>
             <select
@@ -128,11 +134,14 @@ const FormCreate = () => {
                 </option>
               ))}
             </select>
+          </div>
           </>
         )}
 
-        <div>
+        <div className="col">
+          <div className="mb-3">
           <p className="my-1 fw-bold">Dias</p>
+          </div>
           <div className="d-flex align-items-center">
             <input
               type="checkbox"
@@ -201,6 +210,7 @@ const FormCreate = () => {
           </div>
         </div>
 
+        <div className="mb-3">
         <label className="fw-bold" htmlFor="horario">
           Horario
         </label>
@@ -211,7 +221,9 @@ const FormCreate = () => {
           value={service.horario}
           onChange={handleChange}
         />
+        </div>
 
+        <div className="mb-3">
         <label className="fw-bold" htmlFor="cupo">
           Cupo de Participantes
         </label>
@@ -224,6 +236,9 @@ const FormCreate = () => {
           required
           onChange={handleChange}
         />
+        </div>
+        
+        <div className="mb-3">
         <label className="form-label fw-bold" htmlFor="img">
           Imagen
         </label>
@@ -235,7 +250,8 @@ const FormCreate = () => {
           onChange={handleChange}
           required
         />
-
+        </div>
+        <div className="mb-3">
         <label className="fw-bold" htmlFor="descripcion">
           Descripcion
         </label>
@@ -246,6 +262,7 @@ const FormCreate = () => {
           id="descripcion"
           required
         ></textarea>
+        </div>
 
         <div className="d-grid mt-2">
           <button className="btn btn-warning">Crear</button>

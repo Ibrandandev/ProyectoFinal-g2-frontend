@@ -20,3 +20,7 @@ tbody th{
 .table-admin{
     border:10px double;
 }
+
+.table-responsive {
+    width: 300px !important;
+}
