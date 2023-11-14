@@ -59,7 +59,7 @@ export const createBooking = async (datos) => {
 
 export const deleteBooking = async (id) => {
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(`${url}${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
