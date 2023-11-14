@@ -1,4 +1,3 @@
-import "../../css/users.css";
 import { useState } from "react";
 import { deleteUser } from "../../helpers/usersApi";
 import Swal from "sweetalert2";
@@ -44,7 +43,7 @@ const TableUsuarios = ({ usuarios, traerUsuarios }) => {
   };
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive mb-5">
       <table className="table table-admin text-center">
         {usuarios && (
           <thead>
