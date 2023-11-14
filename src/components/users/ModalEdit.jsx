@@ -6,14 +6,36 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 import Modal from "react-bootstrap/Modal";
+import { getPlans } from "../../helpers/plansApi";
+import { getRoles } from "../../helpers/rolesApi";
 
 const ModalEdit = ({ show, handleClose, uid }) => {
   const MySwal = withReactContent(Swal);
   const [usuario, setUsuario] = useState(null);
+  const [roles, setRoles] = useState(null);
+  const [planes, setPlanes] = useState(null);
 
   useEffect(() => {
     traerDatosUsuario();
   }, []);
+
+  useEffect(() => {
+    traerRoles();
+  }, []);
+
+  useEffect(() => {
+    traerPlanes();
+  }, []);
+
+  const traerRoles = async () => {
+    const { roles } = await getRoles();
+    setRoles(roles);
+  };
+
+  const traerPlanes = async () => {
+    const { plans } = await getPlans();
+    setPlanes(plans);
+  };
 
   const traerDatosUsuario = async () => {
     const resp = await getUserById(uid);
@@ -89,21 +111,44 @@ const ModalEdit = ({ show, handleClose, uid }) => {
                 name="email"
               ></textarea>
 
-              <label className="fw-bold">Rol</label>
-              <textarea
-                className="form-control"
-                value={usuario.rol}
-                onChange={handleChange}
-                name="rol"
-              ></textarea>
-
-              <label className="fw-bold">PlanContratado</label>
-              <textarea
-                className="form-control"
-                value={usuario.planContratado}
-                onChange={handleChange}
-                name="planContratado"
-              ></textarea>
+              <div className="my-2">
+                <p>
+                  <span className="fw-bold">Rol actual: </span>
+                  {usuario.rol}
+                </p>
+                <label className="fw-bold">Cambiar Rol</label>
+                <select
+                  className="form-select"
+                  name="rol"
+                  onChange={handleChange}
+                >
+                  {roles &&
+                    roles.map((rol) => (
+                      <option key={rol._id} value={rol.rol}>
+                        {rol.rol}
+                      </option>
+                    ))}
+                </select>
+              </div>
+              <div className="my-2">
+                <p>
+                  <span className="fw-bold">Plan actual: </span>
+                  {usuario.planContratado}
+                </p>
+                <label className="fw-bold">Cambiar Plan</label>
+                <select
+                  className="form-select"
+                  name="planContratado"
+                  onChange={handleChange}
+                >
+                  {planes &&
+                    planes.map((plan) => (
+                      <option key={plan._id} value={plan.nombre}>
+                        {plan.nombre}
+                      </option>
+                    ))}
+                </select>
+              </div>
 
               <div className="form-check form-switch">
                 <input
