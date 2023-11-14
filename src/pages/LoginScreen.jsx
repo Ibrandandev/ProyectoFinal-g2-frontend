@@ -26,7 +26,11 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
       localStorage.setItem("token", JSON.stringify(response.token));
       iniciarSesion();
       guardarUsuario(response.user);
-      navigate("/");
+      if (response.user.rol === "ADMIN_ROLE") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     }
 
     setResultado(response.message);
@@ -41,9 +45,9 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
           <div className="input-container">
             <label htmlFor="">Correo:</label>
             <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="input-container">
