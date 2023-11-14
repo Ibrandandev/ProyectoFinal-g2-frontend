@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getTrainers } from "../../helpers/trainers";
+import { getTrainers } from "../../helpers/trainersApi";
 import Card from "./Card";
 
 const TrainersSection = () => {
