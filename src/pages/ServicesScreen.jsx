@@ -15,36 +15,39 @@ const ServicesScreen = () => {
   };
 
   return (
-    <main className="bg-our-black min-vh-100">
-      <div className="container ">
-        <h1 className="text-our-white text-center py-4">Servicios</h1>
+    <main className="bg-our-black ">
+      <div className="container py-5">
+        <h1 className="text-orange text-center mb-4">Servicios</h1>
         <div className="row justify-content-evenly gap-3">
-          {services.map((service) => (
-            <div className="col-5 card bg-blue" key={service._id}>
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    src={service.img}
-                    className="img-fluid rounded-start"
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className=" text-orange">{service.nombre}</h5>
-                    <p className="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <Link to={`/service-details/${service._id}`}>
-                      <button className="btn btn-primary">Ver Más</button>
-                    </Link>
+          {services &&
+            services.map((service) => (
+              <div className="col-10 col-lg-5 card bg-blue" key={service._id}>
+                <div className="row g-0">
+                  <div className="col">
+                    <div className="card-body">
+                      <h5 className=" text-orange fs-3">{service.nombre}</h5>
+                      <div className="d-flex flex-column flex-md-row gap-2 my-3">
+                        <span className="text-our-white fs-5 text-title text-decoration-underline">
+                          {service.horario}
+                        </span>
+                        {service.dias &&
+                          service.dias.map((dia) => (
+                            <span
+                              key={crypto.randomUUID()}
+                              className="text-our-white fs-5 text-title"
+                            >
+                              {dia}
+                            </span>
+                          ))}
+                      </div>
+                      <Link to={`/service-details/${service._id}`}>
+                        <button className="btn fw-bold">Ver Más</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </main>
