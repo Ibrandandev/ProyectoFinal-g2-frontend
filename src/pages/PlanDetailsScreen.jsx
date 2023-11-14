@@ -1,19 +1,13 @@
 import "../css/plan-details.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2";
+import { Navigate, useParams } from "react-router-dom";
 import { getPlanById } from "../helpers/plansApi";
+import { Link } from "react-router-dom";
+import FormConsulta from "../components/plans/FormConsulta";
 
 const PlanDetailsScreen = () => {
   const { id } = useParams();
-  const [plan, setPlan] = useState([]);
-  const [formValues, setFormValues] = useState({
-    nombre: "",
-    destinatario: "",
-    consulta: "",
-    mensaje: "",
-  });
+  const [plan, setPlan] = useState(null);
 
   useEffect(() => {
     traerPlanes();
@@ -24,178 +18,51 @@ const PlanDetailsScreen = () => {
     setPlan(plan);
   };
 
-  const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.id]: e.target.value });
-  };
-  const templateParams = {
-    nombre: formValues.nombre,
-    destinatario: formValues.destinatario,
-    consulta: formValues.consulta,
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .send(
-        "service_s77z5hs",
-        "template_z6ovm7l",
-        templateParams,
-        "kPRDVZfVG6hM9voQ-"
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          Swal.fire({
-            title: "¡Listo!",
-            text: "Tu consulta ha sido enviada!",
-            icon: "success",
-            confirmButtonText: "Aceptar",
-          });
-        },
-        (err) => {
-          console.log("FAILED...", err);
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Algo salió mal!",
-            confirmButtonText: "Aceptar",
-          });
-        }
-      );
-    setFormValues({
-      nombre: "",
-      destinatario: "",
-      consulta: "",
-      mensaje: "",
-    });
-  };
-
-  return (
-    <div className="background min-vh-100">
-      <div className="container text-white pt-4">
-        <div className="row">
-          <div className="col-12 col-lg-5 justify-content-md-center">
-            <img className="w-100" src={plan.img} alt="" />
-          </div>
-          <div className="col-12 col-lg-7 mt-3">
-            <div className="d-flex justify-content-between rowTitulo">
-              <h1 className="rowTitulo mx-4 m-2">{plan.nombre}</h1>
-              <h2 className="rowTitulo align-self-center mx-5 m-2">
-                ${plan.precio}
-              </h2>
+  if (plan) {
+    return (
+      <div className="bg-blue">
+        <div className="container text-white pt-4">
+          <div className="row">
+            <div className="col-12 col-lg-5 justify-content-md-center">
+              <img className="w-100" src={plan.img} alt="" />
             </div>
-            <div>
-              <h5 className="mt-3 mx-3">{plan.duracion}</h5>
-            </div>
-            <div>
-              <ul className="mt-4 mx-2 ps-1">
-                {plan.beneficios &&
-                  plan.beneficios.map((beneficio) => {
-                    return (
-                      <li key={crypto.randomUUID()}>
-                        <i className="fa fa-check" aria-hidden="true"></i>
-                        {beneficio}
-                      </li>
-                    );
-                  })}
-              </ul>
+            <div className="col-12 col-lg-7 mt-3">
+              <div className="d-flex justify-content-between rowTitulo">
+                <h1 className="rowTitulo mx-4 m-2">{plan.nombre}</h1>
+                <h2 className="rowTitulo align-self-center mx-5 m-2">
+                  ${plan.precio}
+                </h2>
+              </div>
+              <div>
+                <h5 className="mt-3 mx-3">{plan.duracion}</h5>
+              </div>
+              <div>
+                <ul className="mt-4 mx-2 ps-1">
+                  {plan.beneficios &&
+                    plan.beneficios.map((beneficio) => {
+                      return (
+                        <li key={crypto.randomUUID()}>
+                          <i className="fa fa-check" aria-hidden="true"></i>
+                          {beneficio}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+              <div>
+                <Link to="/error" className="btn">
+                  Anotarse
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mt-4 ">
-          <h2 className="infoPer">Información Personal</h2>
-          <form
-            className="row g-3 justify-content-center pt-4"
-            onSubmit={sendEmail}
-          >
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <label htmlFor="validationDefault01" className="form-label">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="nombre"
-                  placeholder="Ingrese su nombre"
-                  onChange={handleChange}
-                  value={formValues.nombre}
-                  required
-                  minLength="3"
-                  maxLength="10"
-                />
-              </div>
-              <div className="col-12 col-md-6">
-                <label
-                  htmlFor="validationDefaultUsername"
-                  className="form-label"
-                >
-                  Correo
-                </label>
-                <div className="input-group">
-                  <span className="input-group-text" id="inputGroupPrepend2">
-                    @
-                  </span>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="destinatario"
-                    aria-describedby="inputGroupPrepend2"
-                    placeholder="email@email.com"
-                    onChange={handleChange}
-                    value={formValues.destinatario}
-                    required
-                    minLength="12"
-                    maxLength="35"
-                  />
-                </div>
-              </div>
-
-              <div className="col mb-3 pt-3">
-                <label htmlFor="formGroupExampleInput" className="form-label">
-                  Motivo de consulta
-                </label>
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  onChange={handleChange}
-                  value={formValues.consulta}
-                  id="consulta"
-                  required
-                >
-                  <option value="">Elija el motivo de su consulta</option>
-                  <option value="Precio">Precio</option>
-                  <option value="Horario">Horario</option>
-                  <option value="Otro">Otro</option>
-                </select>
-                <label
-                  htmlFor="exampleFormControlTextarea1"
-                  className="form-label"
-                ></label>
-                <textarea
-                  className="form-control"
-                  id="mensaje"
-                  rows="3"
-                  placeholder="Ingrese aquí su consulta..."
-                  required
-                  value={formValues.mensaje}
-                  onChange={handleChange}
-                  minLength="10"
-                  maxLength="200"
-                ></textarea>
-              </div>
-
-              <div className="col-12 mb-5 d-flex justify-content-end">
-                <button className="btn btn-cursos" type="submit">
-                  Enviar consulta
-                </button>
-              </div>
-            </div>
-          </form>
+          <FormConsulta />
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    <Navigate to="/" />;
+  }
 };
 
 export default PlanDetailsScreen;
