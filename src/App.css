@@ -8,6 +8,19 @@
   --white: #eeeeee;
 }
 
+p,
+.btn {
+  font-family: "Raleway", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Russo One", sans-serif !important;
+}
+
 .text-title {
   font-family: "Russo One", sans-serif !important;
 }
@@ -21,15 +34,15 @@
 }
 
 .bg-orange {
-  background-color: var(--orange);
+  background-color: var(--orange) !important;
 }
 
 .bg-our-black {
-  background-color: var(--black);
+  background-color: var(--black) !important;
 }
 
 .bg-our-white {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 .text-blue {
@@ -37,7 +50,7 @@
 }
 
 .text-orange {
-  color: var(--orange);
+  color: var(--orange) !important;
 }
 
 .text-our-black {

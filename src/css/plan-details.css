@@ -3,25 +3,6 @@
   border-radius: 10px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Russo One", sans-serif;
-}
-
-p,
-ul,
-form {
-  font-family: "Raleway", sans-serif;
-}
-
-ul {
-  list-style-type: none;
-  font-size: 13pt;
-}
-
 .btn-cursos {
   background-color: #ff5722 !important;
   color: #eeeeee !important;

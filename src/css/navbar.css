@@ -1,34 +1,3 @@
-/*  
-paleta de colores 
-negro : #222831
-azul : #2D4059
-naranja : #FF5722
-blanco : #EEEEEE
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Russo One", sans-serif;
-}
-
-p,
-.btn,
-ul {
-  font-family: "Raleway", sans-serif !important;
-}
-
-ul {
-  font-weight: 400;
-}
-
-/* .logo{
-    border-bottom: #FF5722 2px solid; 
-    padding: 5px;
-} */
-
 .icon {
   width: 2rem;
 }
@@ -65,8 +34,6 @@ ul {
 
 .nav-link:hover {
   color: #eeeeee !important;
-  /* outline: 2px solid ; */
-  /* border-bottom: #EEEEEE 2px solid; */
   background-color: #ff5722;
 }
 

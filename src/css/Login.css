@@ -25,13 +25,13 @@
   border-radius: 25px;
 }
 
-h2 {
+.login h2 {
   text-align: center;
   font-family: "Russo One", sans-serif;
   color: var(--color-3);
 }
 
-form {
+.login form {
   display: flex;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
@@ -42,11 +42,11 @@ form {
   margin-bottom: 15px;
 }
 
-label {
+.login label {
   margin-bottom: 5px;
 }
 
-input {
+.login input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;

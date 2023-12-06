@@ -2,21 +2,6 @@
   background-color: #222831;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Russo One", sans-serif;
-}
-
-p,
-.btn,
-ul,
-form {
-  font-family: "Raleway", sans-serif !important;
-}
-
 .btn-style {
   background-color: #ff5722 !important;
   color: #eeeeee !important;

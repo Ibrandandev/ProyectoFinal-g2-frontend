@@ -16,6 +16,10 @@
   min-height: 100px;
 }
 
+.btn-comment:hover {
+  outline: 2px solid #ff5722;
+}
+
 @media screen and (min-width: 768px) {
   .card-group {
     gap: 1rem;

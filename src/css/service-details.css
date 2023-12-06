@@ -1,17 +1,4 @@
-p,
-.btn {
-  font-family: "Raleway", sans-serif !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Russo One", sans-serif !important;
-}
-
-img {
+.img-service {
   width: 100%;
   border: #ff5722;
 }
