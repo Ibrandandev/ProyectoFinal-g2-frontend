@@ -20,19 +20,21 @@ import CategoryScreen from "./pages/CategoryScreen";
 
 function App() {
   const [login, setLogin] = useState(false);
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(null);
 
   const guardarUsuario = (datos) => {
     setUser(datos);
   };
 
-  const iniciarSesion = () => {
+  const iniciarSesion = (token) => {
+    localStorage.setItem("access-token", token);
     setLogin(true);
   };
 
   const cerrarSesion = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access-token");
     setLogin(false);
+    setUser(null);
   };
 
   return (
@@ -51,10 +53,13 @@ function App() {
         />
         <Route path="/register" element={<RegisterScreen />} />
         <Route path="/services" element={<ServicesScreen />} />
-        <Route path="/contact" element={<ContactScreen />} />
+        <Route path="/contact" element={<ContactScreen user={user} />} />
         <Route path="/categories/:id" element={<CategoryScreen />} />
         <Route path="/service-details/:id" element={<ServiceDetailsScreen />} />
-        <Route path="/plan-details/:id" element={<PlanDetailsScreen />} />
+        <Route
+          path="/plan-details/:id"
+          element={<PlanDetailsScreen user={user} />}
+        />
         <Route
           path="/admin"
           element={
