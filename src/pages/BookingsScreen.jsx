@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { deleteBooking, getBookingsByUser } from "../helpers/bookingsApi";
+import Swal from "sweetalert2";
 
 const BookingsScreen = ({ user }) => {
   const [bookings, setBookings] = useState(null);
@@ -14,8 +15,21 @@ const BookingsScreen = ({ user }) => {
   };
 
   const eliminarReserva = async (id) => {
-    const resp = await deleteBooking(id);
-    console.log(resp);
+    Swal.fire({
+      title: `Quiere cancelar la reserva`,
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Si",
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteBooking(id).then((resp) => {
+          Swal.fire("", `${resp.message}`, "success");
+        });
+      } else if (result.isDenied) {
+        Swal.fire("La reserva sigue activa", "", "info");
+      }
+    });
   };
 
   return (
@@ -23,7 +37,7 @@ const BookingsScreen = ({ user }) => {
       <div className="container py-4">
         <h1 className="text-orange text-center">Mis Reservas</h1>
         <div className="row justify-content-evenly gap-3">
-          {bookings ? (
+          {bookings?.length > 0 ? (
             bookings.map((booking) => (
               <div className="col-10 col-lg-5 card bg-blue" key={booking._id}>
                 <div className="row g-0">
@@ -47,7 +61,7 @@ const BookingsScreen = ({ user }) => {
                           ))}
                       </div>
                       <button
-                        className="btn fw-bold"
+                        className="btn btn-danger fw-bold"
                         onClick={() => eliminarReserva(booking._id)}
                       >
                         Cancelar
