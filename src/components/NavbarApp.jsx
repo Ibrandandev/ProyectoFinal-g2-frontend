@@ -17,7 +17,7 @@ const NavbarApp = ({ user, login, cerrarSesion }) => {
             </NavLink>
           </div>
 
-          <ul className="nav col-12 col-lg-auto mb-2 justify-content-center mb-lg-0">
+          <ul className="nav col-12 col-lg-auto mb-2 justify-content-center mb-lg-0 fw-semibold">
             <li className="nav-item">
               <NavLink
                 className="nav-link px-3"
@@ -56,7 +56,7 @@ const NavbarApp = ({ user, login, cerrarSesion }) => {
                 Contacto
               </NavLink>
             </li>
-            {user.rol === "ADMIN_ROLE" && (
+            {user?.rol === "ADMIN_ROLE" && (
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
