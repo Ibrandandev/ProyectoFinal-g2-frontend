@@ -2,10 +2,10 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useState } from "react";
 
-const FormConsulta = () => {
+const FormConsulta = ({ user }) => {
   const [formValues, setFormValues] = useState({
-    nombre: "",
-    destinatario: "",
+    nombre: user ? user.nombre : "",
+    destinatario: user ? user.email : "",
     consulta: "",
     mensaje: "",
   });
@@ -79,6 +79,7 @@ const FormConsulta = () => {
               required
               minLength="3"
               maxLength="10"
+              disabled={user}
             />
           </div>
           <div className="col-12 col-md-6">
@@ -100,6 +101,7 @@ const FormConsulta = () => {
                 required
                 minLength="12"
                 maxLength="35"
+                disabled={user}
               />
             </div>
           </div>

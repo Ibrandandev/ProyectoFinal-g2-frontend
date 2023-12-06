@@ -3,10 +3,10 @@ import "../css/contacto.css";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 
-const ContactoScreen = () => {
+const ContactoScreen = ({ user }) => {
   const [formValues, setFormValues] = useState({
-    nombre: "",
-    destinatario: "",
+    nombre: user ? user.nombre : "",
+    destinatario: user ? user.email : "",
     consulta: "",
   });
   const handleChange = (e) => {
@@ -74,6 +74,7 @@ const ContactoScreen = () => {
                 title="Ingrese solo letras"
                 minLength="3"
                 maxLength="20"
+                disabled={user}
               />
             </div>
             <div className="my-3 ">
@@ -89,6 +90,7 @@ const ContactoScreen = () => {
                 value={formValues.destinatario}
                 required
                 minLength="10"
+                disabled={user}
               />
             </div>
             <div className="mb-3">
