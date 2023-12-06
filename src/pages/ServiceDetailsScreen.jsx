@@ -32,7 +32,7 @@ const ServiceDetailsScreen = () => {
     return (
       <div className="bg-blue">
         <img
-          className=" d-block img-spinning"
+          className=" d-block img-spinning img-service"
           src={service.img}
           alt={service.nombre}
         />
