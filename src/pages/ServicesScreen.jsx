@@ -19,7 +19,7 @@ const ServicesScreen = () => {
       <div className="container py-5">
         <h1 className="text-orange text-center mb-4">Servicios</h1>
         <div className="row justify-content-evenly gap-3">
-          {services &&
+          {services?.length > 0 ? (
             services.map((service) => (
               <div className="col-10 col-lg-5 card bg-blue" key={service._id}>
                 <div className="row g-0">
@@ -41,13 +41,18 @@ const ServicesScreen = () => {
                           ))}
                       </div>
                       <Link to={`/service-details/${service._id}`}>
-                        <button className="btn fw-bold">Ver Más</button>
+                        <button className="btn btn-service bg-orange text-our-white ">
+                          Ver Más
+                        </button>
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <p className="text-danger text-center">No hay servicios listados</p>
+          )}
         </div>
       </div>
     </main>

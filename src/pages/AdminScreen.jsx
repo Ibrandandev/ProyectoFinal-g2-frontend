@@ -28,7 +28,6 @@ const AdminScreen = () => {
   const traerUsuarios = async () => {
     const { users } = await getUsers();
     setUsuarios(users);
-    // setTotalUsuarios(total);
   };
 
   const traerServicios = async () => {
@@ -50,7 +49,9 @@ const AdminScreen = () => {
             <div className="row m-5 gap-2">
               <div className="col-12">
                 <Button
-                  className="botonU bg-our-black w-100"
+                  className={`btn btn-admin  ${
+                    mostrarUsuarios ? "bg-our-black" : "bg-orange"
+                  } w-100`}
                   onClick={() => {
                     setMostrarUsuarios(!mostrarUsuarios);
                     if (mostrarServicios) setMostrarServicios(false);
@@ -62,7 +63,9 @@ const AdminScreen = () => {
 
               <div className="col-12">
                 <Button
-                  className="botonC  w-100"
+                  className={`btn btn-admin  ${
+                    mostrarServicios ? "bg-our-black" : "bg-orange"
+                  } w-100`}
                   onClick={() => {
                     setMostrarServicios(!mostrarServicios);
                     if (mostrarUsuarios) setMostrarUsuarios(false);

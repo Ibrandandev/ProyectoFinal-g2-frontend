@@ -56,7 +56,10 @@ const CommentsSection = () => {
             }}
           />
           <div className="text-end">
-            <button className="btn btn-danger" type="submit">
+            <button
+              className="btn btn-comment bg-our-white text-orange"
+              type="submit"
+            >
               Enviar
             </button>
           </div>

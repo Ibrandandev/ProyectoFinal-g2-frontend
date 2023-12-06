@@ -5,7 +5,7 @@ import { getPlanById } from "../helpers/plansApi";
 import { Link } from "react-router-dom";
 import FormConsulta from "../components/plans/FormConsulta";
 
-const PlanDetailsScreen = () => {
+const PlanDetailsScreen = ({ user }) => {
   const { id } = useParams();
   const [plan, setPlan] = useState(null);
 
@@ -37,12 +37,18 @@ const PlanDetailsScreen = () => {
                 <h5 className="mt-3 mx-3">{plan.duracion}</h5>
               </div>
               <div>
-                <ul className="mt-4 mx-2 ps-1">
+                <ul className="mt-4 mx-2 ps-1 list-group list-group-flush ">
                   {plan.beneficios &&
                     plan.beneficios.map((beneficio) => {
                       return (
-                        <li key={crypto.randomUUID()}>
-                          <i className="fa fa-check" aria-hidden="true"></i>
+                        <li
+                          key={crypto.randomUUID()}
+                          className="list-group-item bg-blue text-our-white border-0 ps-0"
+                        >
+                          <i
+                            className="fa fa-check me-1 text-success"
+                            aria-hidden="true"
+                          ></i>
                           {beneficio}
                         </li>
                       );
@@ -50,13 +56,16 @@ const PlanDetailsScreen = () => {
                 </ul>
               </div>
               <div>
-                <Link to="/error" className="btn">
+                <Link
+                  to="/error"
+                  className="btn btn-plan bg-orange text-our-white mt-3"
+                >
                   Anotarse
                 </Link>
               </div>
             </div>
           </div>
-          <FormConsulta />
+          <FormConsulta user={user} />
         </div>
       </div>
     );

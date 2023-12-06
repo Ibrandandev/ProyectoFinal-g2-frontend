@@ -23,7 +23,7 @@ const Card = ({ plan }) => {
       <div className="card-body bg-blue py-3">
         <Link
           to={`/plan-details/${plan._id}`}
-          className="btn w-75 mx-auto d-block fw-bold mt-5"
+          className="btn btn-plan w-75 mx-auto d-block fw-bold mt-5"
         >
           Asociate
         </Link>
