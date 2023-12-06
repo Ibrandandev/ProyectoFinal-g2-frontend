@@ -1,16 +1,15 @@
 import Swal from "sweetalert2";
-
 // const url = "http://localhost:8080/api/services/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/services/";
-const token = JSON.parse(localStorage.getItem("token"));
+const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getServices = async (desde = 0, limite = 0) => {
   try {
     const resp = await fetch(url + "?from=" + desde + "&limit=" + limite, {
       method: "GET",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
 
@@ -67,8 +66,8 @@ export const createService = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
 
@@ -86,8 +85,8 @@ export const updateService = async (id, datos) => {
       method: "PUT",
       body: JSON.stringify(datos),
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
 
@@ -104,8 +103,8 @@ export const deleteService = async (id) => {
     const resp = await fetch(url + "/" + id, {
       method: "DELETE",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
 

@@ -1,14 +1,14 @@
 // const url = "http://localhost:8080/api/bookings/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/bookings/";
-const token = JSON.parse(localStorage.getItem("token"));
+const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getBookings = async () => {
   try {
     const resp = await fetch(url, {
       method: "GET",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
     const data = await resp.json();
@@ -25,8 +25,8 @@ export const getBookingsByUser = async (uid) => {
     const resp = await fetch(`${url}${uid}`, {
       method: "GET",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
     const data = await resp.json();
@@ -44,8 +44,8 @@ export const createBooking = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
     const data = await resp.json();
@@ -62,8 +62,8 @@ export const deleteBooking = async (id) => {
     const resp = await fetch(`${url}${id}`, {
       method: "DELETE",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
 

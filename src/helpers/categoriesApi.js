@@ -1,6 +1,6 @@
 // const url = "http://localhost:8080/api/categories/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
-const token = JSON.parse(localStorage.getItem("token"));
+const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getCategories = async (from = 0, limit = 9) => {
   try {
@@ -42,8 +42,8 @@ export const createCategory = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
     const data = await resp.json();

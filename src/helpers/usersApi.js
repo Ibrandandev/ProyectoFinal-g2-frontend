@@ -1,14 +1,14 @@
 // const url = "http://localhost:8080/api/users/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
-const token = JSON.parse(localStorage.getItem("token"));
+const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getUsers = async (limite = 0, pagina = 0) => {
   try {
     const resp = await fetch(url + "?from=" + pagina + "&limit=" + limite, {
       method: "GET",
       headers: {
+        token: accessToken,
         "Content-type": "application/json; charset=UTF-8",
-        token,
       },
     });
     const data = await resp.json();
@@ -26,7 +26,7 @@ export const getUserById = async (id) => {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        token,
+        token: accessToken,
       },
     });
     const data = await resp.json();
@@ -44,7 +44,7 @@ export const createUser = async (datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        token,
+        token: accessToken,
       },
     });
 
@@ -63,7 +63,7 @@ export const updateUser = async (id, datos) => {
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        token,
+        token: accessToken,
       },
     });
 
@@ -82,7 +82,7 @@ export const deleteUser = async (id) => {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        token,
+        token: accessToken,
       },
     });
 

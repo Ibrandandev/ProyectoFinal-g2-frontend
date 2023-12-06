@@ -1,6 +1,6 @@
 // const url = "http://localhost:8080/api/comments/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/comments/";
-const token = JSON.parse(localStorage.getItem("token"));
+const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getComments = async (limit = 5) => {
   try {
@@ -22,8 +22,8 @@ export const createComment = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
+        token: accessToken,
         "content-type": "application/json; charset=utf-8",
-        token,
       },
     });
     const data = await resp.json();
