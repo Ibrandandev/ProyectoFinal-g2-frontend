@@ -36,6 +36,11 @@ const ContactoScreen = ({ user }) => {
             icon: "success",
             confirmButtonText: "Aceptar",
           });
+          setFormValues({
+            nombre: user ? user.nombre : "",
+            destinatario: user ? user.email : "",
+            consulta: "",})
+            e.target.reset()
         },
         (err) => {
           console.log("FAILED...", err);
@@ -47,51 +52,54 @@ const ContactoScreen = ({ user }) => {
           });
         }
       );
+      
   };
   return (
     <div className="background ">
       <div className="container py-5">
         <div className="row  justify-content-center">
           <div className="col-10 text-white ">
-            <h1 className="formulario fs-2">Tenes alguna duda? Contáctanos!</h1>
+            <h1 className="d-flex justify-content-center mb-4">Tenes alguna duda? Contáctanos!</h1>
           </div>
         </div>
         <div className="row justify-content-center text-white ">
           <form className="col-10" onSubmit={sendEmail}>
-            <div className="my-3">
-              <label htmlFor="validationDefault01" className="form-label">
-                Nombre
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="nombre"
-                placeholder="Introduzca su nombre"
-                onChange={handleChange}
-                value={formValues.nombre}
-                required
-                pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,254}"
-                title="Ingrese solo letras"
-                minLength="3"
-                maxLength="20"
-                disabled={user}
-              />
-            </div>
-            <div className="my-3 ">
-              <label htmlFor="destinatario" className="form-label">
-                Correo
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="destinatario"
-                placeholder="name@example.com"
-                onChange={handleChange}
-                value={formValues.destinatario}
-                required
-                minLength="10"
-                disabled={user}
-              />
+            <div className="row">
+              <div className="col my-3">
+                <label htmlFor="validationDefault01" className="form-label">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="nombre"
+                  placeholder="Introduzca su nombre"
+                  onChange={handleChange}
+                  value={formValues.nombre}
+                  required
+                  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,254}"
+                  title="Ingrese solo letras"
+                  minLength="3"
+                  maxLength="20"
+                  disabled={user}
+                />
+              </div>
+              <div className="col my-3 ">
+                <label htmlFor="destinatario" className="form-label">
+                  Correo
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="destinatario"
+                  placeholder="name@example.com"
+                  onChange={handleChange}
+                  value={formValues.destinatario}
+                  required
+                  minLength="10"
+                  disabled={user}
+                />
+              </div>
             </div>
             <div className="mb-3">
               <label htmlFor="formGroupExampleInput" className="form-label">
