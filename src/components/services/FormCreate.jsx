@@ -21,9 +21,6 @@ const FormCreate = () => {
 
   useEffect(() => {
     traerCategorias();
-  }, []);
-
-  useEffect(() => {
     traerProfesores();
   }, []);
 
@@ -75,8 +72,8 @@ const FormCreate = () => {
       <h2 className="text-blue"> Agregar nueva clase </h2>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-5">
-          <label className="form-label fw-bold" htmlFor="nombre">
+        <div className="mb-3">
+          <label className="form-label fw-bold text-orange" htmlFor="nombre">
             Nombre de la Clase
           </label>
           <input
@@ -93,7 +90,10 @@ const FormCreate = () => {
         {categorias && (
           <>
             <div className="mb-3">
-              <label className="form-label fw-bold" htmlFor="categoria">
+              <label
+                className="form-label fw-bold text-orange"
+                htmlFor="categoria"
+              >
                 Categoria
               </label>
               <select
@@ -117,7 +117,10 @@ const FormCreate = () => {
         {profesores && (
           <>
             <div className="mb-3">
-              <label className="form-label fw-bold" htmlFor="profesor">
+              <label
+                className="form-label fw-bold text-orange"
+                htmlFor="profesor"
+              >
                 Profesor
               </label>
               <select
@@ -140,7 +143,7 @@ const FormCreate = () => {
 
         <div className="col">
           <div className="mb-3">
-            <p className="my-1 fw-bold">Dias</p>
+            <p className="my-1 fw-bold text-orange">Dias</p>
           </div>
           <div className="d-flex align-items-center">
             <input
@@ -151,7 +154,7 @@ const FormCreate = () => {
               className="form-check-input m-0"
               onChange={handleChangeCheck}
             />
-            <label htmlFor="Lunes" className="form-label ms-2 m-0">
+            <label htmlFor="Lunes" className="form-label text-blue ms-2 m-0">
               Lunes
             </label>
           </div>
@@ -165,7 +168,7 @@ const FormCreate = () => {
               className="form-check-input m-0"
               onChange={handleChangeCheck}
             />
-            <label htmlFor="Martes" className="form-label ms-2 m-0">
+            <label htmlFor="Martes" className="form-label text-blue ms-2 m-0">
               Martes
             </label>
           </div>
@@ -178,7 +181,10 @@ const FormCreate = () => {
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="Miercoles" className="form-label ms-2 m-0">
+            <label
+              htmlFor="Miercoles"
+              className="form-label text-blue ms-2 m-0"
+            >
               Miercoles
             </label>
           </div>
@@ -191,7 +197,7 @@ const FormCreate = () => {
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="Jueves" className="form-label ms-2 m-0">
+            <label htmlFor="Jueves" className="form-label text-blue ms-2 m-0">
               Jueves
             </label>
           </div>
@@ -204,14 +210,14 @@ const FormCreate = () => {
               onChange={handleChangeCheck}
               className="form-check-input m-0"
             />
-            <label htmlFor="Viernes" className="form-label ms-2 m-0">
+            <label htmlFor="Viernes" className="form-label text-blue ms-2 m-0">
               Viernes
             </label>
           </div>
         </div>
 
         <div className="mb-3">
-          <label className="fw-bold" htmlFor="horario">
+          <label className="fw-bold text-orange" htmlFor="horario">
             Horario
           </label>
           <input
@@ -227,7 +233,7 @@ const FormCreate = () => {
         </div>
 
         <div className="mb-3">
-          <label className="fw-bold" htmlFor="cupo">
+          <label className="fw-bold text-orange" htmlFor="cupo">
             Cupo de Participantes
           </label>
           <input
@@ -242,7 +248,7 @@ const FormCreate = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label fw-bold" htmlFor="img">
+          <label className="form-label fw-bold text-orange" htmlFor="img">
             Imagen
           </label>
           <input
@@ -255,7 +261,7 @@ const FormCreate = () => {
           />
         </div>
         <div className="mb-3">
-          <label className="fw-bold" htmlFor="descripcion">
+          <label className="fw-bold text-orange" htmlFor="descripcion">
             Descripcion
           </label>
           <textarea
@@ -268,7 +274,7 @@ const FormCreate = () => {
         </div>
 
         <div className="d-grid mt-2">
-          <button className="btn btn-warning">Crear</button>
+          <button className="btn bg-orange btn-plan text-white ">Crear</button>
         </div>
       </form>
     </div>
