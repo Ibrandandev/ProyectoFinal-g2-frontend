@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/auth/login";
 
 export const login = async (datos) => {
@@ -14,7 +15,11 @@ export const login = async (datos) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conectó con backend" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

@@ -20,7 +20,7 @@ const ServiceDetailsScreen = () => {
 
   const handleClick = async () => {
     const resp = await createBooking({ servicio: service._id });
-    console.log(resp);
+
     if (resp.message === "Reserva Exitosa") {
       Swal.fire(resp.message, "", "success");
     } else {

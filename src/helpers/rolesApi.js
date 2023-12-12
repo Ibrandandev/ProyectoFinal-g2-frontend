@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/roles/";
 
 export const getRoles = async (limit = 5) => {
@@ -9,7 +10,11 @@ export const getRoles = async (limit = 5) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

@@ -37,9 +37,7 @@ function RegisterScreen() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos enviados:", regData);
     const resp = await createUser(regData);
-    console.log(resp);
     if (resp?.errors) {
       Swal.fire(resp.errors[0].msg, "", "error");
     } else {

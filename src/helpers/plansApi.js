@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/plans/";
 
 export const getPlans = async () => {
@@ -10,7 +11,12 @@ export const getPlans = async () => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -24,6 +30,11 @@ export const getPlanById = async (id) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

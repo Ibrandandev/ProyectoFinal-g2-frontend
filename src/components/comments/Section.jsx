@@ -25,7 +25,6 @@ const CommentsSection = () => {
     } else {
       Swal.fire(resp.message, "", "warning");
     }
-
     setReview("");
   };
 

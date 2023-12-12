@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
@@ -14,8 +15,12 @@ export const getUsers = async (limite = 0, pagina = 0) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, No se pudo obtener la informacion");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -31,8 +36,12 @@ export const getUserById = async (id) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, No se pudo obtener la informacion");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -50,8 +59,12 @@ export const createUser = async (datos) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conectó con backend" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -70,8 +83,12 @@ export const updateUser = async (id, datos) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conectó con backend" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -89,7 +106,11 @@ export const deleteUser = async (id) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conectó con backend" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

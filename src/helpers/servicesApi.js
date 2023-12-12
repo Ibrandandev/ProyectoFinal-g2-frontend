@@ -15,8 +15,12 @@ export const getServices = async (desde = 0, limite = 0) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -32,8 +36,12 @@ export const getServicesByCategory = async (category = null) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -49,13 +57,12 @@ export const getServiceById = async (id) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Something went wrong!",
+      text: "Algo salio mal!",
     });
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    throw new Error(error);
   }
 };
 
@@ -73,8 +80,12 @@ export const createService = async (datos) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -92,8 +103,12 @@ export const updateService = async (id, datos) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -110,7 +125,11 @@ export const deleteService = async (id) => {
     const data = await resp.json();
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Lo sentimos, no se pudo conectar al backend");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

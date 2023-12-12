@@ -32,7 +32,6 @@ const Table = ({ servicios, traerServicios }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteService(id).then((resultado) => {
-          console.log(resultado);
           traerServicios();
           MySwal.fire("", `${resultado.message}`, "success");
         });

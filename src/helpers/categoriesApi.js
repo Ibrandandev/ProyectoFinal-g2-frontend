@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
@@ -13,8 +14,12 @@ export const getCategories = async (from = 0, limit = 9) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -30,8 +35,12 @@ export const getCategoryById = async (id) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -49,7 +58,11 @@ export const createCategory = async (datos) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conecto al backend!" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

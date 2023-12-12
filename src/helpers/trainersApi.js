@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/trainers/";
 
 export const getTrainers = async (from = 0, limit = 0) => {
@@ -12,7 +13,11 @@ export const getTrainers = async (from = 0, limit = 0) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

@@ -45,7 +45,6 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
     let valueCheck = false;
 
     if (e.target.name === "estado") {
-      console.log(e.target);
       if (e.target.checked) {
         valueCheck = true;
       } else {

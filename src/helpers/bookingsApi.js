@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/bookings/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
@@ -14,8 +15,12 @@ export const getBookings = async () => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -32,8 +37,12 @@ export const getBookingsByUser = async (uid) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    throw new Error("Error al obtener la informacion!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -51,8 +60,12 @@ export const createBooking = async (datos) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conecto al backend!" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };
 
@@ -70,7 +83,11 @@ export const deleteBooking = async (id) => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return { msg: "No se conectó con backend" };
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Algo salio mal!",
+    });
+    throw new Error(error);
   }
 };

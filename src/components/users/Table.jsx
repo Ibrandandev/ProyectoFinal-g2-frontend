@@ -32,7 +32,6 @@ const TableUsuarios = ({ usuarios, traerUsuarios }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteUser(id).then((resultado) => {
-          console.log(resultado);
           traerUsuarios();
           MySwal.fire("", `${resultado.message}`, "success");
         });

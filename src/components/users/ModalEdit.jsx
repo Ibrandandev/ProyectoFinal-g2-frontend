@@ -17,13 +17,7 @@ const ModalEdit = ({ show, handleClose, uid }) => {
 
   useEffect(() => {
     traerDatosUsuario();
-  }, []);
-
-  useEffect(() => {
     traerRoles();
-  }, []);
-
-  useEffect(() => {
     traerPlanes();
   }, []);
 
@@ -46,7 +40,6 @@ const ModalEdit = ({ show, handleClose, uid }) => {
     let valueCheck = false;
 
     if (e.target.name === "usuarioActivo") {
-      console.log(e.target);
       if (e.target.checked) {
         valueCheck = true;
       } else {
@@ -68,7 +61,6 @@ const ModalEdit = ({ show, handleClose, uid }) => {
     e.preventDefault();
 
     const resp = await updateUser(usuario._id, usuario);
-    console.log(resp);
     if (resp?.errors) {
       MySwal.fire(resp.errors[0].msg, "", "error");
     } else {

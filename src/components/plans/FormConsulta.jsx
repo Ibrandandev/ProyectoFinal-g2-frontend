@@ -30,8 +30,7 @@ const FormConsulta = ({ user }) => {
         "kPRDVZfVG6hM9voQ-"
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+        () => {
           Swal.fire({
             title: "¡Listo!",
             text: "Tu consulta ha sido enviada!",
@@ -45,8 +44,7 @@ const FormConsulta = ({ user }) => {
             mensaje: "",
           });
         },
-        (err) => {
-          console.log("FAILED...", err);
+        () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
