@@ -38,6 +38,12 @@ const FormConsulta = ({ user }) => {
             icon: "success",
             confirmButtonText: "Aceptar",
           });
+          setFormValues({
+            nombre: user ? user.nombre : "",
+            destinatario: user ? user.email : "",
+            consulta: "",
+            mensaje: "",
+          });
         },
         (err) => {
           console.log("FAILED...", err);
@@ -49,12 +55,6 @@ const FormConsulta = ({ user }) => {
           });
         }
       );
-    setFormValues({
-      nombre: "",
-      destinatario: "",
-      consulta: "",
-      mensaje: "",
-    });
   };
 
   return (
