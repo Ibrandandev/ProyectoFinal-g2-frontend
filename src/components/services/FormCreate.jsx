@@ -64,7 +64,17 @@ const FormCreate = () => {
     service.dias = [...dias];
     service.cupo = Number(service.cupo);
     const resp = await createService(service);
-    console.log(resp);
+    Swal.fire(resp.message, "", "success");
+    setService({
+      nombre: "",
+      categoria: "",
+      profesor: "",
+      dias: [],
+      horario: "",
+      cupo: 0,
+      img: "",
+      descripcion: "",
+    });
   };
 
   return (
