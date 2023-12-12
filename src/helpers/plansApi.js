@@ -1,4 +1,3 @@
-// const url = "http://localhost:8080/api/plans/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/plans/";
 
 export const getPlans = async () => {

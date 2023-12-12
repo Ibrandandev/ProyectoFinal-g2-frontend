@@ -1,4 +1,3 @@
-// const url = "http://localhost:8080/api/auth/login/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/auth/login";
 
 export const login = async (datos) => {

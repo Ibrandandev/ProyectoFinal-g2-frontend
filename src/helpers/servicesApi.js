@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-// const url = "http://localhost:8080/api/services/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/services/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 

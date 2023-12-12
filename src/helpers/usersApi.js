@@ -1,4 +1,3 @@
-// const url = "http://localhost:8080/api/users/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 

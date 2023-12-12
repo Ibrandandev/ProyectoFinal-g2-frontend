@@ -1,4 +1,3 @@
-// const url = "http://localhost:8080/api/comments/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/comments/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 

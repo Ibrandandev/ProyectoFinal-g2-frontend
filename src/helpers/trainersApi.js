@@ -1,4 +1,3 @@
-// const url = "http://localhost:8080/api/trainers/";
 const url = "https://proyectofinal-g2-backend.onrender.com/api/trainers/";
 
 export const getTrainers = async (from = 0, limit = 0) => {
