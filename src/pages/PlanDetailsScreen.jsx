@@ -27,9 +27,9 @@ const PlanDetailsScreen = ({ user }) => {
               <img className="w-100" src={plan.img} alt="" />
             </div>
             <div className="col-12 col-lg-7 mt-3">
-              <div className="d-flex justify-content-between rowTitulo">
+              <div className="d-flex justify-content-md-between justify-content-around rowTitulo">
                 <h1 className="rowTitulo mx-4 m-2">{plan.nombre}</h1>
-                <h2 className="rowTitulo align-self-center mx-5 m-2">
+                <h2 className="rowTitulo align-self-center mx-4 m-2">
                   ${plan.precio}
                 </h2>
               </div>

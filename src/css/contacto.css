@@ -13,12 +13,6 @@
   color: #ff5722 !important;
 }
 
-.formulario {
-  outline: 2px solid #ff5722;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ff5722;
-}
 
 @media (min-width: 1250px) {
   .background {
