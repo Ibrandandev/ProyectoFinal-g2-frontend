@@ -36,6 +36,12 @@ const ContactoScreen = ({ user }) => {
             icon: "success",
             confirmButtonText: "Aceptar",
           });
+          setFormValues({
+            nombre: user ? user.nombre : "",
+            destinatario: user ? user.email : "",
+            consulta: "",
+          });
+          e.target.reset();
         },
         (err) => {
           console.log("FAILED...", err);
