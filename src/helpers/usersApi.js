@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
+const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/users/";
+// const url = "https://proyectofinal-g2-backend.onrender.com/api/users/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getUsers = async (limite = 0, pagina = 0) => {
