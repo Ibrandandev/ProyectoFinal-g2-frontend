@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/categories/";
+const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/categories/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getCategories = async (from = 0, limit = 9) => {

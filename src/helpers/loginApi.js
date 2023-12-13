@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/auth/login";
+const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/auth/login";
 
 export const login = async (datos) => {
   try {

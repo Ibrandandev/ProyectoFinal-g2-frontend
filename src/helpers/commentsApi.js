@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.onrender.com/api/comments/";
+const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/comments/";
 const accessToken = JSON.parse(localStorage.getItem("access-token"));
 
 export const getComments = async (limit = 5) => {
