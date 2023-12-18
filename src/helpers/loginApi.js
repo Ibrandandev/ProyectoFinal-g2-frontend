@@ -13,6 +13,8 @@ export const login = async (datos) => {
 
     const data = await resp.json();
 
+    localStorage.setItem("token", data.token);
+
     return data;
   } catch (error) {
     Swal.fire({
