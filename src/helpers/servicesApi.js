@@ -1,8 +1,9 @@
 import Swal from "sweetalert2";
 const url = `${import.meta.env.VITE_API_URL}/api/services/`;
-const token = localStorage.getItem("token");
 
 export const getServices = async (desde = 0, limite = 0) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url + "?from=" + desde + "&limit=" + limite, {
       method: "GET",
@@ -67,6 +68,8 @@ export const getServiceById = async (id) => {
 };
 
 export const createService = async (datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -90,6 +93,8 @@ export const createService = async (datos) => {
 };
 
 export const updateService = async (id, datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url + id, {
       method: "PUT",
@@ -113,6 +118,8 @@ export const updateService = async (id, datos) => {
 };
 
 export const deleteService = async (id) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url + id, {
       method: "DELETE",

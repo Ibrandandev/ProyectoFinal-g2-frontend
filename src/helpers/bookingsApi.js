@@ -1,8 +1,9 @@
 import Swal from "sweetalert2";
 const url = `${import.meta.env.VITE_API_URL}/api/bookings/`;
-const token = localStorage.getItem("token");
 
 export const getBookings = async () => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url, {
       method: "GET",
@@ -25,6 +26,8 @@ export const getBookings = async () => {
 };
 
 export const getBookingsByUser = async (uid) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(`${url}${uid}`, {
       method: "GET",
@@ -47,6 +50,8 @@ export const getBookingsByUser = async (uid) => {
 };
 
 export const createBooking = async (datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -70,6 +75,8 @@ export const createBooking = async (datos) => {
 };
 
 export const deleteBooking = async (id) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(`${url}${id}`, {
       method: "DELETE",

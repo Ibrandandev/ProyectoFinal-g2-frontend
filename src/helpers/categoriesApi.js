@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 const url = `${import.meta.env.VITE_API_URL}/api/categories/`;
-const token = localStorage.getItem("token");
 
 export const getCategories = async (from = 0, limit = 9) => {
   try {
@@ -45,6 +44,8 @@ export const getCategoryById = async (id) => {
 };
 
 export const createCategory = async (datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url, {
       method: "POST",
