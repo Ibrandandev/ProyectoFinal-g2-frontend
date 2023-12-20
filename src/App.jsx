@@ -26,13 +26,12 @@ function App() {
     setUser(datos);
   };
 
-  const iniciarSesion = (token) => {
-    localStorage.setItem("access-token", token);
+  const iniciarSesion = () => {
     setLogin(true);
   };
 
   const cerrarSesion = () => {
-    localStorage.removeItem("access-token");
+    localStorage.removeItem("token");
     setLogin(false);
     setUser(null);
   };

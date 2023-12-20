@@ -23,7 +23,7 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
     const response = await login(data);
 
     if (response?.token) {
-      iniciarSesion(JSON.stringify(response.token));
+      iniciarSesion();
       guardarUsuario(response.user);
       if (response.user.rol === "ADMIN_ROLE") {
         navigate("/admin");
