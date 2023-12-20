@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = `${import.meta.env.VITE_API_URL}/api/bookings`;
+const url = `${import.meta.env.VITE_API_URL}/api/bookings/`;
 const token = localStorage.getItem("token");
 
 export const getBookings = async () => {

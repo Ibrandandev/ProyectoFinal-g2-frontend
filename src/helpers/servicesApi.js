@@ -47,7 +47,7 @@ export const getServicesByCategory = async (category = null) => {
 
 export const getServiceById = async (id) => {
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -91,7 +91,7 @@ export const createService = async (datos) => {
 
 export const updateService = async (id, datos) => {
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "PUT",
       body: JSON.stringify(datos),
       headers: {
@@ -114,7 +114,7 @@ export const updateService = async (id, datos) => {
 
 export const deleteService = async (id) => {
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

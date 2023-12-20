@@ -25,7 +25,7 @@ export const getCategories = async (from = 0, limit = 9) => {
 
 export const getCategoryById = async (id) => {
   try {
-    const resp = await fetch(`${url}/${id}`, {
+    const resp = await fetch(`${url}${id}`, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
