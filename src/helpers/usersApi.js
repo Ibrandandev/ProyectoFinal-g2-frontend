@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 const url = `${import.meta.env.VITE_API_URL}/api/users/`;
-const token = localStorage.getItem("token");
 
 export const getUsers = async (limite = 0, pagina = 0) => {
+  const token = await localStorage.getItem("token");
   try {
     const resp = await fetch(url + "?from=" + pagina + "&limit=" + limite, {
       method: "GET",
@@ -25,8 +25,10 @@ export const getUsers = async (limite = 0, pagina = 0) => {
 };
 
 export const getUserById = async (id) => {
+  const token = await localStorage.getItem("token");
+
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -46,6 +48,8 @@ export const getUserById = async (id) => {
 };
 
 export const createUser = async (datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
     const resp = await fetch(url, {
       method: "POST",
@@ -69,8 +73,10 @@ export const createUser = async (datos) => {
 };
 
 export const updateUser = async (id, datos) => {
+  const token = await localStorage.getItem("token");
+
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "PUT",
       body: JSON.stringify(datos),
       headers: {
@@ -93,8 +99,10 @@ export const updateUser = async (id, datos) => {
 };
 
 export const deleteUser = async (id) => {
+  const token = await localStorage.getItem("token");
+
   try {
-    const resp = await fetch(url + "/" + id, {
+    const resp = await fetch(url + id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
