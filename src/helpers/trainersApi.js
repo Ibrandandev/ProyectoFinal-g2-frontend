@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/trainers/";
+const url = `${import.meta.env.VITE_API_URL}/api/trainers/`;
 
 export const getTrainers = async (from = 0, limit = 0) => {
   try {

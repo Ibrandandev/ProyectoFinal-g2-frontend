@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/users/";
-const token = JSON.parse(localStorage.getItem("token"));
+const url = `${import.meta.env.VITE_API_URL}/api/users/`;
+const token = localStorage.getItem("token");
 
 export const getUsers = async (limite = 0, pagina = 0) => {
   try {
@@ -29,8 +29,8 @@ export const getUserById = async (id) => {
     const resp = await fetch(url + "/" + id, {
       method: "GET",
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
-        token: accessToken,
       },
     });
     const data = await resp.json();
@@ -51,8 +51,8 @@ export const createUser = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
-        token: accessToken,
       },
     });
 
@@ -74,8 +74,8 @@ export const updateUser = async (id, datos) => {
       method: "PUT",
       body: JSON.stringify(datos),
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
-        token: accessToken,
       },
     });
 
@@ -97,8 +97,8 @@ export const deleteUser = async (id) => {
     const resp = await fetch(url + "/" + id, {
       method: "DELETE",
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
-        token: accessToken,
       },
     });
 

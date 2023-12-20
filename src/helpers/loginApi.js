@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/auth/login";
+const url = `${import.meta.env.VITE_API_URL}/api/auth/login/`;
 
 export const login = async (datos) => {
   try {

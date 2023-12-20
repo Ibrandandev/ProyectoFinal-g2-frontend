@@ -1,13 +1,13 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/services/";
-const accessToken = JSON.parse(localStorage.getItem("access-token"));
+const url = `${import.meta.env.VITE_API_URL}/api/services/`;
+const token = localStorage.getItem("token");
 
 export const getServices = async (desde = 0, limite = 0) => {
   try {
     const resp = await fetch(url + "?from=" + desde + "&limit=" + limite, {
       method: "GET",
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -72,7 +72,7 @@ export const createService = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -95,7 +95,7 @@ export const updateService = async (id, datos) => {
       method: "PUT",
       body: JSON.stringify(datos),
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -117,7 +117,7 @@ export const deleteService = async (id) => {
     const resp = await fetch(url + "/" + id, {
       method: "DELETE",
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });

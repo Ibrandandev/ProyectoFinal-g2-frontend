@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/roles/";
+const url = `${import.meta.env.VITE_API_URL}/api/roles/`;
 
 export const getRoles = async (limit = 5) => {
   try {

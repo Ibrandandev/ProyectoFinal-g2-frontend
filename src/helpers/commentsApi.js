@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/comments/";
-const accessToken = JSON.parse(localStorage.getItem("access-token"));
+const url = `${import.meta.env.VITE_API_URL}/api/comments/`;
+
+const token = localStorage.getItem("token");
 
 export const getComments = async (limit = 5) => {
   try {
@@ -26,7 +27,7 @@ export const createComment = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "content-type": "application/json; charset=utf-8",
       },
     });

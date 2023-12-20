@@ -1,13 +1,13 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/bookings/";
-const accessToken = JSON.parse(localStorage.getItem("access-token"));
+const url = `${import.meta.env.VITE_API_URL}/api/bookings`;
+const token = localStorage.getItem("token");
 
 export const getBookings = async () => {
   try {
     const resp = await fetch(url, {
       method: "GET",
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -29,7 +29,7 @@ export const getBookingsByUser = async (uid) => {
     const resp = await fetch(`${url}${uid}`, {
       method: "GET",
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -52,7 +52,7 @@ export const createBooking = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
@@ -74,7 +74,7 @@ export const deleteBooking = async (id) => {
     const resp = await fetch(`${url}${id}`, {
       method: "DELETE",
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });

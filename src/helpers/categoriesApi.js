@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
-const url = "https://proyectofinal-g2-backend.1.us-1.fl0.io/api/categories/";
-const accessToken = JSON.parse(localStorage.getItem("access-token"));
+const url = `${import.meta.env.VITE_API_URL}/api/categories/`;
+const token = localStorage.getItem("token");
 
 export const getCategories = async (from = 0, limit = 9) => {
   try {
@@ -50,7 +50,7 @@ export const createCategory = async (datos) => {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
-        token: accessToken,
+        Authorization: `Bearer ${token}`,
         "Content-type": "application/json; charset=UTF-8",
       },
     });
