@@ -30,7 +30,7 @@ const CommentsSection = () => {
 
   return (
     <section className="container mt-5 py-4">
-      <h2 className="text-center">Comentarios</h2>
+      <h2 className="text-center text-orange">Comentarios</h2>
       <div>
         {comments.map((comment) => (
           <div
