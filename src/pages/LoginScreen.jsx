@@ -57,7 +57,7 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Link to="*" className="text-white">
+          <Link to="*" className="text-white mb-3">
             ¿Olvidaste Tu Contraseña?
           </Link>
           <div className="text-end">
