@@ -7,7 +7,7 @@ const CategoriesSection = () => {
 
   useEffect(() => {
     traerCategorias();
-  }, [categorias]);
+  }, []);
 
   const traerCategorias = async () => {
     const { categories } = await getCategories();

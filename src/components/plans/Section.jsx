@@ -10,7 +10,7 @@ const PlansSection = () => {
 
   useEffect(() => {
     traerPlanes();
-  }, [planes]);
+  }, []);
 
   const traerPlanes = async () => {
     const { plans } = await getPlans();

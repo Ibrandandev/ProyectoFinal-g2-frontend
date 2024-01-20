@@ -16,13 +16,7 @@ const ModalEdit = ({ show, handleClose, serviceId }) => {
 
   useEffect(() => {
     traerServicio();
-  }, []);
-
-  useEffect(() => {
     traerCategorias();
-  }, []);
-
-  useEffect(() => {
     traerProfesores();
   }, []);
 

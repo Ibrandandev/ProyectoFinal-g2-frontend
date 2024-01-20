@@ -9,7 +9,7 @@ const CommentsSection = () => {
 
   useEffect(() => {
     traerComentarios();
-  }, [comments]);
+  }, []);
 
   const traerComentarios = async () => {
     const { comments } = await getComments();

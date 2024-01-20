@@ -7,7 +7,7 @@ const ServicesScreen = () => {
 
   useEffect(() => {
     traerServicios();
-  }, [services]);
+  }, []);
 
   const traerServicios = async () => {
     const { services } = await getServices();

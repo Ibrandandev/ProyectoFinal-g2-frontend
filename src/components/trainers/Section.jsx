@@ -7,7 +7,7 @@ const TrainersSection = () => {
 
   useEffect(() => {
     traerTrainers();
-  }, [trainers]);
+  }, []);
 
   const traerTrainers = async () => {
     const { trainers } = await getTrainers();

@@ -7,7 +7,7 @@ const BookingsScreen = ({ user }) => {
 
   useEffect(() => {
     traerReservas();
-  }, [bookings]);
+  }, []);
 
   const traerReservas = async () => {
     const { bookings } = await getBookingsByUser(user._id);
